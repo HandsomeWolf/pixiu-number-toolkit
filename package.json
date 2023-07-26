@@ -1,0 +1,49 @@
+{
+  "name": "@handsomewolf/num-utils",
+  "version": "0.0.7",
+  "description": "A collection of number utilities.",
+  "keywords": [
+    "typescript",
+    "math",
+    "formatter"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/repository.git"
+  },
+  "author": "HandsomeWolf <55856773@qq.com> (https://github.com/handsomewolf)",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "dev": "concurrently \"build:watch\" \"vitest --watch\"",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "build": "tsup src/index.ts --dts --minify --format cjs --target node14 --outDir dist",
+    "build:watch": "tsup src/index.ts --dts --minify --format cjs --target node14 --outDir dist --watch",
+    "build:test": "tsup src/index.ts",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
+  },
+  "dependencies": {
+    "mathjs": "^11.8.2",
+    "stacktrace-js": "^2.0.2"
+  },
+  "devDependencies": {
+    "@handsomewolf/eslint-config": "^0.0.11",
+    "concurrently": "^8.2.0",
+    "release-it": "^16.1.2",
+    "ts-node": "^10.9.1",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  }
+}
