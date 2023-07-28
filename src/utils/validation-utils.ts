@@ -4,7 +4,7 @@
  * @returns 如果string_为千分位格式，返回true；否则返回false。
  */
 export function isValidThousandSeparatedNumber(string_: string) {
-  const regex = /^\d{1,3}(,\d{3})*(\.\d+)?$/;
+  const regex = /^\d{1,3}(,\d{3})+(\.\d+)?$/;
   return regex.test(string_);
 }
 

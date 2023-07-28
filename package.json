@@ -22,21 +22,21 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "dev": "concurrently \"build:watch\" \"vitest --watch\"",
+    "dev": "concurrently \"pnpm:build:watch\" \"vitest --watch\"",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "build": "tsup src/index.ts --dts --minify --format cjs --target node14 --outDir dist",
-    "build:watch": "tsup src/index.ts --dts --minify --format cjs --target node14 --outDir dist --watch",
+    "build": "tsup",
+    "build:watch": "tsup --watch",
     "release": "release-it"
   },
   "dependencies": {
-    "mathjs": "^11.8.2",
+    "mathjs": "^11.9.1",
     "stacktrace-js": "^2.0.2"
   },
   "devDependencies": {
-    "@handsomewolf/eslint-config": "^0.0.11",
+    "@handsomewolf/eslint-config": "^0.0.13",
     "concurrently": "^8.2.0",
-    "release-it": "^16.1.2",
+    "release-it": "^16.1.3",
     "ts-node": "^10.9.1",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",

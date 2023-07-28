@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { math } from "../dist/index.js";
+import { math } from "../src/index";
 
 describe("computeExpression", () => {
   const parameters = { x: 0.1, y: 0.2 };

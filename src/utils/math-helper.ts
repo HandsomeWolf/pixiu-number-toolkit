@@ -1,6 +1,6 @@
 import { type BigNumber, all, create } from "mathjs";
-import { addThousandSeparator } from "./formatter";
-import { isValidThousandSeparatedNumber } from "./utils/validation";
+import { addThousandSeparator } from "../formatters";
+import { isValidThousandSeparatedNumber } from "./validation-utils";
 
 interface Parameters {
   [key: string]: number | string | BigNumber;

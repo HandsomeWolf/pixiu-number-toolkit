@@ -6,11 +6,13 @@ import {
   isBlank,
   isNumeric,
   isValidThousandSeparatedNumber,
-} from "../src/utils/validation";
+} from "../src/utils/validation-utils";
 describe("utils", () => {
   it("isValidThousandSeparatedNumber", () => {
     expect(isValidThousandSeparatedNumber("123,456,789")).toBe(true);
+
     expect(isValidThousandSeparatedNumber("123,456789")).toBe(false);
+    expect(isValidThousandSeparatedNumber("123.44")).toBe(false);
     expect(isValidThousandSeparatedNumber("")).toBe(false);
   });
 

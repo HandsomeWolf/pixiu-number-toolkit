@@ -1,6 +1,6 @@
 import { type BigNumber, all, create } from "mathjs";
-import { addThousandSeparator } from "../formatters";
-import { isValidThousandSeparatedNumber } from "../utils/validation";
+import { addThousandSeparator } from "../formatters/index";
+import { isValidThousandSeparatedNumber } from "../utils/validation-utils";
 
 const math = create(all, { number: "BigNumber" });
 
@@ -82,11 +82,13 @@ export function computeExpression(
     switch (typeof parameters) {
       // 替换表达式参数
       case "object": {
-        result = math.evaluate(formulaResult, convertParameters(parameters));
+        result = math
+          .evaluate(formulaResult, convertParameters(parameters))
+          .toString();
         break;
       }
       case "number": {
-        result = math.evaluate(formulaResult).toFixed(parameters);
+        result = Number(math.evaluate(formulaResult).toFixed(parameters));
         break;
       }
       case "boolean": {

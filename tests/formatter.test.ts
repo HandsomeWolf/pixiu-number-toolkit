@@ -1,7 +1,7 @@
 /* eslint-disable unicorn/no-useless-undefined */
 /* eslint-disable unicorn/no-null */
 import { describe, expect, it } from "vitest";
-import { formatter } from "../dist/index.js";
+import { converter, formatter } from "../dist/index.js";
 
 describe("formatter", () => {
   it("addThousandSeparator", () => {
@@ -67,11 +67,11 @@ describe("formatter", () => {
   });
 
   it("digitUppercase", () => {
-    expect(formatter.digitUppercase(123_456_789)).toBe(
+    expect(converter.digitUppercase(123_456_789)).toBe(
       "壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整"
     );
-    expect(formatter.digitUppercase(123.45)).toBe("壹佰贰拾叁元肆角伍分");
-    expect(formatter.digitUppercase(-123.45)).toBe("欠壹佰贰拾叁元肆角伍分");
+    expect(converter.digitUppercase(123.45)).toBe("壹佰贰拾叁元肆角伍分");
+    expect(converter.digitUppercase(-123.45)).toBe("欠壹佰贰拾叁元肆角伍分");
   });
 
   it("formatCurrencyRenminbi", () => {
