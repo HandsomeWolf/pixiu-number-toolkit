@@ -117,7 +117,7 @@ formatter.formatPercentage() //结果为undefined undefined类型
 
 ### 使用示例
 ```ts
-converter.digitUppercase(123_456_789) //结果为"壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整" 字符串类型
+converter.digitUppercase(123456789) //结果为"壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整" 字符串类型
 converter.digitUppercase(123.45) //结果为"壹佰贰拾叁元肆角伍分" 字符串类型
 converter.digitUppercase(-123.45) //结果为"欠壹佰贰拾叁元肆角伍分" 字符串类型
 ```
