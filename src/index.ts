@@ -1,2 +1,2 @@
-export * as formatter from "./formatter/index";
-export * as math from "./math";
+export * as formatter from "./formatters/index";
+export * as math from "./math/math";

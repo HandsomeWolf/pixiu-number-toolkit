@@ -1,6 +1,6 @@
 {
   "name": "@handsomewolf/num-utils",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A collection of number utilities.",
   "keywords": [
     "typescript",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/username/repository.git"
+    "url": "git+https://github.com/HandsomeWolf/num-utils"
   },
   "author": "HandsomeWolf <55856773@qq.com> (https://github.com/handsomewolf)",
   "files": [
@@ -27,11 +27,7 @@
     "test:watch": "vitest --watch",
     "build": "tsup src/index.ts --dts --minify --format cjs --target node14 --outDir dist",
     "build:watch": "tsup src/index.ts --dts --minify --format cjs --target node14 --outDir dist --watch",
-    "build:test": "tsup src/index.ts",
     "release": "release-it"
-  },
-  "release-it": {
-    "git": false
   },
   "dependencies": {
     "mathjs": "^11.8.2",
