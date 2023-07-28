@@ -1,3 +1,6 @@
+import { getDecimalPlaces, padZero } from "../utils/number-utils";
+import { math } from "..";
+
 /**
  *  格式化百分比
  * @param input 要格式化的数字或字符串，可以是数字、字符串、null或undefined
@@ -9,27 +12,27 @@
  */
 export function formatPercentage(
   input: number | string,
-  carrySymbol?: boolean
+  carrySymbol?: boolean,
 ): string;
 export function formatPercentage(
   input: number | string,
   decimalPlaces?: number,
-  carrySymbol?: boolean
+  carrySymbol?: boolean,
 ): string;
 export function formatPercentage(
   input: null,
   decimalPlaces?: number,
-  carrySymbol?: boolean
+  carrySymbol?: boolean,
 ): null;
 export function formatPercentage(
   input: undefined,
   decimalPlaces?: number,
-  carrySymbol?: boolean
+  carrySymbol?: boolean,
 ): undefined;
 export function formatPercentage(
   input: OutType,
   decimalPlaces?: number | boolean,
-  carrySymbol = true
+  carrySymbol = true,
 ): OutType {
   if (input === null || input === undefined || input === "") {
     return input;
@@ -46,15 +49,18 @@ export function formatPercentage(
 
   // 判断是否有第二个参数
   if (decimalPlaces === undefined) {
-    decimalPlaces = 0;
+    decimalPlaces = Math.max(0, getDecimalPlaces(input) - 2);
   } else if (typeof decimalPlaces === "boolean") {
     carrySymbol = decimalPlaces;
-    decimalPlaces = 0;
+    decimalPlaces = Math.max(0, getDecimalPlaces(input) - 2);
   }
   // 判断是否有第三个参数
   if (carrySymbol === undefined) {
     carrySymbol = true;
   }
 
-  return `${(input * 100).toFixed(decimalPlaces)}${carrySymbol ? "%" : ""}`;
+  return `${padZero(
+    math.computeExpression(`${input} * 100`, decimalPlaces),
+    decimalPlaces,
+  )}${carrySymbol ? "%" : ""}`;
 }

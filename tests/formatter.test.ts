@@ -1,7 +1,7 @@
 /* eslint-disable unicorn/no-useless-undefined */
 /* eslint-disable unicorn/no-null */
 import { describe, expect, it } from "vitest";
-import { converter, formatter } from "../dist/index.js";
+import { converter, formatter } from "../src";
 
 describe("formatter", () => {
   it("addThousandSeparator", () => {
@@ -16,19 +16,19 @@ describe("formatter", () => {
     expect(formatter.addThousandSeparator(123_456_789)).toBe("123,456,789");
     expect(formatter.addThousandSeparator(-123_456_789)).toBe("-123,456,789");
     expect(formatter.addThousandSeparator(123_456_789, true)).toBe(
-      "123,456,789"
+      "123,456,789",
     );
     expect(formatter.addThousandSeparator(-123_456_789, true)).toBe(
-      "-123,456,789"
+      "-123,456,789",
     );
     expect(formatter.addThousandSeparator("123456789")).toBe("123,456,789");
     expect(formatter.addThousandSeparator("-123456789")).toBe("-123,456,789");
     expect(formatter.addThousandSeparator("123456789", true)).toBe(
-      "123,456,789"
+      "123,456,789",
     );
     expect(formatter.addThousandSeparator("123,456,789")).toBe("123,456,789");
     expect(formatter.addThousandSeparator("123,456,789", true)).toBe(
-      "123,456,789"
+      "123,456,789",
     );
     expect(formatter.addThousandSeparator("", true)).toBe("");
     expect(formatter.addThousandSeparator("abc", true)).toBe("abc");
@@ -54,21 +54,25 @@ describe("formatter", () => {
     expect(formatter.formatPercentage(0, false)).toBe("0");
 
     expect(formatter.formatPercentage("0.15")).toBe("15%");
+    expect(formatter.formatPercentage("0.15678")).toBe("15.678%");
     expect(formatter.formatPercentage("0.15", true)).toBe("15%");
     expect(formatter.formatPercentage("0.15", false)).toBe("15");
 
     expect(formatter.formatPercentage(0.15)).toBe("15%");
+    expect(formatter.formatPercentage(0.156_78)).toBe("15.678%");
     expect(formatter.formatPercentage(0.15, true)).toBe("15%");
     expect(formatter.formatPercentage(0.15, false)).toBe("15");
 
     expect(formatter.formatPercentage(0.15, 2)).toBe("15.00%");
-    expect(formatter.formatPercentage(0.15, 2, true)).toBe("15.00%");
+    expect(formatter.formatPercentage("0.15", 2)).toBe("15.00%");
+    expect(formatter.formatPercentage(0.156_78, 2, true)).toBe("15.68%");
+    expect(formatter.formatPercentage("0.15678", 2, true)).toBe("15.68%");
     expect(formatter.formatPercentage(0.15, 2, false)).toBe("15.00");
   });
 
   it("digitUppercase", () => {
     expect(converter.digitUppercase(123_456_789)).toBe(
-      "壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整"
+      "壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整",
     );
     expect(converter.digitUppercase(123.45)).toBe("壹佰贰拾叁元肆角伍分");
     expect(converter.digitUppercase(-123.45)).toBe("欠壹佰贰拾叁元肆角伍分");
@@ -76,7 +80,7 @@ describe("formatter", () => {
 
   it("formatCurrencyRenminbi", () => {
     expect(formatter.formatCurrencyRenminbi(123_456_789)).toBe(
-      "¥123,456,789.00"
+      "¥123,456,789.00",
     );
   });
 });

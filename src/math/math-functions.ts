@@ -9,7 +9,7 @@ interface Parameters {
 }
 
 // 该函数将参数转为BigNumber类型
-function convertParameters(parameters: Parameters) {
+export function convertParameters(parameters: Parameters) {
   const convertedParameters: Parameters = {};
   for (const [key, value] of Object.entries(parameters)) {
     if (typeof value === "number") {
@@ -26,43 +26,43 @@ function convertParameters(parameters: Parameters) {
 export function computeExpression(
   formula: string,
   parameters: Parameters,
-  decimalPlaces: number
+  decimalPlaces: number,
 ): number;
 
 export function computeExpression(
   formula: string,
   parameters: Parameters,
   decimalPlaces: number,
-  useThousandSeparator: boolean
+  useThousandSeparator: boolean,
 ): string;
 
 export function computeExpression(
   formula: string,
-  parameters: Parameters
+  parameters: Parameters,
 ): number;
 
 export function computeExpression(
   formula: string,
   parameters: Parameters,
-  useThousandSeparator: boolean
+  useThousandSeparator: boolean,
 ): string;
 
 export function computeExpression(
   formula: string,
-  decimalPlaces: number
+  decimalPlaces: number,
 ): number;
 
 export function computeExpression(
   formula: string,
   decimalPlaces: number,
-  useThousandSeparator: boolean
+  useThousandSeparator: boolean,
 ): string;
 
 export function computeExpression(formula: string): number;
 
 export function computeExpression(
   formula: string,
-  useThousandSeparator: boolean
+  useThousandSeparator: boolean,
 ): string;
 
 // 实现以上函数重载
@@ -70,7 +70,7 @@ export function computeExpression(
   formula: string,
   parameters?: Parameters | number | boolean,
   decimalPlaces?: number | boolean,
-  useThousandSeparator?: boolean
+  useThousandSeparator?: boolean,
 ) {
   let result;
   const formulaResult = formula.replaceAll(",", "");
@@ -126,7 +126,7 @@ export function unitConversion(
   value: number,
   fromUnit: string,
   toUnit: string,
-  withUnit = false
+  withUnit = false,
 ): string | number {
   const result = math.evaluate(`${value} ${fromUnit} to ${toUnit}`);
   return withUnit ? result.toString() : result.toNumber();

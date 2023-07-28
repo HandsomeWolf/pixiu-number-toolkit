@@ -14,8 +14,8 @@ dependencies:
 
 devDependencies:
   '@handsomewolf/eslint-config':
-    specifier: ^0.0.13
-    version: 0.0.13(eslint@8.44.0)(typescript@5.1.6)
+    specifier: ^0.0.14
+    version: 0.0.14(eslint@8.44.0)(typescript@5.1.6)
   concurrently:
     specifier: ^8.2.0
     version: 8.2.0
@@ -311,8 +311,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@handsomewolf/eslint-config@0.0.13(eslint@8.44.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-8paR88G9R5hUmPBhTcGTbq00PeOr7RaCIjSTcgQwZFW+yHUkuNanK35XksGEFeNybmrVcc5DlB1060QUxg7eMw==}
+  /@handsomewolf/eslint-config@0.0.14(eslint@8.44.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-RmZbZYNk+dlS1HL+zRCJmvG82vzxMfC69ECHKS5/Jud4RhlHc28YAsU+5aIsntIE6UO6I+lU6E3gW9dKCjnoRg==}
     peerDependencies:
       eslint: '>=8.0.0'
     dependencies:

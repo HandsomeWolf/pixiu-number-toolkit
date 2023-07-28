@@ -10,7 +10,7 @@ npm i @handsomewolf/num-utils
 
 2. 导入
 ```ts
-import { formatter,math } from "@handsomewolf/num-utils";
+import { converter,formatter,math } from "@handsomewolf/num-utils";
 ```
 
 ## math.computeExpression 计算表达式的值
@@ -68,17 +68,13 @@ math.unitConversion(0.3, "km", "m", true) //结果为"300 m" 字符串类型
 
 ### 使用示例
 ```ts
-formatter.addThousandSeparator(123_456_789) //结果为："123,456,789" 字符串类型
 
-
-// eslint-disable-next-line unicorn/numeric-separators-style
 formatter.addThousandSeparator(123456789) //结果为："123,456,789" 字符串类型
 
 formatter.addThousandSeparator("123456789") //结果为："123,456,789" 字符串类型
 
 formatter.addThousandSeparator(0) //结果为：0 数字类型
 
-// eslint-disable-next-line unicorn/no-null
 formatter.addThousandSeparator(null) //结果为：null null类型
 
 formatter.addThousandSeparator() //结果为：undefined undefined类型
@@ -106,18 +102,22 @@ formatter.removeThousandSeparator() //结果为0 数字类型
 ```ts
 formatter.formatPercentage(0.15) //结果为"15%" 字符串类型
 formatter.formatPercentage(0.15, false) //结果为"15" 字符串类型
+ 
+formatter.formatPercentage(0.15678) //结果为"15.678%" 字符串类型
 formatter.formatPercentage(0.15,2) //结果为"15.00%" 字符串类型
+ 
+formatter.formatPercentage(0.15678,2) //结果为"15.68%" 字符串类型
 formatter.formatPercentage(0.15, 2, false) //结果为"15.00" 字符串类型
 formatter.formatPercentage(0) //结果为"0%" 字符串类型
 formatter.formatPercentage(null) //结果为null null类型
 formatter.formatPercentage() //结果为undefined undefined类型
 ```
 
-## formatter.digitUppercase 金额中文大写转换
+## converter.digitUppercase 金额中文大写转换
 
 ### 使用示例
 ```ts
-formatter.digitUppercase(123_456_789) //结果为"壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整" 字符串类型
-formatter.digitUppercase(123.45) //结果为"壹佰贰拾叁元肆角伍分" 字符串类型
-formatter.digitUppercase(-123.45) //结果为"欠壹佰贰拾叁元肆角伍分" 字符串类型
+converter.digitUppercase(123_456_789) //结果为"壹亿贰仟叁佰肆拾伍万陆仟柒佰捌拾玖元整" 字符串类型
+converter.digitUppercase(123.45) //结果为"壹佰贰拾叁元肆角伍分" 字符串类型
+converter.digitUppercase(-123.45) //结果为"欠壹佰贰拾叁元肆角伍分" 字符串类型
 ```
