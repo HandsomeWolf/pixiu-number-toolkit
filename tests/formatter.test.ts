@@ -35,14 +35,24 @@ describe("formatter", () => {
   });
 
   it("removeThousandSeparator", () => {
-    expect(formatter.removeThousandSeparator(null)).toBe(0);
-    expect(formatter.removeThousandSeparator(undefined)).toBe(0);
-    expect(formatter.removeThousandSeparator("")).toBe(0);
+    expect(formatter.removeThousandSeparator(null)).toBe(null);
+    expect(formatter.removeThousandSeparator(undefined)).toBe(undefined);
+    expect(formatter.removeThousandSeparator("")).toBe("");
     expect(formatter.removeThousandSeparator(0)).toBe(0);
     expect(formatter.removeThousandSeparator(1.123)).toBe(1.123);
     expect(formatter.removeThousandSeparator(123_456_789)).toBe(123_456_789);
     expect(formatter.removeThousandSeparator("123456789")).toBe(123_456_789);
     expect(formatter.removeThousandSeparator("123,456,789")).toBe(123_456_789);
+
+    expect(formatter.removeThousandSeparator(null, "")).toBe("");
+    expect(formatter.removeThousandSeparator(undefined, "")).toBe("");
+    expect(formatter.removeThousandSeparator("", "")).toBe("");
+    expect(formatter.removeThousandSeparator(0, "")).toBe(0);
+
+    expect(formatter.removeThousandSeparator(null, 0)).toBe(0);
+    expect(formatter.removeThousandSeparator(undefined, 0)).toBe(0);
+    expect(formatter.removeThousandSeparator("", 0)).toBe(0);
+    expect(formatter.removeThousandSeparator(0, 0)).toBe(0);
   });
 
   it("formatPercentage", () => {

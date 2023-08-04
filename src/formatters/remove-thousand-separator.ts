@@ -4,21 +4,34 @@
  * @returns 如果input为数字或字符串，返回移除千分位格式后的数字；
  *          如果input为null或undefined或空字符串，返回0。
  */
-export function removeThousandSeparator(input: number): number;
-export function removeThousandSeparator(input: string): number;
-export function removeThousandSeparator(input: null | undefined): 0;
-export function removeThousandSeparator(input: OutType): OutType {
+export function removeThousandSeparator(
+  input: number,
+  defaultReturn?: any,
+): number;
+export function removeThousandSeparator(
+  input: string,
+  defaultReturn?: any,
+): number | string;
+export function removeThousandSeparator(
+  input: null | undefined,
+  defaultReturn?: any,
+): 0;
+export function removeThousandSeparator(
+  input: OutType,
+  defaultReturn?: any,
+): OutType {
+  const getDefaultReturn = (result: OutType) =>
+    defaultReturn === undefined ? result : defaultReturn;
+
   if (input === null || input === undefined || input === "") {
-    return 0;
+    return getDefaultReturn(input);
   }
 
   if (typeof input === "number") {
     return input;
   }
-  const result = Number(input.replaceAll(",", ""));
-  if (Number.isNaN(result)) {
-    return 0;
-  }
 
-  return result;
+  const result = input.replaceAll(/\D/g, "");
+
+  return result === "" ? getDefaultReturn(result) : Number(result);
 }

@@ -89,11 +89,14 @@ formatter.addThousandSeparator(1.123) //结果为：”1.123“ 字符串类型
 ```ts
 formatter.removeThousandSeparator("123,456,789") //结果为123456789 数字类型
 formatter.removeThousandSeparator("123456789") //结果为123456789 数字类型
-formatter.removeThousandSeparator("") //结果为0 数字类型
 formatter.removeThousandSeparator(1.123) //结果为1.123 数字类型
+formatter.removeThousandSeparator("") //结果为"" 字符串类型
 formatter.removeThousandSeparator(0) //结果为0 数字类型
-formatter.removeThousandSeparator(null) //结果为0 数字类型
-formatter.removeThousandSeparator() //结果为0 数字类型
+formatter.removeThousandSeparator(null) //结果为null null类型
+
+// 第二个参数为默认值，即当参数1为null、undefined、""时，若存在第二个参数在返回该参数的值
+formatter.removeThousandSeparator(null,0) //结果为0 数字类型
+formatter.removeThousandSeparator("",0) //结果为0 数字类型
 ```
 
 ## formatter.formatPercentage 数字转百分比

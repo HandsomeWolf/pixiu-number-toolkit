@@ -1,0 +1,38 @@
+{
+  "hash": "cc4b4ef3",
+  "browserHash": "14631dee",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "e65b487f",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "d8206c78",
+      "needsInterop": false
+    },
+    "element-plus": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.3.8_vue@3.3.4/node_modules/element-plus/es/index.mjs",
+      "file": "element-plus.js",
+      "fileHash": "2409c504",
+      "needsInterop": false
+    },
+    "mathjs": {
+      "src": "../../../../node_modules/.pnpm/mathjs@11.9.1/node_modules/mathjs/lib/esm/index.js",
+      "file": "mathjs.js",
+      "fileHash": "2406cfc8",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-254DOEZA": {
+      "file": "chunk-254DOEZA.js"
+    },
+    "chunk-5WWUZCGV": {
+      "file": "chunk-5WWUZCGV.js"
+    }
+  }
+}

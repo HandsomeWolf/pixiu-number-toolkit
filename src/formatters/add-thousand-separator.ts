@@ -12,11 +12,11 @@ export function addThousandSeparator(value: string, asString?: boolean): string;
 export function addThousandSeparator(value: null, asString?: boolean): null;
 export function addThousandSeparator(
   value: undefined,
-  asString?: boolean
+  asString?: boolean,
 ): undefined;
 export function addThousandSeparator(
   value: OutType,
-  asString = false
+  asString = false,
 ): OutType {
   if (value === null || value === undefined || value === 0 || value === "") {
     return asString ? String(value) : value;
@@ -25,7 +25,7 @@ export function addThousandSeparator(
   const [integerPart, decimalPart] = String(value).split(".");
   const formattedIntegerPart = integerPart.replaceAll(
     /\B(?=(\d{3})+(?!\d))/g,
-    ","
+    ",",
   );
 
   return decimalPart
