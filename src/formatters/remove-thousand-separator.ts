@@ -31,7 +31,7 @@ export function removeThousandSeparator(
     return input;
   }
 
-  const result = input.replaceAll(/\D/g, "");
+  const result = input.replaceAll(/\$\s?|(,*)/g, "");
 
   return result === "" ? getDefaultReturn(result) : Number(result);
 }

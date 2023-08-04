@@ -13,7 +13,7 @@ describe("formatter", () => {
     expect(formatter.addThousandSeparator(0, true)).toBe("0");
     expect(formatter.addThousandSeparator(1.123)).toBe("1.123");
     expect(formatter.addThousandSeparator(-1.123)).toBe("-1.123");
-    expect(formatter.addThousandSeparator(123_456_789)).toBe("123,456,789");
+    expect(formatter.addThousandSeparator(123_456_789.123)).toBe("123,456,789.123");
     expect(formatter.addThousandSeparator(-123_456_789)).toBe("-123,456,789");
     expect(formatter.addThousandSeparator(123_456_789, true)).toBe(
       "123,456,789",
@@ -43,6 +43,7 @@ describe("formatter", () => {
     expect(formatter.removeThousandSeparator(123_456_789)).toBe(123_456_789);
     expect(formatter.removeThousandSeparator("123456789")).toBe(123_456_789);
     expect(formatter.removeThousandSeparator("123,456,789")).toBe(123_456_789);
+    expect(formatter.removeThousandSeparator("123,456,789.123")).toBe(123_456_789.123);
 
     expect(formatter.removeThousandSeparator(null, "")).toBe("");
     expect(formatter.removeThousandSeparator(undefined, "")).toBe("");
