@@ -124,3 +124,26 @@ converter.digitUppercase(123456789) //结果为"壹亿贰仟叁佰肆拾伍万�
 converter.digitUppercase(123.45) //结果为"壹佰贰拾叁元肆角伍分" 字符串类型
 converter.digitUppercase(-123.45) //结果为"欠壹佰贰拾叁元肆角伍分" 字符串类型
 ```
+
+## 在element-plus中使用
+```html
+<script setup>
+  import {ref} from 'vue'
+  import { ElInput } from 'element-plus'
+  import { numHooks } from '../src/index.ts';
+  const inputNumberOrUndefined=ref()
+  const inputNumber=ref(0)
+  const { addThousandSeparator, removeThousandSeparator } =
+    numHooks.useThousandSeparator();
+</script>
+
+<template>
+  <!--  -->
+  <el-input v-model="inputNumberOrUndefined" placeholder="请输入金额" :formatter="addThousandSeparator" :parser="removeThousandSeparator" >
+</el-input>
+
+<!-- 若希望输入框的值始终为数字类型 -->
+  <el-input v-model="inputNumber" placeholder="请输入金额" :formatter="addThousandSeparator" :parser="value => removeThousandSeparator(value,0)" >
+  </el-input>
+</template>
+```

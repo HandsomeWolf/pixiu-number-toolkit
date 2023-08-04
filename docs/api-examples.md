@@ -5,13 +5,13 @@
 import {ref} from 'vue'
 import { useData } from 'vitepress'
 import { ElInput } from 'element-plus'
-import {useThousandSeparator} from '../src/vue/hooks/use-formatter';
+import {numHooks} from '../src/index.ts';
 
 const { site, theme, page, frontmatter } = useData()
 const inputNumberOrUndefined=ref()
 const inputNumber=ref(0)
 const { addThousandSeparator, removeThousandSeparator } =
-  useThousandSeparator();
+  numHooks.useThousandSeparator();
 
 </script>
 
@@ -53,7 +53,7 @@ const input = ref('')
 
 下面是具体的代码示例：
 
-<el-input v-model="inputNumber" placeholder="请输入金额1" :formatter="addThousandSeparator" :parser="value => removeThousandSeparator(value,0)" >
+<el-input v-model="inputNumber" placeholder="请输入金额" :formatter="addThousandSeparator" :parser="value => removeThousandSeparator(value,0)" >
 </el-input>
 
 值类型：{{typeof inputNumber}}  值为：{{ inputNumber }}
