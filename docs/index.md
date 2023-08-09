@@ -3,23 +3,37 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "num-utils"
+  text: "A collection of number utilities."
+  tagline: "Your ultimate toolkit for number operations"
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /guide/introduction
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Install
+      link: /guide/quick-start
+  image:
+    # src: /vitepress-logo-large.webp
+    alt: VitePress
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Math Operations && Unit Conversion
+    icon: ➗
+    details: Perform various mathematical operations like addition, subtraction, multiplication, and division.Convert between different units of measurement.
+    
+  - title: Formatting
+    icon: 🎨
+    details: Format numbers to different styles, like currency, percentage,thousand separator, etc.
+
+  - title: Amount to Chinese Uppercase
+    icon: 💹
+    details: Converts numeric amounts to their Chinese uppercase equivalent, useful for financial applications in Chinese context.
+
+  - title: Runtime API Examples
+    icon: 📚
+    details: Explore examples of how to use the runtime API.
+
+
 ---
 
