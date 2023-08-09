@@ -1,23 +1,41 @@
 import { removeThousandSeparator } from "../../../../basic/formatter/thousand-separator";
 
 export interface Options {
-  // 是否为正数
+  /**
+   * Whether the value is required (值是否必填)
+   */
   positive?: boolean;
-  // 是否为整数
+  /**
+   * Whether to allow integers (是否允许整数)
+   */
   integer?: boolean;
-  // 是否为正整数
+  /**
+   * Whether to allow positive integers (是否允许正整数)
+   */
   positiveInteger?: boolean;
-  // 是否为负数
+  /**
+   * Whether to allow negative numbers (是否允许负数)
+   */
   negative?: boolean;
-  // 是否为负整数
+  /**
+   * Whether to allow negative integers (是否允许负整数)
+   */
   negativeInteger?: boolean;
-  // 小数点位数
+  /**
+   * The number of decimal places (小数位数)
+   */
   decimal?: number;
-  // 最小值
+  /**
+   * The minimum value (最小值)
+   */
   min?: number;
-  // 最大值
+  /**
+   * The maximum value (最大值)
+   */
   max?: number;
-  // 单位
+  /**
+   * The unit of the value (值的单位)
+   */
   unit?: string;
 }
 
@@ -30,65 +48,93 @@ type Callback = (error?: Error) => void;
 export const isInRangeForElementPlus = (
   name: string,
   options: Options = {},
+  lang: "en" | "zh" = "en",
 ) => {
+  const messages = {
+    en: {
+      mustBeNumber: `${name} must be a number`,
+      required: `Please enter ${name}`,
+      mustBePositive: `${name} must be a positive number`,
+      mustBeInteger: `${name} must be an integer`,
+      mustBePositiveInteger: `${name} must be a positive integer`,
+      mustBeNegative: `${name} must be a negative number`,
+      mustBeNegativeInteger: `${name} must be a negative integer`,
+      decimalExceed: `The number of decimal places in ${name} cannot exceed ${options.decimal}`,
+      lessThanMin: `${name} cannot be less than ${options.min}${options.unit}`,
+      moreThanMax: `${name} cannot be more than ${options.max}${options.unit}`,
+    },
+    zh: {
+      mustBeNumber: `${name}必须是数字`,
+      required: `请输入${name}`,
+      mustBePositive: `${name}必须是正数`,
+      mustBeInteger: `${name}必须是整数`,
+      mustBePositiveInteger: `${name}必须是正整数`,
+      mustBeNegative: `${name}必须是负数`,
+      mustBeNegativeInteger: `${name}必须是负整数`,
+      decimalExceed: `${name}的小数点位数不能超过${options.decimal}`,
+      lessThanMin: `${name}不能小于${options.min}${options.unit}`,
+      moreThanMax: `${name}不能大于${options.max}${options.unit}`,
+    },
+  };
+
   return (rule: Rule, value: any, callback: Callback) => {
     const handleError = (message: string) => callback(new Error(message));
 
-    // 转换为数字
+    // Convert to number
     value = removeThousandSeparator(value);
 
-    // 错误处理函数
+    // Error handling function
 
-    // 检查输入的值是否为数字
+    // Check if the input value is a number
     if (Number.isNaN(value)) {
-      return handleError(`${name}必须是数字`);
+      return handleError(messages[lang].mustBeNumber);
     }
-    // 是否为必填项
+    // Is it a required field?
     if (rule.required && !value) {
-      return handleError(`请输入${name}`);
+      return handleError(messages[lang].required);
     }
 
-    // 是否为正数
+    // Is it a positive number?
     if (options.positive && (!Number.isFinite(value) || value <= 0)) {
-      return handleError(`${name}必须是正数`);
+      return handleError(messages[lang].mustBePositive);
     }
 
-    // 是否为整数
+    // Is it an integer?
     if (options.integer && !Number.isInteger(value)) {
-      return handleError(`${name}必须是整数`);
+      return handleError(messages[lang].mustBeInteger);
     }
 
-    // 是否为正整数
+    // Is it a positive integer?
     if (options.positiveInteger && (!Number.isInteger(value) || value <= 0)) {
-      return handleError(`${name}必须是正整数`);
+      return handleError(messages[lang].mustBePositiveInteger);
     }
 
-    // 是否为负数
+    // Is it a negative number?
     if (options.negative && (!Number.isFinite(value) || value >= 0)) {
-      return handleError(`${name}必须是负数`);
+      return handleError(messages[lang].mustBeNegative);
     }
 
-    // 是否为负整数
+    // Is it a negative integer?
     if (options.negativeInteger && (!Number.isInteger(value) || value >= 0)) {
-      return handleError(`${name}必须是负整数`);
+      return handleError(messages[lang].mustBeNegativeInteger);
     }
 
-    // 检查小数点位数
+    // Check the number of decimal places
     if (options.decimal !== undefined) {
       const decimalPart = value.toString().split(".")[1];
       if (!decimalPart || decimalPart.length > options.decimal) {
-        return handleError(`${name}的小数点位数不能超过${options.decimal}`);
+        return handleError(messages[lang].decimalExceed);
       }
     }
 
-    // 检查最小值
+    // Check the minimum value
     if (options.min !== undefined && value < options.min) {
-      return handleError(`${name}不能小于${options.min}${options.unit}`);
+      return handleError(messages[lang].lessThanMin);
     }
 
-    // 检查最大值
+    // Check the maximum value
     if (options.max !== undefined && value > options.max) {
-      return handleError(`${name}不能大于${options.max}${options.unit}`);
+      return handleError(messages[lang].moreThanMax);
     }
 
     callback();
