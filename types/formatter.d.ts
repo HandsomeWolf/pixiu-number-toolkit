@@ -1,1 +1,1 @@
-type OutType = number | string | null | undefined;
+type IOType = number | string | null | undefined;

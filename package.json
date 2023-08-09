@@ -1,6 +1,6 @@
 {
   "name": "@handsomewolf/num-utils",
-  "version": "0.0.14",
+  "version": "0.0.18",
   "description": "A collection of number utilities.",
   "keywords": [
     "typescript",
@@ -37,14 +37,19 @@
     "git": false
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "mathjs": "^11.9.1",
     "stacktrace-js": "^2.0.2",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@handsomewolf/eslint-config": "^0.0.14",
+    "@types/lodash": "^4.14.196",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/test-utils": "^2.4.1",
     "concurrently": "^8.2.0",
     "element-plus": "^2.3.8",
+    "jsdom": "^22.1.0",
     "release-it": "^16.1.3",
     "ts-node": "^10.9.1",
     "tsup": "^7.1.0",

@@ -3,8 +3,6 @@
     "target": "ES6",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -13,7 +11,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "lib": ["es2021"]
+    "lib": ["es2021", "dom"]
   },
   "exclude": ["./dist", "./example", "./tests"]
 }

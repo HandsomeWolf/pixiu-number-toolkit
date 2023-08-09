@@ -1,1 +1,0 @@
-interface GetDecimalPlacesOptions{minDecimalPlaces:number,maxDecimalPlaces:number}

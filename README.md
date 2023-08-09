@@ -126,24 +126,67 @@ converter.digitUppercase(-123.45) //结果为"欠壹佰贰拾叁元肆角伍分"
 ```
 
 ## 在element-plus中使用
+### 语法
+
+```html
+<el-input 
+  v-model="input"
+  placeholder="请输入金额"
+  :formatter="addThousandSeparator"
+  :parser="removeThousandSeparator"
+>
+</el-input>
+```
+### removeThousandSeparator可选参数
+| 属性 | 描述 |
+| --- | --- | --- |
+| defaultReturn | 当输入框的只为空时显示的默认值 |
+| decimalPlaces | 输入框保留小数位数 |
+
 ```html
 <script setup>
   import {ref} from 'vue'
   import { ElInput } from 'element-plus'
-  import { numHooks } from '../src/index.ts';
-  const inputNumberOrUndefined=ref()
-  const inputNumber=ref(0)
-  const { addThousandSeparator, removeThousandSeparator } =
-    numHooks.useThousandSeparator();
+  import { elementPlusUtils } from '@handsomewolf/num-utils';
+  const input1=ref()
+  const input2=ref(0)
+  const input3=ref()
 </script>
 
 <template>
-  <!--  -->
-  <el-input v-model="inputNumberOrUndefined" placeholder="请输入金额" :formatter="addThousandSeparator" :parser="removeThousandSeparator" >
+<el-input 
+  v-model="input1"
+  placeholder="请输入金额" 
+  :formatter="elementPlusUtils.addThousandSeparator" 
+  :parser="elementPlusUtils.removeThousandSeparator" 
+>
 </el-input>
 
-<!-- 若希望输入框的值始终为数字类型 -->
-  <el-input v-model="inputNumber" placeholder="请输入金额" :formatter="addThousandSeparator" :parser="value => removeThousandSeparator(value,0)" >
-  </el-input>
+<!-- 若希望输入框有默认值-->
+<el-input 
+  v-model="input2" 
+  placeholder="请输入金额" 
+  :formatter="elementPlusUtils.addThousandSeparator" 
+  :parser="value => elementPlusUtils.removeThousandSeparator(value,{ defaultReturn:'0' })" 
+>
+</el-input>
+
+<!-- 若希望输入框保留固定小数位数-->
+<el-input 
+  v-model="input3" 
+  placeholder="请输入金额" 
+  :formatter="elementPlusUtils.addThousandSeparator" 
+  :parser="value => elementPlusUtils.removeThousandSeparator(value,{ decimalPlaces:2 })" 
+>
+</el-input>
+
+<!-- 上面代码可以简写为formatDecimal，即小数位保留2为小数 -->
+<el-input 
+  v-model="input3" 
+  placeholder="请输入金额" 
+  :formatter="elementPlusUtils.addThousandSeparator" 
+  :parser="elementPlusUtils.formatDecimal" 
+>
+</el-input>
 </template>
 ```
