@@ -10,12 +10,12 @@ import { computeExpression, padZero } from "../../index";
  *          如果input为非数字字符串，返回原字符串。
  */
 export function formatPercentage(
-  input: IOType,
+  input: number | string,
   options: {
     decimalPlaces?: number;
     carrySymbol?: boolean;
   } = {},
-): IOType {
+): string {
   options = {
     carrySymbol: true,
     ...options,
@@ -31,7 +31,11 @@ export function formatPercentage(
     options.decimalPlaces === undefined
       ? computeExpression(`${input} * 100`)
       : padZero(
-          computeExpression(`${input} * 100`, options.decimalPlaces),
+          Number(
+            computeExpression(`${input} * 100`, {
+              decimalPlaces: options.decimalPlaces,
+            }),
+          ),
           options.decimalPlaces,
         );
   return `${result.toString()}${options.carrySymbol ? "%" : ""}`;

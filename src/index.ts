@@ -29,8 +29,11 @@ export { formatPercentage } from "./basic/formatter/percentage";
 
 // ------------------------ math ------------------------
 
-// computeExpression (计算表达式), unitConversion (单位换算)
-export { computeExpression, unitConversion } from "./basic/math";
+// computeExpression (计算表达式)
+export { computeExpression } from "./basic/math/compute-expression";
+
+// unitConversion (单位换算)
+export { unitConversion } from "./basic/math/unit-conversion";
 
 // ------------------------ utils ------------------------
 

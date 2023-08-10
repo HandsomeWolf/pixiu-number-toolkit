@@ -30,10 +30,5 @@ features:
     icon: 💹
     details: Converts numeric amounts to their Chinese uppercase equivalent, useful for financial applications in Chinese context.
 
-  - title: Runtime API Examples
-    icon: 📚
-    details: Explore examples of how to use the runtime API.
-
-
 ---
 

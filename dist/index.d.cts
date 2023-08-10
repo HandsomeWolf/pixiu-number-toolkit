@@ -1,5 +1,3 @@
-import { BigNumber } from 'mathjs';
-
 /**
  * Convert amount to uppercase (将金额转换为大写)
  * @param n amount (金额)
@@ -45,39 +43,35 @@ declare function formatCurrencyRenminbi(value: number): string;
  *          如果input为null或undefined，返回null或undefined；
  *          如果input为非数字字符串，返回原字符串。
  */
-declare function formatPercentage(input: IOType, options?: {
+declare function formatPercentage(input: number | string, options?: {
     decimalPlaces?: number;
     carrySymbol?: boolean;
-}): IOType;
+}): string;
 
-interface Parameters {
-    [key: string]: number | string | BigNumber;
+interface ComputeExpressionOptions {
+    parameters?: NumberDictionary;
+    decimalPlaces?: number;
+    useThousandSeparator?: boolean;
 }
-declare function computeExpression(formula: string, parameters: Parameters, decimalPlaces: number): number;
-declare function computeExpression(formula: string, parameters: Parameters, decimalPlaces: number, useThousandSeparator: boolean): string;
-declare function computeExpression(formula: string, parameters: Parameters): number;
-declare function computeExpression(formula: string, parameters: Parameters, useThousandSeparator: boolean): string;
-declare function computeExpression(formula: string, decimalPlaces: number): number;
-declare function computeExpression(formula: string, decimalPlaces: number, useThousandSeparator: boolean): string;
-declare function computeExpression(formula: string): number;
-declare function computeExpression(formula: string, useThousandSeparator: boolean): string;
+declare function computeExpression(formula: string, options?: ComputeExpressionOptions): number | string;
+
 declare function unitConversion(value: number, fromUnit: string, toUnit: string, withUnit?: boolean): string | number;
 
 /**
  *  判断是否为千分位格式
- * @param string_ 要判断的字符串
+ * @param value 要判断的字符串
  * @returns 如果string_为千分位格式，返回true；否则返回false。
  */
-declare function isValidThousandSeparatedNumber(string_: string): boolean;
+declare function isValidThousandSeparatedNumber(value: string): boolean;
 /**
  * 判断字符串是否为空或只包含空格
- * @param {string} str - 待检查的字符串
+ * @param {string} value - 待检查的字符串
  * @returns {boolean} 是空字符串或只包含空格时返回 true，否则返回 false
  */
-declare function isBlank(string_: string): boolean;
+declare function isBlank(value: string): boolean;
 /**
  * 判断参数是否为数字或字符串数字
- * @param {string | number} val - 待检查的参数
+ * @param {string | number} value - 待检查的参数
  * @returns {boolean} 是数字或字符串数字时返回 true，否则返回 false
  */
 declare function isNumeric(value: string | number): boolean;

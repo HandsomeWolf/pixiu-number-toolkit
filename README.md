@@ -2,6 +2,10 @@
 
 num-utils is a collection of number utilities written in TypeScript. It provides a set of functions for number conversion, finance calculations, formatting, and math operations. It also includes utilities for Vue's Element Plus library.
 
+For more detailed documentation, visit [documentation](https://handsomewolf.github.io/num-utils/).
+
+
+
 ## Installation
 
 To install `num-utils`, use the following command:

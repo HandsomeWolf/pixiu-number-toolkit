@@ -28,8 +28,6 @@ describe("unitConversion", () => {
     expect(unitConversion(1, "m3", "cm3")).toBe(1_000_000); // 立方米 -> 立方厘米
   });
 
-  // TODO：时间单位需要使用dayjs进行转换
-
   it("速度单位", () => {
     expect(unitConversion(1, "km/h", "m/s")).toBe(0.277_777_777_777_777_8); // 千米/小时 -> 米/秒
     expect(unitConversion(1, "m/s", "km/h")).toBe(3.6); // 米/秒 -> 千米/小时

@@ -26,7 +26,6 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/introduction" },
-      { text: "Examples", link: "/markdown-examples" },
     ],
     sidebar: [
       {
@@ -38,12 +37,30 @@ export default defineConfig({
         ],
       },
       {
+        text: "Basic Usage",
+        collapsed: false,
+        items: [
+          {
+            text: "Digit Chinese Uppercase",
+            link: "/guide/digit-chinese-uppercase",
+          },
+          { text: "Finance", link: "/guide/finance" },
+          { text: "Format Currency", link: "/guide/format-currency" },
+          { text: "Percentage", link: "/guide/percentage" },
+          { text: "Thousand Separator", link: "/guide/thousand-separator" },
+          { text: "Compute Expression", link: "/guide/compute-expression" },
+          { text: "Unit Conversion", link: "/guide/unit-conversion" },
+          { text: "Utils", link: "/guide/utils" },
+          { text: "Validation", link: "/guide/validation" },
+        ],
+      },
+      {
         text: "Element Plus Related",
         collapsed: false,
         items: [
-          { text: "formatter", link: "/guide/element-plus-formatter" },
+          { text: "Formatter", link: "/guide/element-plus-formatter" },
           {
-            text: "form validation",
+            text: "Form Balidation",
             link: "/guide/element-plus-form-validation",
           },
         ],
