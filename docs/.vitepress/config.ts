@@ -5,6 +5,21 @@ export default defineConfig({
   lang: "en-US",
   base: "/num-utils/",
   title: "num-utils",
+  head: [
+    [
+      "script",
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?89e9ccd37dbd0d1c48650f38a861cee4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `,
+    ],
+  ],
 
   description: "A collection of number utilities.",
   themeConfig: {
