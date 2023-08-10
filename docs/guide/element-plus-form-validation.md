@@ -42,7 +42,7 @@ Here is an example of how to use it:
 </template>
 
 <script>
-import { isInRangeForElementPlus } from './range';
+import { isInRangeForElementPlus } from '@handsomewolf/num-utils';
 
 export default {
   data() {

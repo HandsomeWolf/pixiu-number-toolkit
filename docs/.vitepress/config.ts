@@ -58,9 +58,9 @@ export default defineConfig({
         text: "Element Plus Related",
         collapsed: false,
         items: [
-          { text: "Formatter", link: "/guide/element-plus-formatter" },
+          { text: "Input Formatter", link: "/guide/element-plus-formatter" },
           {
-            text: "Form Balidation",
+            text: "Form Validation",
             link: "/guide/element-plus-form-validation",
           },
         ],

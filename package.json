@@ -4,9 +4,14 @@
   "description": "A collection of number utilities.",
   "type": "module",
   "keywords": [
-    "typescript",
+    "thousand separator",
+    "numeric",
+    "decimal",
+    "number formatting",
     "math",
-    "formatter"
+    "number conversion",
+    "number utilities",
+    "typescript"
   ],
   "license": "MIT",
   "homepage": "https://handsomewolf.github.io/num-utils/",
