@@ -39,14 +39,11 @@
     "git": false
   },
   "dependencies": {
-    "lodash": "^4.17.21",
     "mathjs": "^11.9.1",
-    "stacktrace-js": "^2.0.2",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@handsomewolf/eslint-config": "^0.0.17",
-    "@types/lodash": "^4.14.196",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/test-utils": "^2.4.1",
     "concurrently": "^8.2.0",
