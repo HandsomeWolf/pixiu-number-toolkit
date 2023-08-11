@@ -48,7 +48,7 @@ summaryRowForElementPlus(parameter, options: Options = {})
 | Name | Description | Default |
 | --- | --- | --- |
 | totalCostLabel | The label for the total cost. | Total Cost |
-| excludeColumns | An array of column property names to exclude from the summary. | ] |
+| excludeColumns | An array of column property names to exclude from the summary. | [] |
 | includeColumns | An array of column property names to include in the summary. | [] |
 | currency | The currency symbol to prepend to the sum. | |
 | placeholder | The placeholder to display for excluded columns. |  |
