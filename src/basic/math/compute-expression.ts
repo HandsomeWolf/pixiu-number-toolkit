@@ -10,7 +10,7 @@ interface ComputeExpressionOptions {
 export function computeExpression(
   formula: string,
   options: ComputeExpressionOptions = {},
-): number | string {
+): string {
   let result;
   const formulaResult = formula.replaceAll(",", "");
 

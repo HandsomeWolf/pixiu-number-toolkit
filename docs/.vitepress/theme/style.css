@@ -13,3 +13,16 @@
   );
   --vp-home-hero-image-filter: blur(40px);
 }
+
+/* Element Plus */
+
+.vp-doc .el-table__inner-wrapper table{
+  margin:0;
+}
+.vp-doc .el-table__inner-wrapper table td{
+  border-top:none !important;
+  /* border-bottom:none !important; */
+}
+.vp-doc .el-table__inner-wrapper tr{
+  border:none;
+}

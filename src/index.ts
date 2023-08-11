@@ -62,3 +62,6 @@ export {
 
 // Validation rule for Element Plus form (Element Plus表单校验规则)
 export { isInRangeForElementPlus } from "./vue/element-plus/validation/range/index";
+
+// Summary row for Element Plus table (Element Plus表格尾合计行
+export { summaryRowForElementPlus } from "./vue/element-plus/utils/summary-row";

@@ -2,7 +2,12 @@
 
 num-utils is a collection of number utilities written in TypeScript. It provides a set of functions for number conversion, finance calculations, formatting, and math operations. It also includes utilities for Vue's Element Plus library.
 
-For more detailed documentation, visit [documentation](https://handsomewolf.github.io/num-utils/).
+[Documentation](https://handsomewolf.github.io/num-utils/) - Official guide for num-utils with examples and usage scenarios.
+
+[Changelog](https://handsomewolf.github.io/num-utils/changelog.html) - View the detailed version history of num-utils here.
+
+
+
 
 
 
@@ -14,41 +19,27 @@ To install `num-utils`, use the following command:
 npm install @handsomewolf/num-utils
 ```
 
-## Usage
-
-Import the required utilities from the package:
-
-```TypeScript
-import {
-  digitUppercase,
-  calculateGrossAmount,
-  addThousandSeparator,
-  computeExpression,
-  isNumeric,
-  getDecimalInfo,
-  formatDecimalForElementPlus,
-  isInRangeForElementPlus
-} from "@handsomewolf/num-utils"
-
-```
 ## Utilities
 ### Basic Utilities
 
-| Function Name | Description |
-| --- | --- |
-| digitUppercase | Converts a number to uppercase. |
-| calculateGrossAmount | Calculates the gross amount. |
-| addThousandSeparator | Adds a thousand separator to a number. |
-| computeExpression | Computes a mathematical expression. |
-| isNumeric | Checks if a value is numeric. |
-| getDecimalInfo | Gets decimal information of a number. |
+ Function Name | Description |
+ --- | --- |
+ [Digit Chinese Uppercase](https://handsomewolf.github.io/num-utils/guide/digit-chinese-uppercase.html) | Convert numeric amount to Chinese uppercase |
+ [Thousand Separator](https://handsomewolf.github.io/num-utils/guide/thousand-separator.html) | Add or remove thousand separator |
+ [Percentage](https://handsomewolf.github.io/num-utils/guide/percentage.html) | Convert number to percentage format |
+ [Compute expression](https://handsomewolf.github.io/num-utils/guide/compute-expression.html) | Mathematical formula |
+ [Unit Conversion](https://handsomewolf.github.io/num-utils/guide/unit-conversion.html) | Unit conversion |
+ [Validation](https://handsomewolf.github.io/num-utils/guide/validation.html) | Numeric related validation |
+ [Utils](https://handsomewolf.github.io/num-utils/guide/utils.html) | Common tools |
 
 ### Element Plus Utilities
 
 | Function Name | Description |
 | --- | --- |
-| formatDecimalForElementPlus | Formats a decimal number for Element Plus. |
-| isInRangeForElementPlus | Checks if a number is in a specific range for Element Plus. |
+ [Thousand Separator](https://handsomewolf.github.io/num-utils/guide/element-plus-formatter.html) | Use thousand separator in Element Plus library's input component |
+ [Form Validation](https://handsomewolf.github.io/num-utils/guide/element-plus-form-validation.html) | Use form validation in Element Plus library's Form component |
+ [Table Summary Row](https://handsomewolf.github.io/num-utils/guide/element-plus-table-summary-row.html) | Use summary row in Element Plus library's Table component |
+
 
 
 ## Contributing

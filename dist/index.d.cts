@@ -53,7 +53,7 @@ interface ComputeExpressionOptions {
     decimalPlaces?: number;
     useThousandSeparator?: boolean;
 }
-declare function computeExpression(formula: string, options?: ComputeExpressionOptions): number | string;
+declare function computeExpression(formula: string, options?: ComputeExpressionOptions): string;
 
 declare function unitConversion(value: number, fromUnit: string, toUnit: string, withUnit?: boolean): string | number;
 
@@ -143,7 +143,7 @@ declare const formatDecimalForElementPlus: (value: string, options?: {
     defaultReturn?: string;
 }) => string;
 
-interface Options {
+interface Options$1 {
     /**
      * Whether the value is required (值是否必填)
      */
@@ -185,6 +185,32 @@ interface Rule {
     required: boolean;
 }
 type Callback = (error?: Error) => void;
-declare const isInRangeForElementPlus: (name: string, options?: Options, lang?: "en" | "zh") => (rule: Rule, value: any, callback: Callback) => void;
+declare const isInRangeForElementPlus: (name: string, options?: Options$1, lang?: "en" | "zh") => (rule: Rule, value: any, callback: Callback) => void;
 
-export { addThousandSeparator, addThousandSeparatorForElementPlus, calculateGrossAmount, calculateNetAmount, calculateTaxAmount, calculateTaxRate, computeExpression, digitUppercase, formatCurrencyRenminbi, formatDecimalForElementPlus, formatPercentage, getDecimalInfo, getDecimalPlaces, isBlank, isInRangeForElementPlus, isNumeric, isValidThousandSeparatedNumber, padZero, removeThousandSeparator, removeThousandSeparatorForElementPlus, unitConversion };
+interface Column {
+    property: string;
+}
+interface SummaryMethodProperties {
+    columns: Column[];
+    data: [];
+}
+interface Options {
+    totalCostLabel?: string;
+    excludeColumns?: string[];
+    includeColumns?: string[];
+    currency?: string;
+    placeholder?: string;
+    decimalPlaces?: number;
+    useThousandSeparator?: boolean;
+    columnOptions?: {
+        [key: string]: {
+            decimalPlaces?: number;
+            currency?: string;
+            placeholder?: string;
+            useThousandSeparator?: boolean;
+        };
+    };
+}
+declare const summaryRowForElementPlus: (parameter: SummaryMethodProperties, options?: Options) => string[];
+
+export { addThousandSeparator, addThousandSeparatorForElementPlus, calculateGrossAmount, calculateNetAmount, calculateTaxAmount, calculateTaxRate, computeExpression, digitUppercase, formatCurrencyRenminbi, formatDecimalForElementPlus, formatPercentage, getDecimalInfo, getDecimalPlaces, isBlank, isInRangeForElementPlus, isNumeric, isValidThousandSeparatedNumber, padZero, removeThousandSeparator, removeThousandSeparatorForElementPlus, summaryRowForElementPlus, unitConversion };
