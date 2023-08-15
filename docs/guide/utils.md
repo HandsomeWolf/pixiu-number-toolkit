@@ -7,6 +7,8 @@ function getDecimalInfo(value: number): DecimalInfo
 function getDecimalPlaces(value: number): number
 
 function padZero(value: number, decimalLength?: number): string
+
+function parseIdCard(value: string): IdCardInfo
 ```
 
 ## Description
@@ -16,6 +18,8 @@ The `getDecimalInfo` function is used to get the decimal information of a number
 The `getDecimalPlaces` function is used to get the number of decimal places of a number. 
 
 The `padZero` function is used to pad a number with zeros to a specified number of decimal places.
+
+The `parseIdCard` Parsing Chinese ID card information
 
 ## Parameters
 
@@ -33,6 +37,10 @@ The `padZero` function is used to pad a number with zeros to a specified number 
 
 - `decimalLength` (number): An optional parameter that specifies the number of decimal places. Default is 0.
 
+**parseIdCard**
+
+- `value` (string): The ID card number to be parsed.
+
 ## Returns
 
 **getDecimalInfo**
@@ -44,6 +52,17 @@ The `padZero` function is used to pad a number with zeros to a specified number 
 **padZero**
 
 - (string): If no decimal places are specified, it returns the original number string. Otherwise, it returns the padded number string.
+
+**parseIdCard**
+
+- (IdCardInfo): An object that contains the information of the ID card number.
+
+This interface represents the information of an ID card.
+
+- `region` (string): The region of the ID card holder.
+- `birthdate` (string): The birthdate of the ID card holder in the format 'YYYY-MM-DD'.
+- `gender` (string): The gender of the ID card holder. '男' for male and '女' for female.
+- `valid` (boolean): Whether the ID card number is valid.
 
 ## Usage
 
@@ -68,6 +87,19 @@ console.log(decimalPlaces); // Outputs: 3
 
 const paddedValue = padZero(value, 5);
 console.log(paddedValue); // Outputs: '123.45600'
+
+import { parseIdCard } from '@handsomewolf/num-utils'
+
+const idCardNumber = '110105197208108139';
+const idCardInfo = parseIdCard(idCardNumber);
+console.log(idCardInfo);
+// Outputs:
+// {
+//   birthdate: "1972-08-10",
+//   gender: "男",
+//   region: "110105",
+//   valid: true,
+// }
 ```
 
 In this example, the `getDecimalInfo` function is used to get the decimal information of the number `123.456`. The getDecimalPlaces function is used to get the number of decimal places of the number `123.456`. The `padZero` function is used to pad the number `123.456` with zeros to 5 decimal places.
