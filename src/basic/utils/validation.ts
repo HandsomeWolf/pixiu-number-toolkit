@@ -1,11 +1,16 @@
+import {
+  BLANK_STRING_REGEX,
+  CHINESE_ID_CARD_REGEX,
+  THOUSAND_SEPARATED_NUMBER_REGEX,
+} from "../../constants/regex";
+
 /**
  *  判断是否为千分位格式
  * @param value 要判断的字符串
- * @returns 如果string_为千分位格式，返回true；否则返回false。
+ * @returns 如果value为千分位格式，返回true；否则返回false。
  */
 export function isValidThousandSeparatedNumber(value: string) {
-  const regex = /^\d{1,3}(,\d{3})+(\.\d+)?$/;
-  return regex.test(value);
+  return THOUSAND_SEPARATED_NUMBER_REGEX.test(value);
 }
 
 /**
@@ -14,7 +19,7 @@ export function isValidThousandSeparatedNumber(value: string) {
  * @returns {boolean} 是空字符串或只包含空格时返回 true，否则返回 false
  */
 export function isBlank(value: string): boolean {
-  return !value || /^\s*$/.test(value);
+  return !value || BLANK_STRING_REGEX.test(value);
 }
 
 /**
@@ -28,4 +33,25 @@ export function isNumeric(value: string | number): boolean {
     (!Number.isNaN(Number.parseFloat(value as any)) &&
       !Number.isNaN((value as any) - 0));
   return isNumber;
+}
+/**
+ * 判断是否为身份证号码
+ * @param id 身份证号码
+ * @returns 如果是身份证号码，返回true；否则返回false。
+ */
+export function isValidChineseIdCard(id: string) {
+  if (!CHINESE_ID_CARD_REGEX.test(id)) {
+    return false;
+  }
+
+  const weight = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+  const validate = ["1", "0", "X", "9", "8", "7", "6", "5", "4", "3", "2"];
+  const idArray = [...id];
+  let sum = 0;
+
+  for (let index = 0; index < 17; index++) {
+    sum += Number.parseInt(idArray[index]) * weight[index];
+  }
+
+  return validate[sum % 11].toUpperCase() === idArray[17].toUpperCase();
 }

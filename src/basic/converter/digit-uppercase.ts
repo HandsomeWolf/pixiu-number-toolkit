@@ -1,3 +1,12 @@
+import {
+  EMPTY_START_REGEX,
+  WHOLE_REGEX,
+  ZERO_DOT_END_REGEX,
+  ZERO_DOT_PLUS_REGEX,
+  ZERO_DOT_REGEX,
+  ZERO_YUAN_REGEX,
+} from "../../constants/regex";
+
 /**
  * Convert amount to uppercase (将金额转换为大写)
  * @param n amount (金额)
@@ -21,7 +30,7 @@ export function digitUppercase(n: number): string {
   // Convert the fraction part (转换小数部分)
   for (const [index, element] of fraction.entries()) {
     s += (digit[Math.floor(n * 10 * 10 ** index) % 10] + element).replace(
-      /零./,
+      ZERO_DOT_REGEX,
       "",
     );
   }
@@ -34,14 +43,17 @@ export function digitUppercase(n: number): string {
       p = digit[n % 10] + unit[1][index_] + p;
       n = Math.floor(n / 10);
     }
-    s = p.replace(/(零.)*零$/, "").replace(/^$/, "零") + unit[0][index] + s;
+    s =
+      p.replace(ZERO_DOT_END_REGEX, "").replace(EMPTY_START_REGEX, "零") +
+      unit[0][index] +
+      s;
   }
   // Return the final result (返回最终结果)
   return (
     head +
     s
-      .replace(/(零.)*零元/, "元")
-      .replaceAll(/(零.)+/g, "零")
-      .replace(/^整$/, "零元整")
+      .replace(ZERO_YUAN_REGEX, "元")
+      .replaceAll(ZERO_DOT_PLUS_REGEX, "零")
+      .replace(WHOLE_REGEX, "零元整")
   );
 }

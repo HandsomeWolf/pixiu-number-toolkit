@@ -1,3 +1,7 @@
+import {
+  REMOVE_THOUSAND_SEPARATOR_REGEX,
+  THOUSAND_SEPARATOR_REGEX,
+} from "../../constants/regex";
 import { isValidThousandSeparatedNumber } from "../utils/validation";
 
 /**
@@ -18,7 +22,7 @@ export function addThousandSeparator(
 
   const [integerPart, decimalPart] = String(value).split(".");
   const formattedIntegerPart = integerPart.replaceAll(
-    /\B(?=(\d{3})+(?!\d))/g,
+    THOUSAND_SEPARATOR_REGEX,
     ",",
   );
 
@@ -55,7 +59,7 @@ export function removeThousandSeparator(
     return input;
   }
 
-  const result = input.replaceAll(/\$\s?|(,*)/g, "");
+  const result = input.replaceAll(REMOVE_THOUSAND_SEPARATOR_REGEX, "");
 
   return result === "" ? getDefaultReturn(result) : Number(result);
 }

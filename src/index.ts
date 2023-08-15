@@ -51,6 +51,9 @@ export {
   padZero,
 } from "./basic/utils/common";
 
+// id-card (身份证)
+export { parseIdCard } from "./basic/utils/id-card";
+
 // ------------------------ Element Plus ------------------------
 
 // thousand-separator for Element Plus input (el-input的千位分隔符)
