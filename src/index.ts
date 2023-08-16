@@ -3,6 +3,9 @@
 // digit-uppercase (数字大写)
 export { digitUppercase } from "./basic/converter/digit-uppercase";
 
+// number to words or Chinese (数字转换为英文单词或中文汉字)
+export { numberToWords } from "./basic/converter/number-to-words";
+
 // ------------------------ finance ------------------------
 
 // Finance Calculations (财务计算)
@@ -34,6 +37,27 @@ export { computeExpression } from "./basic/math/compute-expression";
 
 // unitConversion (单位换算)
 export { unitConversion } from "./basic/math/unit-conversion";
+
+// math function (数学函数)
+export {
+  add,
+  subtract,
+  multiply,
+  divide,
+  modulo,
+  round,
+  ceil,
+  floor,
+  pickRandom,
+  random,
+  randomInt,
+  equal,
+  unequal,
+  larger,
+  largerEq,
+  smaller,
+  smallerEq,
+} from "./basic/math/math";
 
 // ------------------------ utils ------------------------
 

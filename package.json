@@ -45,8 +45,7 @@
     "git": false
   },
   "dependencies": {
-    "mathjs": "^11.9.1",
-    "vue": "^3.3.4"
+    "mathjs": "^11.9.1"
   },
   "devDependencies": {
     "@handsomewolf/eslint-config": "^0.0.17",
@@ -60,6 +59,7 @@
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
     "vitepress": "1.0.0-rc.4",
-    "vitest": "^0.34.1"
+    "vitest": "^0.34.1",
+    "vue": "^3.3.4"
   }
 }

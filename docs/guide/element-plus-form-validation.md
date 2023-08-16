@@ -1,3 +1,18 @@
+<script setup>
+import {ref} from 'vue'
+import { useData } from 'vitepress'
+import { ElInput } from 'element-plus'
+import {isInRangeForElementPlus} from '../../src/index.ts';
+
+const { site, theme, page, frontmatter } = useData()
+const form=ref({amount:''})
+const rules={
+  amount: [
+          { validator: isInRangeForElementPlus('Amount', { min: 0, max: 100, decimal: 2 }, 'en'), trigger: 'blur' },
+          // other rules
+        ],
+}
+</script>
 # Element-Plus Form Validation
 
 This guide will help you understand how to use the isInRangeForElementPlus function for form validation in Element-Plus.
@@ -28,6 +43,13 @@ isInRangeForElementPlus(name, options, lang)
 ## Usage
 
 The `isInRangeForElementPlus` function is used as a custom validator in Element-Plus form validation. It checks if the input value is within a certain range and meets certain conditions specified in the `options` parameter.
+
+  <el-form :model="form" :rules="rules">
+    <el-form-item label="Amount" prop="amount">
+      <el-input v-model="form.amount"></el-input>
+    </el-form-item>
+    <!-- other form items -->
+  </el-form>
 
 Here is an example of how to use it:
 
