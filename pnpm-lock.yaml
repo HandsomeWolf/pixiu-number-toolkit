@@ -13,9 +13,6 @@ devDependencies:
   '@handsomewolf/eslint-config':
     specifier: ^0.0.17
     version: 0.0.17(eslint@8.46.0)(typescript@5.1.6)
-  '@vitejs/plugin-vue':
-    specifier: ^4.2.3
-    version: 4.2.3(vite@4.4.9)(vue@3.3.4)
   '@vue/test-utils':
     specifier: ^2.4.1
     version: 2.4.1(vue@3.3.4)

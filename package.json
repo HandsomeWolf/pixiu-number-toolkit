@@ -1,6 +1,6 @@
 {
   "name": "@handsomewolf/num-utils",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A collection of number utilities.",
   "type": "module",
   "keywords": [
@@ -47,7 +47,6 @@
   },
   "devDependencies": {
     "@handsomewolf/eslint-config": "^0.0.17",
-    "@vitejs/plugin-vue": "^4.2.3",
     "@vue/test-utils": "^2.4.1",
     "element-plus": "^2.3.9",
     "release-it": "^16.1.3",
