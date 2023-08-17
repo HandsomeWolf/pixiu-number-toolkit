@@ -46,6 +46,14 @@ export default defineConfig({
               text: "Digit Chinese Uppercase",
               link: "/guide/digit-chinese-uppercase",
             },
+            {
+              text: "number to words",
+              link: "/guide/number-to-words",
+            },
+            {
+              text: "Math",
+              link: "/guide/math",
+            },
             // { text: "Finance", link: "/guide/finance" },
             // { text: "Format Currency", link: "/guide/format-currency" },
             { text: "Percentage", link: "/guide/percentage" },
