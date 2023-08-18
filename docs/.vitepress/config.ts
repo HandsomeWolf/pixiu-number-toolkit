@@ -47,7 +47,7 @@ export default defineConfig({
               link: "/guide/digit-chinese-uppercase",
             },
             {
-              text: "number to words",
+              text: "Number to words",
               link: "/guide/number-to-words",
             },
             {

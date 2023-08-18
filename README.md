@@ -22,15 +22,17 @@ npm install @handsomewolf/num-utils
 ## Utilities
 ### Basic Utilities
 
- Function Name | Description |
- --- | --- |
- [Digit Chinese Uppercase](https://handsomewolf.github.io/num-utils/guide/digit-chinese-uppercase.html) | Convert numeric amount to Chinese uppercase |
- [Thousand Separator](https://handsomewolf.github.io/num-utils/guide/thousand-separator.html) | Add or remove thousand separator |
- [Percentage](https://handsomewolf.github.io/num-utils/guide/percentage.html) | Convert number to percentage format |
- [Compute expression](https://handsomewolf.github.io/num-utils/guide/compute-expression.html) | Mathematical formula |
- [Unit Conversion](https://handsomewolf.github.io/num-utils/guide/unit-conversion.html) | Unit conversion |
- [Validation](https://handsomewolf.github.io/num-utils/guide/validation.html) | Numeric related validation |
- [Utils](https://handsomewolf.github.io/num-utils/guide/utils.html) | Common tools |
+| Function Name | Description |
+| --- | --- |
+| [Digit Chinese Uppercase](https://handsomewolf.github.io/num-utils/guide/digit-chinese-uppercase.html) | Convert numeric amount to Chinese uppercase |
+| [Number To Words](https://handsomewolf.github.io/num-utils/guide/number-to-words.html) | Convert numeric to word representation in either English or Chinese |
+| [Math](https://handsomewolf.github.io/num-utils/guide/math.html) | Performing various mathematical operations |
+| [Thousand Separator](https://handsomewolf.github.io/num-utils/guide/thousand-separator.html) | Add or remove thousand separator |
+| [Percentage](https://handsomewolf.github.io/num-utils/guide/percentage.html) | Convert number to percentage format |
+| [Compute expression](https://handsomewolf.github.io/num-utils/guide/compute-expression.html) | Mathematical formula |
+| [Unit Conversion](https://handsomewolf.github.io/num-utils/guide/unit-conversion.html) | Unit conversion |
+| [Validation](https://handsomewolf.github.io/num-utils/guide/validation.html) | Numeric related validation |
+| [Utils](https://handsomewolf.github.io/num-utils/guide/utils.html) | Common tools |
 
 ### Element Plus Utilities
 
