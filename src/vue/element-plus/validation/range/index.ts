@@ -126,7 +126,8 @@ export const isInRangeForElementPlus = (
     // Check the number of decimal places
     if (options.decimal !== undefined) {
       const decimalPart = value.toString().split(".")[1];
-      if (!decimalPart || decimalPart.length > options.decimal) {
+
+      if (decimalPart && decimalPart.length > options.decimal) {
         return handleError(messages[lang].decimalExceed);
       }
     }
