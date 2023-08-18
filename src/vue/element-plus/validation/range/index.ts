@@ -60,8 +60,12 @@ export const isInRangeForElementPlus = (
       mustBeNegative: `${name} must be a negative number`,
       mustBeNegativeInteger: `${name} must be a negative integer`,
       decimalExceed: `The number of decimal places in ${name} cannot exceed ${options.decimal}`,
-      lessThanMin: `${name} cannot be less than ${options.min}${options.unit}`,
-      moreThanMax: `${name} cannot be more than ${options.max}${options.unit}`,
+      lessThanMin: `${name} cannot be less than ${options.min}${
+        options.unit ?? ""
+      }`,
+      moreThanMax: `${name} cannot be more than ${options.max}${
+        options.unit ?? ""
+      }`,
     },
     zh: {
       mustBeNumber: `${name}必须是数字`,
@@ -72,8 +76,8 @@ export const isInRangeForElementPlus = (
       mustBeNegative: `${name}必须是负数`,
       mustBeNegativeInteger: `${name}必须是负整数`,
       decimalExceed: `${name}的小数点位数不能超过${options.decimal}`,
-      lessThanMin: `${name}不能小于${options.min}${options.unit}`,
-      moreThanMax: `${name}不能大于${options.max}${options.unit}`,
+      lessThanMin: `${name}不能小于${options.min}${options.unit ?? ""}`,
+      moreThanMax: `${name}不能大于${options.max}${options.unit ?? ""}`,
     },
   };
 
