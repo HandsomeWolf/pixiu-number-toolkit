@@ -5,12 +5,15 @@ import { ElInput } from 'element-plus'
 import {isInRangeForElementPlus} from '../../src/index.ts';
 
 const { site, theme, page, frontmatter } = useData()
-const form=ref({amount:''})
+const form=ref({amount1:'',amount2:''})
 const rules={
-  amount: [
-          { validator: isInRangeForElementPlus('Amount', { min: 0, max: 100, decimal: 2 }, 'en'), trigger: 'blur' },
-          // other rules
-        ],
+  amount1: [
+    
+    { required:true,validator: isInRangeForElementPlus('Amount', { min: 0, max: 100, decimal: 2 }, 'en'), trigger: 'blur' },
+  ],
+  amount2: [
+    { required:true,validator: isInRangeForElementPlus('数量', { min: 0, max: 100, decimal: 2 }, 'zh'), trigger: 'blur' },
+  ],
 }
 </script>
 # Element-Plus Form Validation
@@ -45,10 +48,12 @@ isInRangeForElementPlus(name, options, lang)
 The `isInRangeForElementPlus` function is used as a custom validator in Element-Plus form validation. It checks if the input value is within a certain range and meets certain conditions specified in the `options` parameter.
 
   <el-form :model="form" :rules="rules">
-    <el-form-item label="Amount" prop="amount">
-      <el-input v-model="form.amount"></el-input>
+    <el-form-item label="Amount" prop="amount1">
+      <el-input v-model="form.amount1"></el-input>
     </el-form-item>
-    <!-- other form items -->
+    <el-form-item label="数量" prop="amount2">
+      <el-input v-model="form.amount2"></el-input>
+    </el-form-item>
   </el-form>
 
 Here is an example of how to use it:
@@ -56,32 +61,37 @@ Here is an example of how to use it:
 ```Vue
 <template>
   <el-form :model="form" :rules="rules">
-    <el-form-item label="Amount" prop="amount">
-      <el-input v-model="form.amount"></el-input>
+    <el-form-item label="Amount" prop="amount1">
+      <el-input v-model="form.amount1"></el-input>
     </el-form-item>
-    <!-- other form items -->
+    <el-form-item label="数量" prop="amount2">
+      <el-input v-model="form.amount2"></el-input>
+    </el-form-item>
   </el-form>
 </template>
 
-<script>
+<script setup>
+import {ref} from 'vue'
+import { ElInput } from 'element-plus'
 import { isInRangeForElementPlus } from '@handsomewolf/num-utils';
 
-export default {
-  data() {
-    return {
-      form: {
-        amount: '',
-        // other form fields
-      },
-      rules: {
-        amount: [
-          { validator: isInRangeForElementPlus('Amount', { min: 0, max: 100, decimal: 2 }, 'en'), trigger: 'blur' },
-          // other rules
-        ],
-      },
-    };
-  },
-};
+const form=ref({amount1:'',amount2:''})
+const rules={
+  amount1: [
+    {
+      required:true,
+      validator: isInRangeForElementPlus('Amount', { min: 0, max: 100, decimal: 2 }, 'en'), 
+      trigger: 'blur' 
+    },
+  ],
+  amount2: [
+    {
+      required:true,
+      validator: isInRangeForElementPlus('数量', { min: 0, max: 100, decimal: 2 }, 'zh'),
+      trigger: 'blur' 
+    },
+  ],
+}
 </script>
 ```
 
