@@ -1,0 +1,38 @@
+{
+  "name": "@handsomewolf/num-utils",
+  "version": "1.0.0",
+  "description": "A collection of number utilities.",
+  "type": "module",
+  "keywords": [
+    "thousand separator",
+    "numeric",
+    "decimal",
+    "number formatting",
+    "math",
+    "number conversion",
+    "number utilities",
+    "typescript"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HandsomeWolf/num-utils"
+  },
+  "author": "HandsomeWolf <55856773@qq.com> (https://github.com/handsomewolf)",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "scripts": {
+    "test": "vitest",
+    "build": "tsup",
+    "build:watch": "tsup --watch"
+  },
+  "dependencies": {
+    "mathjs": "^11.9.1"
+  },
+  "devDependencies": {
+    "tsup": "^7.2.0"
+  }
+}

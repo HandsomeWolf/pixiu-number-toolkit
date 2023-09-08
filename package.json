@@ -1,0 +1,40 @@
+{
+  "name": "num-utils",
+  "version": "1.0.0",
+  "private": true,
+  "description": "monorepo for @handsomewolf/num-utils",
+  "keywords": [
+    "thousand separator",
+    "numeric",
+    "decimal",
+    "number formatting",
+    "math",
+    "number conversion",
+    "number utilities",
+    "typescript"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/HandsomeWolf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HandsomeWolf/num-utils"
+  },
+  "author": "HandsomeWolf <55856773@qq.com> (https://github.com/handsomewolf)",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "test:basic": "pnpm -C packages/num-utils run test",
+    "build:all": "pnpm -r run build",
+    "build:basic": "pnpm -C packages/num-utils run build",
+    "build:dev": "tsup --watch",
+    "docs:dev": "pnpm -C docs run docs:dev",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@handsomewolf/eslint-config": "^0.0.18",
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.2"
+  }
+}
