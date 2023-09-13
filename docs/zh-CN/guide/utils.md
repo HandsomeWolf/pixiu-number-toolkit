@@ -1,6 +1,6 @@
-# Utils
+# 工具
 
-## Syntax
+## 语法
 
 ```ts
 function getDecimalInfo(value: number): DecimalInfo;
@@ -12,70 +12,68 @@ function padZero(value: number, decimalLength?: number): string;
 function parseIdCard(value: string): IdCardInfo;
 ```
 
-## Description
+## 描述
 
-The `getDecimalInfo` function is used to get the decimal information of a number.
+`getDecimalInfo` 函数用于获取数字的整数与小数的信息
 
-The `getDecimalPlaces` function is used to get the number of decimal places of a number.
+`getDecimalPlaces` 函数用于获取数字的小数位数
 
-The `padZero` function is used to pad a number with zeros to a specified number of decimal places.
+`padZero` 函数用于将数字用零填充到指定的小数位数
 
-The `parseIdCard` Parsing Chinese ID card information
+`parseIdCard` 解析中国身份证信息
 
-## Parameters
+## 参数
 
 **getDecimalInfo**
 
-- `value` (number): The input number.
+- `value` (number): 数字
 
 **getDecimalPlaces**
 
-- `value` (number): The input number.
+- `value` (number): 数字
 
 **padZero**
 
-- `value` (number): The number to be padded.
+- `value` (number): 数字
 
-- `decimalLength` (number): An optional parameter that specifies the number of decimal places. Default is 0.
+- `decimalLength` (number): 可选参数，指定小数位数
 
 **parseIdCard**
 
-- `value` (string): The ID card number to be parsed.
+- `value` (string): 身份证号码
 
-## Returns
+## 返回值
 
 **getDecimalInfo**
 
-- (DecimalInfo): An object that contains the decimal information of the input number.
-  **getDecimalPlaces**
+- (DecimalInfo): 包含输入数字的小数信息的对象.
 
-- (number): The number of decimal places of the input number.
-  **padZero**
+**getDecimalPlaces**
 
-- (string): If no decimal places are specified, it returns the original number string. Otherwise, it returns the padded number string.
+- (number): 数字的小数位数
+
+**padZero**
+
+- (string): 如果没有指定小数位，则返回原始数字字符串。 否则，它返回填充的数字字符串。
 
 **parseIdCard**
 
-- (IdCardInfo): An object that contains the information of the ID card number.
+- (IdCardInfo): 包含身份证号码信息的对象
+  - `region` (string): 身份证持有者所在的区域
+  - `birthdate` (string): 身份证持有者的出生日期，格式为 `YYYY-MM-DD`
+  - `gender` (string): 身份证持有者的性别
+  - `valid` (boolean): 身份证号码是否有效
 
-This interface represents the information of an ID card.
-
-- `region` (string): The region of the ID card holder.
-- `birthdate` (string): The birthdate of the ID card holder in the format 'YYYY-MM-DD'.
-- `gender` (string): The gender of the ID card holder. '男' for male and '女' for female.
-- `valid` (boolean): Whether the ID card number is valid.
-
-## Usage
+## 使用
 
 ```ts
-import { getDecimalInfo, getDecimalPlaces, padZero } from "@handsomewolf/num-utils"; // Outputs: '123.45600'
-
-import { parseIdCard } from "@handsomewolf/num-utils";
+import { getDecimalInfo, getDecimalPlaces, padZero, parseIdCard } from "@handsomewolf/num-utils";
 
 const value = 123.456;
 const decimalInfo = getDecimalInfo(value);
+
 console.log(decimalInfo);
-// Outputs:
+// 输出:
 // {
 // valueString: '123.456',
 // decimalIndex: 3,
@@ -86,15 +84,20 @@ console.log(decimalInfo);
 // }
 
 const decimalPlaces = getDecimalPlaces(value);
-console.log(decimalPlaces); // Outputs: 3
+
+console.log(decimalPlaces);
+// 输出: 3
 
 const paddedValue = padZero(value, 5);
+
 console.log(paddedValue);
+// 输出: '123.45600'
 
 const idCardNumber = "110105197208108139";
 const idCardInfo = parseIdCard(idCardNumber);
+
 console.log(idCardInfo);
-// Outputs:
+// 输出:
 // {
 //   birthdate: "1972-08-10",
 //   gender: "男",
@@ -102,5 +105,3 @@ console.log(idCardInfo);
 //   valid: true,
 // }
 ```
-
-In this example, the `getDecimalInfo` function is used to get the decimal information of the number `123.456`. The getDecimalPlaces function is used to get the number of decimal places of the number `123.456`. The `padZero` function is used to pad the number `123.456` with zeros to 5 decimal places.

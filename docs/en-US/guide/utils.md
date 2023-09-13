@@ -47,10 +47,12 @@ The `parseIdCard` Parsing Chinese ID card information
 **getDecimalInfo**
 
 - (DecimalInfo): An object that contains the decimal information of the input number.
-  **getDecimalPlaces**
+
+**getDecimalPlaces**
 
 - (number): The number of decimal places of the input number.
-  **padZero**
+
+**padZero**
 
 - (string): If no decimal places are specified, it returns the original number string. Otherwise, it returns the padded number string.
 
@@ -68,9 +70,7 @@ This interface represents the information of an ID card.
 ## Usage
 
 ```ts
-import { getDecimalInfo, getDecimalPlaces, padZero } from "@handsomewolf/num-utils"; // Outputs: '123.45600'
-
-import { parseIdCard } from "@handsomewolf/num-utils";
+import { getDecimalInfo, getDecimalPlaces, padZero, parseIdCard } from "@handsomewolf/num-utils";
 
 const value = 123.456;
 const decimalInfo = getDecimalInfo(value);
@@ -89,7 +89,7 @@ const decimalPlaces = getDecimalPlaces(value);
 console.log(decimalPlaces); // Outputs: 3
 
 const paddedValue = padZero(value, 5);
-console.log(paddedValue);
+console.log(paddedValue); // Outputs: '123.45600'
 
 const idCardNumber = "110105197208108139";
 const idCardInfo = parseIdCard(idCardNumber);
@@ -102,5 +102,3 @@ console.log(idCardInfo);
 //   valid: true,
 // }
 ```
-
-In this example, the `getDecimalInfo` function is used to get the decimal information of the number `123.456`. The getDecimalPlaces function is used to get the number of decimal places of the number `123.456`. The `padZero` function is used to pad the number `123.456` with zeros to 5 decimal places.
