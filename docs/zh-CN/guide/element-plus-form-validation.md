@@ -1,8 +1,8 @@
-<script setup>
+<script lang="ts" setup>
 import {ref} from 'vue'
 import { useData } from 'vitepress'
 import { ElInput } from 'element-plus'
-import {isInRangeForElementPlus} from '../../src/index.ts';
+import {isInRangeForElementPlus} from '@handsomewolf/num-utils';
 
 const { site, theme, page, frontmatter } = useData()
 const form=ref({amount1:'',amount2:''})

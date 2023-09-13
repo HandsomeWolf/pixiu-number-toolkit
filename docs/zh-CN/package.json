@@ -10,6 +10,9 @@
     "docs:serve": "vitepress serve .",
     "docs:preview": "vitepress preview"
   },
+  "dependencies": {
+    "@handsomewolf/num-utils": "workspace:^"
+  },
   "devDependencies": {
     "element-plus": "^2.3.12",
     "vitepress": "1.0.0-rc.10",

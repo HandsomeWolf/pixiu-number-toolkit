@@ -19,6 +19,10 @@ importers:
         version: 0.34.4
 
   docs/en-US:
+    dependencies:
+      '@handsomewolf/num-utils':
+        specifier: workspace:^
+        version: link:../../packages/num-utils
     devDependencies:
       element-plus:
         specifier: ^2.3.12
@@ -31,6 +35,10 @@ importers:
         version: 3.3.4
 
   docs/zh-CN:
+    dependencies:
+      '@handsomewolf/num-utils':
+        specifier: workspace:^
+        version: link:../../packages/num-utils
     devDependencies:
       element-plus:
         specifier: ^2.3.12

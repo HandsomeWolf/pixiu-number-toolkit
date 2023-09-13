@@ -2,7 +2,7 @@
 import {ref} from 'vue'
 import { useData } from 'vitepress'
 import { ElInput } from 'element-plus'
-import {formatDecimalForElementPlus,addThousandSeparatorForElementPlus,removeThousandSeparatorForElementPlus} from '../../src/index.ts';
+import {formatDecimalForElementPlus,addThousandSeparatorForElementPlus,removeThousandSeparatorForElementPlus} from '@handsomewolf/num-utils';
 
 const { site, theme, page, frontmatter } = useData()
 const input1=ref('')
@@ -13,9 +13,11 @@ const input4=ref('')
 </script>
 
 # Using in Element-Plus
+
 ## Syntax
+
 ```Vue
-<el-input 
+<el-input
   v-model="input"
   placeholder="Enter amount"
   :formatter="addThousandSeparatorForElementPlus"
@@ -23,14 +25,13 @@ const input4=ref('')
 >
 </el-input>
 ```
+
 Optional Parameters for removeThousandSeparatorForElementPlus
 
-| Property | Description |
-| --- | --- |
+| Property      | Description                                             |
+| ------------- | ------------------------------------------------------- |
 | defaultReturn | The default value displayed when the input box is empty |
-| decimalPlaces | The number of decimal places retained in the input box |
-
-
+| decimalPlaces | The number of decimal places retained in the input box  |
 
 ## Example
 
@@ -52,15 +53,16 @@ value：{{ input1 }}
   const input=ref()
 </script>
 <template>
-  <el-input 
+  <el-input
     v-model="input"
-    placeholder="Enter amount" 
-    :formatter="addThousandSeparatorForElementPlus" 
-    :parser="removeThousandSeparatorForElementPlus" 
+    placeholder="Enter amount"
+    :formatter="addThousandSeparatorForElementPlus"
+    :parser="removeThousandSeparatorForElementPlus"
   >
   </el-input>
 </template>
 ```
+
 ---
 
 **Default value**
@@ -81,22 +83,25 @@ value：{{ input2 }}
   const input=ref()
 </script>
 <template>
-  <el-input 
+  <el-input
     v-model="input"
-    placeholder="Enter amount" 
-    :formatter="addThousandSeparatorForElementPlus" 
+    placeholder="Enter amount"
+    :formatter="addThousandSeparatorForElementPlus"
     :parser="value => removeThousandSeparatorForElementPlus(value,{ defaultReturn:'0' })"
   >
   </el-input>
 </template>
 ```
+
 ---
+
 **Decimal places**
 <el-input v-model="input3" placeholder="Enter amount" :formatter="addThousandSeparatorForElementPlus" :parser="value => removeThousandSeparatorForElementPlus(value,{ decimalPlaces:2 })" >
-</el-input> 
+</el-input>
 
 type：{{typeof input3}}  
 value：{{ input3 }}
+
 ```Vue
 <script setup>
   import {ref} from 'vue'
@@ -108,22 +113,25 @@ value：{{ input3 }}
   const input=ref()
 </script>
 <template>
-  <el-input 
+  <el-input
     v-model="input"
-    placeholder="Enter amount" 
-    :formatter="addThousandSeparatorForElementPlus" 
+    placeholder="Enter amount"
+    :formatter="addThousandSeparatorForElementPlus"
     :parser="value => removeThousandSeparatorForElementPlus(value,{ decimalPlaces:2 })"
   >
   </el-input>
 </template>
 ```
+
 ---
+
 **Shorthand for decimal places**
 <el-input v-model="input4" placeholder="Enter amount" :formatter="addThousandSeparatorForElementPlus" :parser="formatDecimalForElementPlus" >
-</el-input> 
+</el-input>
 
 type：{{typeof input4}}  
 value：{{ input4 }}
+
 ```Vue
 <script setup>
   import {ref} from 'vue'
@@ -135,10 +143,10 @@ value：{{ input4 }}
   const input=ref()
 </script>
 <template>
-  <el-input 
+  <el-input
     v-model="input"
-    placeholder="Enter amount" 
-    :formatter="addThousandSeparatorForElementPlus" 
+    placeholder="Enter amount"
+    :formatter="addThousandSeparatorForElementPlus"
     :parser="formatDecimalForElementPlus"  // <- Shorthand
   >
   </el-input>

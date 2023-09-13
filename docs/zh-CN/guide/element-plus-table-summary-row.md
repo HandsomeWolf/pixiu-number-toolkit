@@ -3,7 +3,7 @@ import {ref} from 'vue'
 import { useData } from 'vitepress'
 import { ElInput } from 'element-plus'
 import type { TableColumnCtx } from 'element-plus'
-import {summaryRowForElementPlus} from '../../src/index.ts';
+import {summaryRowForElementPlus} from '@handsomewolf/num-utils';
 
 const { site, theme, page, frontmatter } = useData()
 
