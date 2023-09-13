@@ -2,12 +2,12 @@
 
 ## Syntax
 
-```TypeScript
-function isValidThousandSeparatedNumber(value: string): boolean
+```ts
+function isValidThousandSeparatedNumber(value: string): boolean;
 
-function isBlank(value: string): boolean
+function isBlank(value: string): boolean;
 
-function isNumeric(value: string | number): boolean
+function isNumeric(value: string | number): boolean;
 ```
 
 ## Description
@@ -43,18 +43,19 @@ The `isValidThousandSeparatedNumber` function is used to check if a string is in
 - (boolean): `true` if the value is a number or a numeric string, `false` otherwise.
 
 ## Usage
-```TypeScript
-import { isValidThousandSeparatedNumber, isBlank, isNumeric } from '@handsomewolf/num-utils'
 
-const value = '123,456';
+```ts
+import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "@handsomewolf/num-utils";
+
+const value = "123,456";
 const isValid = isValidThousandSeparatedNumber(value);
 console.log(isValid); // Outputs: true
 
-const isBlankString = isBlank(' ');
+const isBlankString = isBlank(" ");
 console.log(isBlankString); // Outputs: true
 
-const isNum = isNumeric('123');
-console.log(isNum); // Outputs: true
+const isNumber = isNumeric("123");
+console.log(isNumber); // Outputs: true
 ```
 
 In this example, the `isValidThousandSeparatedNumber` function is used to check if the string `'123,456'` is in the thousand-separated format. The `isBlank` function is used to check if the string `' '` is blank or contains only whitespace characters. The `isNumeric` function is used to check if the string `'123'` is a numeric string.

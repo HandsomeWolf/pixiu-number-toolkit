@@ -1,45 +1,42 @@
-# Math
+# 数学
 
-If you are calculating very complex formulas, please use [compute expression](/guide/compute-expression.html)
+如果您正在计算非常复杂的公式，请使用[计算表达式](/guide/compute-expression.html)
 
-## Description
+## 描述
 
-The math module provides a set of functions for performing various mathematical operations. It includes functions for arithmetic, probability, and relational operations.
+数学模块提供了一组用于执行各种数学运算的函数。 它包括算术、概率和关系运算的函数。
 
-## Functions
+## 函数
 
-### Arithmetic
+### 算术
 
-- add(...values: (number | string)[]): number: Adds all the input values.
-- subtract(...values: (number | string)[]): number: Subtracts all the input values from the first value.
-- multiply(...values: (number | string)[]): number: Multiplies all the input values.
-- divide(...values: (number | string)[]): number: Divides the first value by all the other input values.
-- modulo(value: number, divisor: number): number: Returns the remainder of the division of the value by the divisor.
-- round(value: number, decimalPlaces: number = 0): number: Rounds the value to the nearest integer or decimal place.
-- ceil(value: number): number: Rounds the value up to the nearest integer.
-- floor(value: number): number: Rounds the value down to the nearest integer.
+- add(...values: (number | string)[]): number: 计算所有值相加的和
+- subtract(...values: (number | string)[]): number: 将第一个值中减去之后所有输入值
+- multiply(...values: (number | string)[]): number: 计算所有值的乘积
+- divide(...values: (number | string)[]): number: 将第一个值中除以之后所有输入值
+- modulo(value: number, divisor: number): number: 余数
+- round(value: number, decimalPlaces: number = 0): 将值四舍五入到最接近的整数或小数位
+- ceil(value: number): number: 将值向上舍入到最接近的整数
+- floor(value: number): number: 将值向下舍入到最接近的整数
 
-### Probability
+### 概率
 
-- pickRandom(value: any[]): number: Returns a random element from the input array.
-- random(min?: number, max?: number): number: Returns a random number between min and max. If only one parameter is provided, it returns a random number between 0 and the provided number.
-- randomInt(min: number, max?: number): number: Returns a random integer between min and max. If only min is provided, it returns a random integer between 0 and min.
+- pickRandom(value: any[]): number: 从数组中取一个随机数
+- random(min?: number, max?: number): number: 返回最小值和最大值之间的随机数。 如果仅提供一个参数，则返回 0 和提供的数字之间的随机数
+- randomInt(min: number, max?: number): 返回最小值和最大值之间的随机整数。 如果仅提供 min，则返回 0 到 min 之间的随机整数
 
-### Relational
+### 关系
 
-- equal(x: number | string, y: number | string): boolean: Checks if x is equal to y.
-- unequal(x: number | string, y: number | string): boolean: Checks if x is not equal to y.
-- larger(x: number | string, y: number | string): boolean: Checks if x is larger than y.
-- largerEq(x: number | string, y: number | string): boolean: Checks if x is larger than or equal to y.
-- smaller(x: number | string, y: number | string): boolean: Checks if x is smaller than y.
-- smallerEq(x: number | string, y: number | string): boolean: Checks if x is smaller than or equal to y.
+- equal(x: number | string, y: number | string): boolean: 检查 x 是否等于 y
+- unequal(x: number | string, y: number | string): boolean: 检查 x 是否不等于 y
+- larger(x: number | string, y: number | string): boolean: 检查 x 是否大于 y
+- largerEq(x: number | string, y: number | string):检查 x 是否大于或等于 y
+- smaller(x: number | string, y: number | string): boolean: 检查x是否小于y
+- smallerEq(x: number | string, y: number | string): boolean: 检查 x 是否小于或等于 y
 
-## Notes
+## 注意事项
 
-- All functions throw a TypeError if the input parameters are not numbers or string numbers.
-- The add, subtract, multiply, and divide functions require at least two parameters.
-- The random and randomInt functions return a random number between 0 and 1 if no parameters are provided.
-- The equal, unequal, larger, largerEq, smaller, and smallerEq functions return a boolean value.
-Usage
-
-In these examples, various mathematical operations are performed using the functions provided by the math module.
+- 如果输入参数不是数字或字符串数字，则所有函数都会抛出 TypeError。
+- 加、减、乘、除函数至少需要两个参数。
+- random、randomInt函数如果未提供参数，函数将返回 0 到 1 之间的随机数。
+- equal、unequal、larger、largerEq、smaller 和smallerEq 函数返回布尔值。

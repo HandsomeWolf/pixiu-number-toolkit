@@ -1,17 +1,15 @@
-# Introduction
+# 介绍
 
-Welcome to num-utils, a comprehensive collection of number utilities designed to simplify your programming tasks related to numbers. This library provides a wide range of functionalities, from basic mathematical operations to advanced formatting and validation.
+欢迎使用 num-utils，这是一个全面的数字工具集，旨在简化你的数字相关编程任务。这个库提供了从基本的数学运算到高级格式化和验证的广泛功能。
 
-## Features
+## 特性
 
-Here are some of the key features of num-utils:
+以下是 num-utils 的一些关键特性：
 
-- **Math Operations & Unit Conversion**: Perform various mathematical operations like addition, subtraction, multiplication, and division. Convert between different units of measurement.
+- **数学运算和单位转换**：执行各种数学运算，如加、减、乘、除。在不同的测量单位之间进行转换。
 
-- **Formatting**: Format numbers to different styles, like currency, percentage, thousand separator, etc.
+- **格式化**：将数字格式化为不同的样式，如货币、百分比、千位分隔符等。
 
-- **Amount to Chinese Uppercase**: Converts numeric amounts to their Chinese uppercase equivalent, useful for financial applications in Chinese context.
+- **数字金额转中文**：将数字金额转换为对应的中文汉字，这对于中文环境下的金融应用程序很有用。
 
-- **Validation**: Validate numbers based on various criteria such as range, positivity, negativity, integer, decimal places, etc.
-
-
+- **验证**：根据各种条件验证数字，如范围、正数、负数、整数、小数位数等。

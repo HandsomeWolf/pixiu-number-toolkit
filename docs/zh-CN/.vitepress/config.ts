@@ -2,8 +2,8 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lang: "en-US",
-  base: "/num-utils/",
+  lang: "zh-CN",
+  base: "/num-utils/zh-CN/",
   title: "num-utils",
   head: [
     [
@@ -21,60 +21,60 @@ export default defineConfig({
     ],
   ],
 
-  description: "A collection of number utilities.",
+  description: "数字工具集",
   themeConfig: {
     nav: [
-      { text: "Home", link: "/" },
-      { text: "Guide", link: "/guide/introduction" },
-      { text: "Changelog", link: "/changelog" },
+      { text: "首页", link: "/" },
+      { text: "指南", link: "/guide/introduction" },
+      { text: "变更日志", link: "/changelog" },
     ],
     sidebar: {
       "/guide/": [
         {
-          text: "Getting Started",
+          text: "入门",
           collapsed: false,
           items: [
-            { text: "Introduction", link: "/guide/introduction" },
-            { text: "Quick Start", link: "/guide/quick-start" },
+            { text: "介绍", link: "/guide/introduction" },
+            { text: "快速开始", link: "/guide/quick-start" },
           ],
         },
         {
-          text: "Basic Usage",
+          text: "基础用法",
           collapsed: false,
           items: [
             {
-              text: "Digit Chinese Uppercase",
+              text: "数字转中文",
               link: "/guide/digit-chinese-uppercase",
             },
             {
-              text: "Number to words",
+              text: "数字转文字",
               link: "/guide/number-to-words",
             },
             {
-              text: "Math",
+              text: "数学",
               link: "/guide/math",
             },
             // { text: "Finance", link: "/guide/finance" },
             // { text: "Format Currency", link: "/guide/format-currency" },
-            { text: "Percentage", link: "/guide/percentage" },
-            { text: "Thousand Separator", link: "/guide/thousand-separator" },
-            { text: "Compute Expression", link: "/guide/compute-expression" },
-            { text: "Unit Conversion", link: "/guide/unit-conversion" },
-            { text: "Utils", link: "/guide/utils" },
-            { text: "Validation", link: "/guide/validation" },
+            { text: "百分比", link: "/guide/percentage" },
+            { text: "千位分隔符", link: "/guide/thousand-separator" },
+            { text: "计算表达式", link: "/guide/compute-expression" },
+            { text: "单位转换", link: "/guide/unit-conversion" },
+            { text: "工具", link: "/guide/utils" },
+            { text: "校验", link: "/guide/validation" },
           ],
         },
         {
-          text: "Element Plus Related",
+          text: "Element Plus 相关",
           collapsed: false,
           items: [
-            { text: "Input Formatter", link: "/guide/element-plus-formatter" },
+            { text: "输入框格式", link: "/guide/element-plus-formatter" },
             {
-              text: "Form Validation",
+              text: "表单校验",
               link: "/guide/element-plus-form-validation",
             },
             {
-              text: "Table Summary Row",
+              text: "表格行尾合计",
               link: "/guide/element-plus-table-summary-row",
             },
           ],

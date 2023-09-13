@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "en-US",
-  base: "/num-utils/",
+  base: "/num-utils/en-US/",
   title: "num-utils",
   head: [
     [

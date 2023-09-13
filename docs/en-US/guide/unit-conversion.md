@@ -2,19 +2,13 @@
 
 ## Syntax
 
-```TypeScript
-function unitConversion(
-  value: number,
-  fromUnit: string,
-  toUnit: string,
-  withUnit?: boolean
-): string | number
+```ts
+function unitConversion(value: number, fromUnit: string, toUnit: string, withUnit?: boolean): string | number;
 ```
+
 ## Description
 
 The `unitConversion` function is used to convert a value from one unit to another. It supports a wide range of units including length, weight, area, volume, speed, temperature, pressure, power, electric charge, voltage, current, etc.
-
-
 
 ## Parameters
 
@@ -31,12 +25,13 @@ The `unitConversion` function is used to convert a value from one unit to anothe
 - (string | number): The converted value. If `withUnit` is `true`, it returns a string with the value and the unit. If `withUnit` is `false`, it returns a number.
 
 ## Usage
-```TypeScript
-import { unitConversion } from '@handsomewolf/num-utils'
+
+```ts
+import { unitConversion } from "@handsomewolf/num-utils";
 
 const value = 1;
-const fromUnit = 'km';
-const toUnit = 'm';
+const fromUnit = "km";
+const toUnit = "m";
 const result = unitConversion(value, fromUnit, toUnit, true);
 console.log(result); // Outputs: "1000 m"
 ```

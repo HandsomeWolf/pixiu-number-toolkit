@@ -16,13 +16,15 @@ const rules={
   ],
 }
 </script>
+
 # Element-Plus Form Validation
 
 This guide will help you understand how to use the isInRangeForElementPlus function for form validation in Element-Plus.
 
 ## Syntax
-```TypeScript
-isInRangeForElementPlus(name, options, lang)
+
+```ts
+isInRangeForElementPlus(name, options, lang);
 ```
 
 ## Parameters
@@ -30,19 +32,20 @@ isInRangeForElementPlus(name, options, lang)
 - `name` (string): The name of the field to be validated.
 - `options` (object): An object containing validation rules. The properties of this object are optional and are as follows:
 
-| Property | Description |
-| --- | --- |
-| positive | If true, the value must be a positive number |
-| integer | If true, the value must be an integer |
+| Property        | Description                                   |
+| --------------- | --------------------------------------------- |
+| positive        | If true, the value must be a positive number  |
+| integer         | If true, the value must be an integer         |
 | positiveInteger | If true, the value must be a positive integer |
-| negative | If true, the value must be a negative number |
+| negative        | If true, the value must be a negative number  |
 | negativeInteger | If true, the value must be a negative integer |
-| decimal | The maximum number of decimal places allowed |
-| min | The minimum value allowed |
-| max | The maximum value allowed |
-| unit | The unit of the value, used in error messages |
+| decimal         | The maximum number of decimal places allowed  |
+| min             | The minimum value allowed                     |
+| max             | The maximum value allowed                     |
+| unit            | The unit of the value, used in error messages |
 
 - `lang` (string): The language of the error messages. It can be either 'en' for English or 'zh' for Chinese.
+
 ## Usage
 
 The `isInRangeForElementPlus` function is used as a custom validator in Element-Plus form validation. It checks if the input value is within a certain range and meets certain conditions specified in the `options` parameter.
@@ -80,15 +83,15 @@ const rules={
   amount1: [
     {
       required:true,
-      validator: isInRangeForElementPlus('Amount', { min: 0, max: 100, decimal: 2 }, 'en'), 
-      trigger: 'blur' 
+      validator: isInRangeForElementPlus('Amount', { min: 0, max: 100, decimal: 2 }, 'en'),
+      trigger: 'blur'
     },
   ],
   amount2: [
     {
       required:true,
       validator: isInRangeForElementPlus('数量', { min: 0, max: 100, decimal: 2 }, 'zh'),
-      trigger: 'blur' 
+      trigger: 'blur'
     },
   ],
 }

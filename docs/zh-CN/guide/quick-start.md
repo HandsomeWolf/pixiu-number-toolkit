@@ -1,100 +1,142 @@
-# Quick Start
+# 快速开始
 
-To get started with num-utils, you need to install it in your project. You can do this by running the following command:
+开始使用 `num-utils` 之前，需要将其安装到您的项目中。 可以通过运行以下命令来执行此操作：
 
-```command
+```cmd
 npm install @handsomewolf/num-utils
 ```
 
-Once installed, you can import the required utilities from the library and use them in your code. Here's an example:
+安装后，可以从库中导入所需的实用程序并在代码中使用它们。
 
-In the following sections, we will explore each feature in detail and provide examples to help you understand how to use them effectively. Let's get started!
+在以下部分中，我们将详细探讨每个功能并提供示例以帮助您了解如何有效地使用它们。
 
-### digitUppercase
+### 数字金额转中文
 
-```TypeScript
-import { digitUppercase } from '@handsomewolf/num-utils';
+```ts
+import { digitUppercase } from "@handsomewolf/num-utils";
+const a = 123;
 
-console.log(digitUppercase(12345)); // Outputs: "壹万贰仟叁佰肆拾伍元整"
-```
-### addThousandSeparator & removeThousandSeparator
-
-```TypeScript
-import { addThousandSeparator, removeThousandSeparator } from '@handsomewolf/num-utils';
-
-console.log(addThousandSeparator(1234567)); // Outputs: "1,234,567"
-console.log(removeThousandSeparator("1,234,567")); // Outputs: 1234567
-```
-### formatPercentage
-
-```TypeScript
-import { formatPercentage } from '@handsomewolf/num-utils';
-
-console.log(formatPercentage(0.12345, { decimalPlaces: 2 })); // Outputs: "12.35%"
-console.log(formatPercentage(0.12345, { decimalPlaces: 2, carrySymbol: false })); // Outputs: "12.35"
-
+console.log(digitUppercase(12345));
+// 输出: "壹万贰仟叁佰肆拾伍元整"
 ```
 
-### formatCurrency
+### 添加千位分隔符 & 移除千位分隔符
 
-```TypeScript
-import { formatCurrencyRenminbi } from '@handsomewolf/num-utils';
+```ts
+import { addThousandSeparator, removeThousandSeparator } from "@handsomewolf/num-utils";
 
-console.log(formatCurrencyRenminbi(12345)); // Outputs: "￥12,345.00"
+console.log(addThousandSeparator(1234567));
+// 输出: "1,234,567"
+
+console.log(removeThousandSeparator("1,234,567"));
+// 输出: 1234567
 ```
 
-### Math Operations & Unit Conversion
+### 格式化百分比
 
-```TypeScript
-import { computeExpression, unitConversion } from '@handsomewolf/num-utils';
+```ts
+import { formatPercentage } from "@handsomewolf/num-utils";
 
-// Using computeExpression for mathematical operations
-console.log(computeExpression('2 + 3 * 4')); // Outputs: 14
-console.log(computeExpression('2 + 3 * 4', 2)); // Outputs: "14.00"
-console.log(computeExpression('2 + 3 * 4', true)); // Outputs: "14"
+console.log(formatPercentage(0.12345, { decimalPlaces: 2 }));
+// 输出: "12.35%"
 
-// Using computeExpression with parameters
+console.log(formatPercentage(0.12345, { decimalPlaces: 2, carrySymbol: false }));
+// 输出: "12.35"
+```
+
+### 格式化金额
+
+```ts
+import { formatCurrencyRenminbi } from "@handsomewolf/num-utils";
+
+console.log(formatCurrencyRenminbi(12345));
+// 输出: "￥12,345.00"
+```
+
+### 数学运算、单位转换
+
+```ts
+import { computeExpression, unitConversion } from "@handsomewolf/num-utils";
+
+// 使用computeExpression进行数学运算
+console.log(computeExpression("2 + 3 * 4"));
+// 输出: 14
+
+console.log(computeExpression("2 + 3 * 4", 2));
+// 输出: "14.00"
+
+console.log(computeExpression("2 + 3 * 4", true));
+// 输出: "14"
+
+// 使用带有参数的computeExpression
 const parameters = { x: 2, y: 3 };
-console.log(computeExpression('x * y + 4', parameters)); // Outputs: 10
 
-// Using unitConversion for converting units
-console.log(unitConversion(1, 'm', 'cm')); // Outputs: 100
-console.log(unitConversion(1, 'm', 'cm', true)); // Outputs: "100 cm"
+console.log(computeExpression("x * y + 4", parameters));
+// 输出: 10
 
-```
-### Decimal Information, Decimal Places & Padding Zeros
+// 使用unitConversion转换单位
+console.log(unitConversion(1, "m", "cm"));
+// 输出: 100
 
-```TypeScript
-import { getDecimalInfo, getDecimalPlaces, padZero } from '@handsomewolf/num-utils';
-
-// Using getDecimalInfo to get decimal information of a number
-console.log(getDecimalInfo(123.45)); 
-// Outputs: { valueString: '123.45', decimalIndex: 3, decimalLength: 2, integerPart: '123', decimalPart: '45', integerLength: 3 }
-
-// Using getDecimalPlaces to get the number of decimal places of a number
-console.log(getDecimalPlaces(123.45)); // Outputs: 2
-
-// Using padZero to pad a number with zeros
-console.log(padZero(123.45, 4)); // Outputs: "123.4500"
-
+console.log(unitConversion(1, "m", "cm", true));
+// 输出: "100 cm"
 ```
 
-### validation
+### 小数信息、小数位和补零
 
-```TypeScript
-import { isValidThousandSeparatedNumber, isBlank, isNumeric } from '@handsomewolf/num-utils';
+```ts
+import { getDecimalInfo, getDecimalPlaces, padZero } from "@handsomewolf/num-utils";
 
-// Using isValidThousandSeparatedNumber to check if a string is in thousand separated format
-console.log(isValidThousandSeparatedNumber("1,234,567.89")); // Outputs: true
-console.log(isValidThousandSeparatedNumber("1234567.89")); // Outputs: false
+// 使用 getDecimalInfo 获取数字的小数信息
+console.log(getDecimalInfo(123.45));
+// 输出:
+// {
+// 	valueString: '123.45',
+// 	decimalIndex: 3, // 小数点索引位置
+// 	decimalLength: 2, // 小数位长度
+// 	integerPart: '123', // 整数部分
+// 	decimalPart: '45', // 小数部分
+// 	integerLength: 3 // 整数位长度
+// }
 
-// Using isBlank to check if a string is blank or contains only spaces
-console.log(isBlank("")); // Outputs: true
-console.log(isBlank(" ")); // Outputs: true
-console.log(isBlank("123")); // Outputs: false
+// 使用 getDecimalPlaces 获取数字的小数位数
+console.log(getDecimalPlaces(123.45));
+// 输出: 2
 
-// Using isNumeric to check if a value is a number or a numeric string
-console.log(isNumeric(123)); // Outputs: true
-console.log(isNumeric("123")); // Outputs: true
-console.log(isNumeric("abc")); // Outputs: false
+// 使用 padZero 用零填充
+console.log(padZero(123.45, 4));
+// 输出: "123.4500"
+```
+
+### 校验
+
+```ts
+import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "@handsomewolf/num-utils";
+
+// 使用 isValidThousandSeparatedNumber 检查字符串是否采用千位分隔格式
+console.log(isValidThousandSeparatedNumber("1,234,567.89"));
+// 输出: true
+
+console.log(isValidThousandSeparatedNumber("1234567.89"));
+// 输出: false
+
+// 使用 isBlank 检查字符串是否为空或仅包含空格
+console.log(isBlank(""));
+// 输出: true
+
+console.log(isBlank(" "));
+// 输出: true
+
+console.log(isBlank("123"));
+// 输出: false
+
+// 使用 isNumeric 检查值是数字或数字字符串
+console.log(isNumeric(123));
+// 输出: true
+
+console.log(isNumeric("123"));
+// 输出: true
+
+console.log(isNumeric("abc"));
+// 输出: false
 ```

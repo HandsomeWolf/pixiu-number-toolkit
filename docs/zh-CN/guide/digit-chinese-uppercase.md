@@ -1,37 +1,39 @@
-# Digit Chinese Uppercase
+# 数字金额转中文
 
-## syntax
+## 语法
 
-```TypeScript
-function digitUppercase(n: number): string
+```ts
+function digitUppercase(n: number): string;
 ```
 
-## Description
+## 描述
 
-The digitUppercase function is used to convert a numerical amount into its uppercase Chinese representation. This is often used in financial contexts where amounts are written out in words to prevent fraud.
+digitalUppercase 函数用于将数字金额转换为其中文表示形式，这通常用于金融环境中。
 
-## Parameters
+## 参数
 
-- **n** (number): The numerical amount to be converted.
+- **n** (number): 要转换的值
 
-## Returns
+## 返回值
 
-- (string): The uppercase Chinese representation of the input amount.
+- (string): 金额中文表示。
 
-## Usage
+## 使用
 
-```TypeScript
-import { digitUppercase } from '@handsomewolf/num-utils'
+```ts
+import { digitUppercase } from "@handsomewolf/num-utils";
 
 const amount = 1234.56;
 const result = digitUppercase(amount);
-console.log(result); // Outputs: "壹仟贰佰叁拾肆元伍角陆分"
+
+console.log(result);
+// 输出: "壹仟贰佰叁拾肆元伍角陆分"
 ```
 
-In this example, the numerical amount 1234.56 is converted into its uppercase Chinese representation "壹仟贰佰叁拾肆元伍角陆分".
+在此示例中，数字金额 `1234.56` 转换为其中文表示形式 "壹仟贰佰叁拾肆元伍角陆分".
 
-## Notes
+## 注意事项
 
-- The function handles both the integer and fractional parts of the input amount.
-- The function also handles negative amounts, prefixing the result with "欠" (owe).
-- Zero amounts are represented as "零元整".
+- 该函数处理输入金额的整数和小数部分。
+- 该函数还处理负金额，在结果前加上“欠”。
+- 零金额表示为“零元整”。

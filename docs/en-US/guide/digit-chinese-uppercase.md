@@ -2,8 +2,8 @@
 
 ## syntax
 
-```TypeScript
-function digitUppercase(n: number): string
+```ts
+function digitUppercase(n: number): string;
 ```
 
 ## Description
@@ -20,8 +20,8 @@ The digitUppercase function is used to convert a numerical amount into its upper
 
 ## Usage
 
-```TypeScript
-import { digitUppercase } from '@handsomewolf/num-utils'
+```ts
+import { digitUppercase } from "@handsomewolf/num-utils";
 
 const amount = 1234.56;
 const result = digitUppercase(amount);

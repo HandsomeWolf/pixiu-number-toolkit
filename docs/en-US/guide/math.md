@@ -10,7 +10,7 @@ The math module provides a set of functions for performing various mathematical 
 
 ### Arithmetic
 
-- add(...values: (number | string)[]): number: Adds all the input values.
+- add(...values: (number | string)[]): number: Calculate the sum of all parameters.
 - subtract(...values: (number | string)[]): number: Subtracts all the input values from the first value.
 - multiply(...values: (number | string)[]): number: Multiplies all the input values.
 - divide(...values: (number | string)[]): number: Divides the first value by all the other input values.
@@ -40,6 +40,3 @@ The math module provides a set of functions for performing various mathematical 
 - The add, subtract, multiply, and divide functions require at least two parameters.
 - The random and randomInt functions return a random number between 0 and 1 if no parameters are provided.
 - The equal, unequal, larger, largerEq, smaller, and smallerEq functions return a boolean value.
-Usage
-
-In these examples, various mathematical operations are performed using the functions provided by the math module.

@@ -12,63 +12,64 @@ In the following sections, we will explore each feature in detail and provide ex
 
 ### digitUppercase
 
-```TypeScript
-import { digitUppercase } from '@handsomewolf/num-utils';
+```ts
+import { digitUppercase } from "@handsomewolf/num-utils";
 
 console.log(digitUppercase(12345)); // Outputs: "壹万贰仟叁佰肆拾伍元整"
 ```
+
 ### addThousandSeparator & removeThousandSeparator
 
-```TypeScript
-import { addThousandSeparator, removeThousandSeparator } from '@handsomewolf/num-utils';
+```ts
+import { addThousandSeparator, removeThousandSeparator } from "@handsomewolf/num-utils";
 
 console.log(addThousandSeparator(1234567)); // Outputs: "1,234,567"
 console.log(removeThousandSeparator("1,234,567")); // Outputs: 1234567
 ```
+
 ### formatPercentage
 
-```TypeScript
-import { formatPercentage } from '@handsomewolf/num-utils';
+```ts
+import { formatPercentage } from "@handsomewolf/num-utils";
 
 console.log(formatPercentage(0.12345, { decimalPlaces: 2 })); // Outputs: "12.35%"
 console.log(formatPercentage(0.12345, { decimalPlaces: 2, carrySymbol: false })); // Outputs: "12.35"
-
 ```
 
 ### formatCurrency
 
-```TypeScript
-import { formatCurrencyRenminbi } from '@handsomewolf/num-utils';
+```ts
+import { formatCurrencyRenminbi } from "@handsomewolf/num-utils";
 
 console.log(formatCurrencyRenminbi(12345)); // Outputs: "￥12,345.00"
 ```
 
 ### Math Operations & Unit Conversion
 
-```TypeScript
-import { computeExpression, unitConversion } from '@handsomewolf/num-utils';
+```ts
+import { computeExpression, unitConversion } from "@handsomewolf/num-utils";
 
 // Using computeExpression for mathematical operations
-console.log(computeExpression('2 + 3 * 4')); // Outputs: 14
-console.log(computeExpression('2 + 3 * 4', 2)); // Outputs: "14.00"
-console.log(computeExpression('2 + 3 * 4', true)); // Outputs: "14"
+console.log(computeExpression("2 + 3 * 4")); // Outputs: 14
+console.log(computeExpression("2 + 3 * 4", 2)); // Outputs: "14.00"
+console.log(computeExpression("2 + 3 * 4", true)); // Outputs: "14"
 
 // Using computeExpression with parameters
 const parameters = { x: 2, y: 3 };
-console.log(computeExpression('x * y + 4', parameters)); // Outputs: 10
+console.log(computeExpression("x * y + 4", parameters)); // Outputs: 10
 
 // Using unitConversion for converting units
-console.log(unitConversion(1, 'm', 'cm')); // Outputs: 100
-console.log(unitConversion(1, 'm', 'cm', true)); // Outputs: "100 cm"
-
+console.log(unitConversion(1, "m", "cm")); // Outputs: 100
+console.log(unitConversion(1, "m", "cm", true)); // Outputs: "100 cm"
 ```
+
 ### Decimal Information, Decimal Places & Padding Zeros
 
-```TypeScript
-import { getDecimalInfo, getDecimalPlaces, padZero } from '@handsomewolf/num-utils';
+```ts
+import { getDecimalInfo, getDecimalPlaces, padZero } from "@handsomewolf/num-utils";
 
 // Using getDecimalInfo to get decimal information of a number
-console.log(getDecimalInfo(123.45)); 
+console.log(getDecimalInfo(123.45));
 // Outputs: { valueString: '123.45', decimalIndex: 3, decimalLength: 2, integerPart: '123', decimalPart: '45', integerLength: 3 }
 
 // Using getDecimalPlaces to get the number of decimal places of a number
@@ -76,13 +77,12 @@ console.log(getDecimalPlaces(123.45)); // Outputs: 2
 
 // Using padZero to pad a number with zeros
 console.log(padZero(123.45, 4)); // Outputs: "123.4500"
-
 ```
 
 ### validation
 
-```TypeScript
-import { isValidThousandSeparatedNumber, isBlank, isNumeric } from '@handsomewolf/num-utils';
+```ts
+import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "@handsomewolf/num-utils";
 
 // Using isValidThousandSeparatedNumber to check if a string is in thousand separated format
 console.log(isValidThousandSeparatedNumber("1,234,567.89")); // Outputs: true

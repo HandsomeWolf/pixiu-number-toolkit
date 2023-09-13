@@ -1,87 +1,121 @@
-# Compute Expression
+# 计算表达式的值
 
-## syntax
+## 语法
 
-The `computeExpression` function has the following syntax:
-
-```TypeScript
+```ts
 function computeExpression(
-    formula: string,
-    options?:{
-        parameters?: Parameters,
-        decimalPlaces?: number,
-        useThousandSeparator?: boolean
-    }
+  formula: string,
+  options?: {
+    parameters?: Parameters;
+    decimalPlaces?: number;
+    useThousandSeparator?: boolean;
+  },
 ): string;
 ```
 
-Where:
+## 描述
 
-- `formula` is a string that represents the mathematical expression to be evaluated.
-- `options` is an optional object that may include:
-  - `parameters`: An object of key-value pairs where the key is the variable name in the formula, and the value is the number to substitute for that variable.
-  - `decimalPlaces`: The number of decimal places to include in the result. If not provided, the result will include all decimal places.
-  - `useThousandSeparator`: A boolean indicating whether to include a thousand separator in the result. If true, the result will include a thousand separator.
+`computeExpression` 函数用于计算数学表达式的值。表达式以字符串的形式表示，可以包含变量。
 
-## Basic Usage
+## 参数
 
- `computeExpression(formula: string)`: Evaluates a mathematical expression represented as a string.
+- `formula`(string) ：要计算的数学表达式
+- `options` 可选对象，可能包括：
+  - `parameters`: key-value， 其中键是公式中的变量名称，值是要替换该变量的数字。
+  - `decimalPlaces`(number): 结果中包含的小数位数。如果未提供，结果将包括所有小数位。
+  - `useThousandSeparator`(boolean): 指示结果中是否包含千位分隔符。如果为 true，结果将包含千位分隔符。
 
-```TypeScript
-computeExpression("0.1+0.2"); // returns "0.3"
+## 基础使用
+
+`computeExpression(formula: string)`: 计算以字符串表示的数学表达式。
+
+```ts
+const result = computeExpression("0.1+0.2");
+
+console.log(result);
+// 输出 "0.3"
 // or
-const obj={x: 0.1, y: 0.2}
-computeExpression(`${obj.x}+${obj.y}`); // returns "0.3"
+const object = { x: 0.1, y: 0.2 };
+const result = computeExpression(`${object.x}+${object.y}`);
+
+console.log(result);
+// returns "0.3"
 ```
-`computeExpression(formula: string, {parameters:Parameters})`: Evaluates an expression with parameters.
-```TypeScript
+
+`computeExpression(formula: string, {parameters:Parameters})`: 使用参数计算表达式
+
+```ts
 const parameters = { x: 0.1, y: 0.2 };
-computeExpression("x+y", {
-    parameters: parameters
-}); // returns "0.3"
-```
-`computeExpression(formula: string, {decimalPlaces: number})`: Evaluates an expression with decimal places.
-```TypeScript
-computeExpression("0.1+0.2", {
-    decimalPlaces: 2
-}); // returns "0.30"
+const result = computeExpression("x+y", {
+  parameters,
+});
 
-computeExpression("0.113+0.223", {
-    decimalPlaces: 2
-}); // returns "0.34"
-```
-`computeExpression(formula: string, {useThousandSeparator: boolean})`: Evaluates an expression with thousand separator.
-```TypeScript
-computeExpression("1111.1+2222.2", {
-    useThousandSeparator: true
-}); // returns "3,333.3"
-```
-`computeExpression(formula: string, {parameters: Parameters, decimalPlaces: number})`: Evaluates an expression with parameters and decimal places.
-```TypeScript
-computeExpression("x+y",{
-    parameters: {x: 1111.113, y: 2222.223},
-    decimalPlaces: 2
-}); // returns "3333.34"
-```
-`computeExpression(formula: string, {parameters: Parameters, useThousandSeparator: boolean})`: Evaluates an expression with parameters and thousand separator.
-```TypeScript
-computeExpression("1111.113+2222.223", {
-    decimalPlaces: 2,
-    useThousandSeparator: true
-}); // returns "3,333.34"
-```
-`computeExpression(formula: string, {parameters: Parameters, decimalPlaces: number, useThousandSeparator: boolean})`: Evaluates an expression with parameters, decimal places, and thousand separator.
-```TypeScript
-computeExpression("1111.113+2222.223",{
-    parameters: { x: 1111.113, y: 2222.223 },
-    decimalPlaces: 2,
-    useThousandSeparator: true
-}); // returns "3,333.34"
+console.log(result);
+// returns "0.3"
 ```
 
+`computeExpression(formula: string, {decimalPlaces: number})`: 返回值保留指定小数位
 
+```ts
+const result = computeExpression("0.1+0.2", {
+  decimalPlaces: 2,
+});
 
+console.log(result);
+// returns "0.30"
 
+const result = computeExpression("0.113+0.223", {
+  decimalPlaces: 2,
+});
 
+console.log(result);
+// returns "0.34"
+```
 
+`computeExpression(formula: string, {useThousandSeparator: boolean})`: 返回值带有千位分隔符
 
+```ts
+const result = computeExpression("1111.1+2222.2", {
+  useThousandSeparator: true,
+});
+
+console.log(result);
+// returns "3,333.3"
+```
+
+`computeExpression(formula: string, {parameters: Parameters, decimalPlaces: number})`: 带有参数，并且返回值保留指定小数位
+
+```ts
+const result = computeExpression("x+y", {
+  parameters: { x: 1111.113, y: 2222.223 },
+  decimalPlaces: 2,
+});
+
+console.log(result);
+// returns "3333.34"
+```
+
+`computeExpression(formula: string, {parameters: Parameters, useThousandSeparator: boolean})`: 返回值保留指定小数位，并带有千位分隔符
+
+```ts
+const result = computeExpression("1111.113+2222.223", {
+  decimalPlaces: 2,
+  useThousandSeparator: true,
+});
+
+console.log(result);
+// returns "3,333.34"
+```
+
+`computeExpression(formula: string, {parameters: Parameters, decimalPlaces: number, useThousandSeparator: boolean})`: 使用参数、小数位和千位分隔符
+
+```ts
+const result = computeExpression("1111.113+2222.223", {
+  parameters: { x: 1111.113, y: 2222.223 },
+  decimalPlaces: 2,
+  useThousandSeparator: true,
+});
+
+console.log(result);
+// returns "3,333.34"
+```

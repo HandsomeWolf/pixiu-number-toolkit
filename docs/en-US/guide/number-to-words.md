@@ -1,16 +1,18 @@
 # Number to Words
 
 ## Syntax
-```TypeScript
-function numberToWords(number_: number, lang: "en" | "zh"): string
+
+```ts
+function numberToWords(number_: number, lang: "en" | "zh"): string;
 ```
+
 ## Description
 
 The numberToWords function is used to convert a numerical value into its word representation in either English or Chinese. This can be useful in various contexts, such as financial or educational applications.
 
 ## Parameters
 
-- number_ (number): The numerical value to be converted.
+- number\_ (number): The numerical value to be converted.
 - lang ("en" | "zh"): The language to convert the number into. "en" for English and "zh" for Chinese.
 
 ## Returns
@@ -19,8 +21,8 @@ The numberToWords function is used to convert a numerical value into its word re
 
 ## Usage
 
-```TypeScript
-import { numberToWords } from 'src/basic/converter/number-to-words'
+```ts
+import { numberToWords } from "src/basic/converter/number-to-words";
 
 const number = 1234;
 const resultEn = numberToWords(number, "en");

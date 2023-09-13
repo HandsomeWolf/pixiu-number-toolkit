@@ -1,56 +1,53 @@
-# Unit Conversion
+# 单位转换
 
-## Syntax
+## 语法
 
-```TypeScript
-function unitConversion(
-  value: number,
-  fromUnit: string,
-  toUnit: string,
-  withUnit?: boolean
-): string | number
+```ts
+function unitConversion(value: number, fromUnit: string, toUnit: string, withUnit?: boolean): string | number;
 ```
-## Description
 
-The `unitConversion` function is used to convert a value from one unit to another. It supports a wide range of units including length, weight, area, volume, speed, temperature, pressure, power, electric charge, voltage, current, etc.
+## 描述
 
+`unitConversion` 函数用于将值从一种单位转换为另一种单位。 它支持多种单位，包括长度、重量、面积、体积、速度、温度、压力、功率、电荷、电压、电流等。
 
+## 参数
 
-## Parameters
+- `value` (number): 要转换的值
 
-- `value` (number): The value to be converted.
+- `fromUnit` (string): 值的单位
 
-- `fromUnit` (string): The unit of the input value.
+- `toUnit` (string): 要转换为的单位
 
-- `toUnit` (string): The unit to which the input value should be converted.
+- `withUnit` (boolean): 可选参数，返回值是否携带单位。 默认为 `false` ，即不携带单位。
 
-- `withUnit` (boolean): An optional parameter that determines whether the result should be returned with the unit. Default is `false`.
+## 返回值
 
-## Returns
+- (string | number): 如果 `withUnit` 为 `true`，它将返回一个包含值和单位的字符串。 如果`withUnit` 为 `false`，则返回一个数字。
 
-- (string | number): The converted value. If `withUnit` is `true`, it returns a string with the value and the unit. If `withUnit` is `false`, it returns a number.
+## 使用
 
-## Usage
-```TypeScript
-import { unitConversion } from '@handsomewolf/num-utils'
+```ts
+import { unitConversion } from "@handsomewolf/num-utils";
 
 const value = 1;
-const fromUnit = 'km';
-const toUnit = 'm';
+const fromUnit = "km";
+const toUnit = "m";
 const result = unitConversion(value, fromUnit, toUnit, true);
-console.log(result); // Outputs: "1000 m"
+
+console.log(result);
+// 输出: "1000 m"
 ```
 
-In this example, the value `1` in kilometers is converted into meters using the `unitConversion` function, resulting in `"1000 m"`.
+在此示例中，使用 `unitConversion` 函数将以公里为单位的值 `1` 转换为米，结果为 `"1000 m"`。
 
-## Notes
+## 注意事项
 
-- The function uses the math.evaluate function from the mathjs library to perform the unit conversion.
+- 该函数使用 mathjs 库中的 math.evaluate 函数来执行单位转换。
 
-- The function supports a wide range of units. For a full list of supported units, refer to the mathjs documentation.
+- 该功能支持多种单位。 有关受支持单位的完整列表，请参阅 mathjs 文档。
 
-- The function also supports conversion between different types of units, such as from speed to length or from temperature to energy. However, such conversions may not always make sense in a physical context.
+- 该功能还支持不同类型单位之间的转换，例如从速度到长度或从温度到能量。 然而，这种转换在物理环境中可能并不总是有意义。
 
-- The function handles both positive and negative values, as well as zero.
+- 该函数处理正值和负值以及零。
 
-- If the fromUnit and toUnit are the same, the function returns the input value without any conversion.
+- 如果 `当前单位` 和 `转换后的单位` 相同，则函数返回输入值而不进行任何转换。

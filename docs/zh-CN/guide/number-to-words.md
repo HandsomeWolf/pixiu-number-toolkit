@@ -1,39 +1,45 @@
-# Number to Words
+# 数字转文字
 
-## Syntax
-```TypeScript
-function numberToWords(number_: number, lang: "en" | "zh"): string
+## 语法
+
+```ts
+function numberToWords(number: number, lang: "en" | "zh"): string;
 ```
-## Description
 
-The numberToWords function is used to convert a numerical value into its word representation in either English or Chinese. This can be useful in various contexts, such as financial or educational applications.
+## 描述
 
-## Parameters
+`numberToWords` 函数用于将数字转换为英文或中文的文字表示形式。
 
-- number_ (number): The numerical value to be converted.
-- lang ("en" | "zh"): The language to convert the number into. "en" for English and "zh" for Chinese.
+## 参数
 
-## Returns
+- number (number): 要转换的数字
+- lang ("en" | "zh"): 将数字转换成的语言。 “en”代表英语，“zh”代表中文。
 
-- (string): The word representation of the input number in the specified language.
+## 返回值
 
-## Usage
+- (string): 输入数字在指定语言中的单词表示形式。
 
-```TypeScript
-import { numberToWords } from 'src/basic/converter/number-to-words'
+## 使用
+
+```ts
+import { numberToWords } from "src/basic/converter/number-to-words";
 
 const number = 1234;
 const resultEn = numberToWords(number, "en");
-console.log(resultEn); // Outputs: "one thousand two hundred thirty four"
+
+console.log(resultEn);
+// 输出: "one thousand two hundred thirty four"
 
 const resultZh = numberToWords(number, "zh");
-console.log(resultZh); // Outputs: "一千二百三十四"
+
+console.log(resultZh);
+// 输出: "一千二百三十四"
 ```
 
-In these examples, the numerical value 1234 is converted into its word representation in English and Chinese.
+在该示例中，数值 `1234` 被转换为其英文和中文的文字表示形式。
 
-## Notes
+## 注意事项
 
-- The function handles both small and large numbers, up to billions in English and up to billions (亿) in Chinese.
-- Zero is represented as "zero" in English and "零" in Chinese.
-- The function does not handle fractional parts or negative numbers.
+- 该函数可处理小数和大数，英文最多可达十亿，中文最多可达十亿（亿）。
+- 零在英文中表示为“zero”，在中文中表示为“零”。
+- 该函数不处理小数部分或负数。

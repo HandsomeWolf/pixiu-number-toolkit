@@ -1,41 +1,43 @@
-# Format Percentage
+# 数字转百分比
 
-## syntax
+## 语法
 
-```TypeScript
+```ts
 function formatPercentage(
-  input: number|string,
+  input: number | string,
   options: {
     decimalPlaces?: number;
     carrySymbol?: boolean;
   } = {},
-): string
+): string;
 ```
 
-## Description
+## 描述
 
-The `formatPercentage` function is used to format a number into a percentage string. The function also provides options to specify the number of decimal places and whether to carry the percentage symbol.
+`formatPercentage` 函数用于将数字格式化为百分比字符串。 该函数还提供了指定小数位数以及是否携带百分比符号选项。
 
-## Parameters
+## 参数
 
-- `input` (Number|string): The input to be formatted.
+- `input` (Number|string): 要格式化的数字或字符串类型数字.
 
-- `options` (Object): An optional parameter that can have the following properties:
-- `decimalPlaces` (number): The number of decimal places in the output string.
-- `carrySymbol` (boolean): Whether to carry the percentage symbol in the output string. Default is true.
+- `options` (Object): 可选参数，具有以下属性：
+  - `decimalPlaces` (number): 输出字符串中的小数位数
+  - `carrySymbol` (boolean): 是否在输出字符串中携带百分比符号。 默认为 true。
 
-## Returns
+## 返回值
 
-- (String): The formatted percentage string.
+- (String): 格式化的百分比字符串。
 
-## Usage
+## 使用
 
-```TypeScript
-import { formatPercentage } from '@handsomewolf/num-utils'
+```ts
+import { formatPercentage } from "@handsomewolf/num-utils";
 
 const input = 0.15678;
 const result = formatPercentage(input, { decimalPlaces: 2, carrySymbol: true });
-console.log(result); // Outputs: "15.68%"
+
+console.log(result);
+// 输出: "15.68%"
 ```
 
-In this example, the number `0.15678` is formatted into the percentage string `"15.68%"` with 2 decimal places and carrying the percentage symbol.
+在此示例中，数字 `“0.15678”` 被格式化为带有 `2 `位小数并带有百分比符号的百分比字符串 `“15.68%”`。

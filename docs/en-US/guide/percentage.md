@@ -2,14 +2,14 @@
 
 ## syntax
 
-```TypeScript
+```ts
 function formatPercentage(
-  input: number|string,
+  input: number | string,
   options: {
     decimalPlaces?: number;
     carrySymbol?: boolean;
   } = {},
-): string
+): string;
 ```
 
 ## Description
@@ -30,8 +30,8 @@ The `formatPercentage` function is used to format a number into a percentage str
 
 ## Usage
 
-```TypeScript
-import { formatPercentage } from '@handsomewolf/num-utils'
+```ts
+import { formatPercentage } from "@handsomewolf/num-utils";
 
 const input = 0.15678;
 const result = formatPercentage(input, { decimalPlaces: 2, carrySymbol: true });

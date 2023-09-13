@@ -1,21 +1,22 @@
 # Utils
 
 ## Syntax
-```TypeScript
-function getDecimalInfo(value: number): DecimalInfo
 
-function getDecimalPlaces(value: number): number
+```ts
+function getDecimalInfo(value: number): DecimalInfo;
 
-function padZero(value: number, decimalLength?: number): string
+function getDecimalPlaces(value: number): number;
 
-function parseIdCard(value: string): IdCardInfo
+function padZero(value: number, decimalLength?: number): string;
+
+function parseIdCard(value: string): IdCardInfo;
 ```
 
 ## Description
 
-The `getDecimalInfo` function is used to get the decimal information of a number. 
+The `getDecimalInfo` function is used to get the decimal information of a number.
 
-The `getDecimalPlaces` function is used to get the number of decimal places of a number. 
+The `getDecimalPlaces` function is used to get the number of decimal places of a number.
 
 The `padZero` function is used to pad a number with zeros to a specified number of decimal places.
 
@@ -46,10 +47,10 @@ The `parseIdCard` Parsing Chinese ID card information
 **getDecimalInfo**
 
 - (DecimalInfo): An object that contains the decimal information of the input number.
-**getDecimalPlaces**
+  **getDecimalPlaces**
 
 - (number): The number of decimal places of the input number.
-**padZero**
+  **padZero**
 
 - (string): If no decimal places are specified, it returns the original number string. Otherwise, it returns the padded number string.
 
@@ -66,13 +67,15 @@ This interface represents the information of an ID card.
 
 ## Usage
 
-```TypeScript
-import { getDecimalInfo, getDecimalPlaces, padZero } from '@handsomewolf/num-utils'
+```ts
+import { getDecimalInfo, getDecimalPlaces, padZero } from "@handsomewolf/num-utils"; // Outputs: '123.45600'
+
+import { parseIdCard } from "@handsomewolf/num-utils";
 
 const value = 123.456;
 const decimalInfo = getDecimalInfo(value);
 console.log(decimalInfo);
-// Outputs: 
+// Outputs:
 // {
 // valueString: '123.456',
 // decimalIndex: 3,
@@ -86,11 +89,9 @@ const decimalPlaces = getDecimalPlaces(value);
 console.log(decimalPlaces); // Outputs: 3
 
 const paddedValue = padZero(value, 5);
-console.log(paddedValue); // Outputs: '123.45600'
+console.log(paddedValue);
 
-import { parseIdCard } from '@handsomewolf/num-utils'
-
-const idCardNumber = '110105197208108139';
+const idCardNumber = "110105197208108139";
 const idCardInfo = parseIdCard(idCardNumber);
 console.log(idCardInfo);
 // Outputs:

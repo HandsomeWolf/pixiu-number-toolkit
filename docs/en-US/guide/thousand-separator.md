@@ -1,20 +1,15 @@
 # add Thousand Separator and remove Thousand Separator
 
 ## Syntax
-```TypeScript
-function addThousandSeparator(
-  value: string | number,
-  asString?: boolean
-): string
+
+```ts
+function addThousandSeparator(value: string | number, asString?: boolean): string;
 
 // and
 
-function removeThousandSeparator(
-  input: string,
-  defaultReturn?: any
-): number
-
+function removeThousandSeparator(input: string, defaultReturn?: any): number;
 ```
+
 ## Description
 
 The `addThousandSeparator` function is used to convert a number or a string into a format with thousand separators (comma-separated).
@@ -28,7 +23,6 @@ The `removeThousandSeparator` function is used to remove the thousand separators
 - value (string | number): The value to be formatted. It can be a number or a string.
 
 - asString (boolean): An optional parameter. If the input is null or undefined, this parameter determines whether the result should be returned as a string "null" or "undefined". Default is false.
-
 
 **removeThousandSeparator**
 
@@ -48,8 +42,8 @@ The `removeThousandSeparator` function is used to remove the thousand separators
 
 ## Usage
 
-```TypeScript
-import { addThousandSeparator, removeThousandSeparator } from '@handsomewolf/num-utils'
+```ts
+import { addThousandSeparator, removeThousandSeparator } from "@handsomewolf/num-utils";
 
 const value = 123456789;
 const formattedValue = addThousandSeparator(value);
