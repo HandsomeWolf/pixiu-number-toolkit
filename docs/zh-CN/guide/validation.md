@@ -1,6 +1,6 @@
-# Validation
+# 校验
 
-## Syntax
+## 语法
 
 ```ts
 function isValidThousandSeparatedNumber(value: string): boolean;
@@ -10,52 +10,58 @@ function isBlank(value: string): boolean;
 function isNumeric(value: string | number): boolean;
 ```
 
-## Description
+## 描述
 
-The `isValidThousandSeparatedNumber` function is used to check if a string is in the thousand-separated format. The `isBlank` function is used to check if a string is blank or contains only whitespace characters. The `isNumeric` function is used to check if a value is a number or a numeric string.
+`isValidThousandSeparatedNumber` 函数用于检查字符串是否采用千位分隔格式  
+`isBlank` 函数用于检查字符串是否为空或仅包含空白字符  
+`isNumeric` 函数用于检查值是数字还是数字字符串
 
-## Parameters
-
-**isValidThousandSeparatedNumber**
-
-- `value` (string): The string to be checked.
-
-**isBlank**
-
-- `value` (string): The string to be checked.
-
-**isNumeric**
-
-- `value` (string | number): The value to be checked.
-
-## Returns
+## 参数
 
 **isValidThousandSeparatedNumber**
 
-- (boolean): `true` if the string is in the thousand-separated format, `false` otherwise.
+- `value` (string): 要校验的值
 
 **isBlank**
 
-- (boolean): `true` if the string is blank or contains only whitespace characters, `false` otherwise.
+- `value` (string): 要校验的值
 
 **isNumeric**
 
-- (boolean): `true` if the value is a number or a numeric string, `false` otherwise.
+- `value` (string | number): 要校验的值
 
-## Usage
+## 返回值
+
+**isValidThousandSeparatedNumber**
+
+- (boolean): 如果字符串采用千位分隔格式，则为`true`，否则为`false`。
+
+**isBlank**
+
+- (boolean): 如果字符串为空或仅包含空格字符，则为`true`，否则为`false`。
+
+**isNumeric**
+
+- (boolean): 如果值是数字或数字字符串，则为`true`，否则为`false`。
+
+## 使用
 
 ```ts
 import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "@handsomewolf/num-utils";
 
 const value = "123,456";
 const isValid = isValidThousandSeparatedNumber(value);
-console.log(isValid); // Outputs: true
+
+console.log(isValid);
+// 输出: true
 
 const isBlankString = isBlank(" ");
-console.log(isBlankString); // Outputs: true
+
+console.log(isBlankString);
+// 输出: true
 
 const isNumber = isNumeric("123");
-console.log(isNumber); // Outputs: true
-```
 
-In this example, the `isValidThousandSeparatedNumber` function is used to check if the string `'123,456'` is in the thousand-separated format. The `isBlank` function is used to check if the string `' '` is blank or contains only whitespace characters. The `isNumeric` function is used to check if the string `'123'` is a numeric string.
+console.log(isNumber);
+// 输出: true
+```

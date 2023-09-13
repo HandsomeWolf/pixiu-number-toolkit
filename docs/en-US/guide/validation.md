@@ -57,5 +57,3 @@ console.log(isBlankString); // Outputs: true
 const isNumber = isNumeric("123");
 console.log(isNumber); // Outputs: true
 ```
-
-In this example, the `isValidThousandSeparatedNumber` function is used to check if the string `'123,456'` is in the thousand-separated format. The `isBlank` function is used to check if the string `' '` is blank or contains only whitespace characters. The `isNumeric` function is used to check if the string `'123'` is a numeric string.
