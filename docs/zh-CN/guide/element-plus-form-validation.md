@@ -17,38 +17,36 @@ const rules={
 }
 </script>
 
-# Element-Plus Form Validation
+# 在 `Element-Plus`的 `el-form` 组件中使用校验
 
-This guide will help you understand how to use the isInRangeForElementPlus function for form validation in Element-Plus.
-
-## Syntax
+## 语法
 
 ```ts
 isInRangeForElementPlus(name, options, lang);
 ```
 
-## Parameters
+## 参数
 
-- `name` (string): The name of the field to be validated.
-- `options` (object): An object containing validation rules. The properties of this object are optional and are as follows:
+- `name` (string): 要验证的字段的名称
+- `options` (object):可选项，如下所示：
 
-| Property        | Description                                   |
-| --------------- | --------------------------------------------- |
-| positive        | If true, the value must be a positive number  |
-| integer         | If true, the value must be an integer         |
-| positiveInteger | If true, the value must be a positive integer |
-| negative        | If true, the value must be a negative number  |
-| negativeInteger | If true, the value must be a negative integer |
-| decimal         | The maximum number of decimal places allowed  |
-| min             | The minimum value allowed                     |
-| max             | The maximum value allowed                     |
-| unit            | The unit of the value, used in error messages |
+| 属性            | 描述                            |
+| --------------- | ------------------------------- |
+| positive        | 如果为 true，则该值必须是正数   |
+| integer         | 如果为 true，则该值必须是整数   |
+| positiveInteger | 如果为 true，则该值必须是正整数 |
+| negative        | 如果为 true，则该值必须是负数   |
+| negativeInteger | 如果为 true，则该值必须是负整数 |
+| decimal         | 允许的最大小数位数              |
+| min             | 允许的最小值                    |
+| max             | 允许的最大值                    |
+| unit            | 错误消息中使用的值的单位        |
 
-- `lang` (string): The language of the error messages. It can be either 'en' for English or 'zh' for Chinese.
+- `lang` (string): 错误消息的语言。 它可以是 `en` 或 `zh`
 
-## Usage
+## 使用
 
-The `isInRangeForElementPlus` function is used as a custom validator in Element-Plus form validation. It checks if the input value is within a certain range and meets certain conditions specified in the `options` parameter.
+`isInRangeForElementPlus` 函数用作 Element-Plus 表单验证中的自定义验证器。 它检查输入值是否在特定范围内并满足 `options` 参数中指定的特定条件。
 
   <el-form :model="form" :rules="rules">
     <el-form-item label="Amount" prop="amount1">
@@ -59,7 +57,7 @@ The `isInRangeForElementPlus` function is used as a custom validator in Element-
     </el-form-item>
   </el-form>
 
-Here is an example of how to use it:
+示例:
 
 ```Vue
 <template>
@@ -97,5 +95,3 @@ const rules={
 }
 </script>
 ```
-
-In this example, the `Amount` field must be a number between 0 and 100, and can have up to 2 decimal places. If the input value does not meet these conditions, an error message will be displayed in English. If you want to display error messages in Chinese, you can use `'zh'` instead of `'en'`.

@@ -12,9 +12,9 @@ const input4=ref('')
 
 </script>
 
-# Using in Element-Plus
+# 在 `Element-Plus`的 `el-input` 组件中使用千位分隔符
 
-## Syntax
+## 语法
 
 ```Vue
 <el-input
@@ -26,21 +26,21 @@ const input4=ref('')
 </el-input>
 ```
 
-Optional Parameters for removeThousandSeparatorForElementPlus
+`removeThousandSeparatorForElementPlus` 可选参数
 
-| Property      | Description                                             |
-| ------------- | ------------------------------------------------------- |
-| defaultReturn | The default value displayed when the input box is empty |
-| decimalPlaces | The number of decimal places retained in the input box  |
+| 属性          | 描述                     |
+| ------------- | ------------------------ |
+| defaultReturn | 输入框为空时显示的默认值 |
+| decimalPlaces | 输入框中保留的小数位数   |
 
-## Example
+## 示例
 
-**basic**
+**基础**
 <el-input v-model="input1" placeholder="Enter amount" :formatter="addThousandSeparatorForElementPlus" :parser="removeThousandSeparatorForElementPlus" >
 </el-input>
 
-type：{{typeof input1}}  
-value：{{ input1 }}
+类型：{{typeof input1}}  
+值：{{ input1 }}
 
 ```Vue
 <script setup>
@@ -65,7 +65,7 @@ value：{{ input1 }}
 
 ---
 
-**Default value**
+**默认值**
 <el-input v-model="input2" placeholder="Enter amount" :formatter="addThousandSeparatorForElementPlus" :parser="value => removeThousandSeparatorForElementPlus(value,{ defaultReturn:'0' })" >
 </el-input>
 
@@ -95,11 +95,11 @@ value：{{ input2 }}
 
 ---
 
-**Decimal places**
+**限制小数位数**
 <el-input v-model="input3" placeholder="Enter amount" :formatter="addThousandSeparatorForElementPlus" :parser="value => removeThousandSeparatorForElementPlus(value,{ decimalPlaces:2 })" >
 </el-input>
 
-type：{{typeof input3}}  
+类型：{{typeof input3}}  
 value：{{ input3 }}
 
 ```Vue

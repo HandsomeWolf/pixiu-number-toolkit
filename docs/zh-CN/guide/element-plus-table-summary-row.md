@@ -28,37 +28,35 @@ const tableData = [
 ]
 </script>
 
-# Summary Row For Element Plus
+# 在 `Element-Plus`的 `el-table` 组件中行尾合计
 
-## Introduction
+`summaryRowForElementPlus` 函数是 `Element Plus` 的行尾合计。 当您需要计算并在表格中显示汇总信息时，此功能特别有用。 此外，它还解决了 JavaScript 数学运算中精度损失的问题。
 
-The `summaryRowForElementPlus` function is a summary row for Element Plus. This function is particularly useful when you need to calculate and display summary information in a table. Additionally, it addresses the issue of precision loss in JavaScript mathematical operations.
-
-## Syntax
+## 语法
 
 ```ts
-summaryRowForElementPlus(parameter, options: Options = {})
+summaryRowForElementPlus(parameter, options);
 ```
 
-## Parameters
+## 参数
 
-- `parameter`(unimportant): Parameters passed by the :summary-method attribute of element plus
+- `parameter`（不重要）：element plus 的 :summary-method 属性传递的参数
 
-- `options`: An optional object of type Options which includes:
+- `options`: 可选项，包括：
 
-| Name           | Description                                                                                                                                                                    | Default    |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
-| totalCostLabel | The label for the total cost.                                                                                                                                                  | Total Cost |
-| excludeColumns | An array of column property names to exclude from the summary.                                                                                                                 | []         |
-| includeColumns | An array of column property names to include in the summary.                                                                                                                   | []         |
-| currency       | The currency symbol to prepend to the sum.                                                                                                                                     |            |
-| placeholder    | The placeholder to display for excluded columns.                                                                                                                               |            |
-| decimalPlaces  | The number of decimal places to display for the sum.                                                                                                                           |            |
-| columnOptions  | An object that specifies options for individual columns. Each key is a column property name, and the value is an object with decimalPlaces, currency, and placeholder options. | {}         |
+| 属性           | 描述                                                                                                            | 默认值     |
+| -------------- | --------------------------------------------------------------------------------------------------------------- | ---------- |
+| totalCostLabel | 合计行的显示名称                                                                                                | Total Cost |
+| excludeColumns | 要排除的列属性名称                                                                                              | []         |
+| includeColumns | 要包含的列属性名称                                                                                              | []         |
+| currency       | 货币符号                                                                                                        |            |
+| placeholder    | 占位符                                                                                                          |            |
+| decimalPlaces  | 小数位数                                                                                                        |            |
+| columnOptions  | 为各个列指定选项的对象。 每个键都是一个列属性名称，值是一个带有decimalPlaces、currency和placeholder选项的对象。 | {}         |
 
-## Example
+## 示例
 
-**Basic**
+**基础**
 <el-table :data="tableData" border :summary-method="summaryRowForElementPlus" show-summary style="width: 100%">
 <el-table-column prop="id" label="ID" width="180" />
 <el-table-column prop="name" label="Name" />
@@ -105,7 +103,7 @@ const tableData = [
 
 ---
 
-**Custom all decimal places**
+**自定义所有小数位**
 <el-table :data="tableData" border :summary-method="value=>summaryRowForElementPlus(value,{decimalPlaces:2})" show-summary style="width: 100%">
 <el-table-column prop="id" label="ID" width="180" />
 <el-table-column prop="name" label="Name" />
@@ -152,7 +150,7 @@ const tableData = [
 
 ---
 
-**Custom placeholder**
+**自定义占位符**
 <el-table :data="tableData" border :summary-method="value=>summaryRowForElementPlus(value,{placeholder:'-'})" show-summary style="width: 100%">
 <el-table-column prop="id" label="ID" width="180" />
 <el-table-column prop="name" label="Name" />
@@ -199,7 +197,7 @@ const tableData = [
 
 ---
 
-**Custom Amount Prefix Symbol**
+**自定义金额符号**
 <el-table :data="tableData" border :summary-method="value=>summaryRowForElementPlus(value,{currency:'$'})" show-summary style="width: 100%">
 <el-table-column prop="id" label="ID" width="180" />
 <el-table-column prop="name" label="Name" />
@@ -246,7 +244,7 @@ const tableData = [
 
 ---
 
-**Custom total cost label**
+**自定义合计行显示的名称**
 <el-table :data="tableData" border :summary-method="value=>summaryRowForElementPlus(value,{totalCostLabel:'Sum'})" show-summary style="width: 100%">
 <el-table-column prop="id" label="ID" width="180" />
 <el-table-column prop="name" label="Name" />
@@ -293,7 +291,7 @@ const tableData = [
 
 ---
 
-**Use thousand separator**
+**使用千位分隔符**
 <el-table :data="tableData" border :summary-method="value=>summaryRowForElementPlus(value,{useThousandSeparator:true})" show-summary style="width: 100%">
 <el-table-column prop="id" label="ID" width="180" />
 <el-table-column prop="name" label="Name" />
@@ -340,7 +338,7 @@ const tableData = [
 
 ---
 
-**Exclude Columns**
+**排除某列**
 <el-table :data="tableData" border :summary-method="value=>summaryRowForElementPlus(value,{excludeColumns:['amount1','amount2']})" show-summary style="width: 100%">
 <el-table-column prop="id" label="ID" width="180" />
 <el-table-column prop="name" label="Name" />
@@ -387,7 +385,7 @@ const tableData = [
 
 ---
 
-**Include Columns**
+**包含某列**
 <el-table :data="tableData" border :summary-method="value=>summaryRowForElementPlus(value,{includeColumns:['id','amount1','amount2']})" show-summary style="width: 100%">
 <el-table-column prop="id" label="ID" width="180" />
 <el-table-column prop="name" label="Name" />
@@ -434,7 +432,7 @@ const tableData = [
 
 ---
 
-**Customize the style of a column**
+**自定义每一列的风格**
 <el-table :data="tableData" border :summary-method="value=>summaryRowForElementPlus(value,{columnOptions:{'amount1':{decimalPlaces:2,currency:'￥',placeholder:''},'amount2':{decimalPlaces:3,currency:'$',placeholder:''},'amount3':{decimalPlaces:5},'amount4':{useThousandSeparator:true}}})" show-summary style="width: 100%">
 <el-table-column prop="id" label="ID" width="180" />
 <el-table-column prop="name" label="Name" />

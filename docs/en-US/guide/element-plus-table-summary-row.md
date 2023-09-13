@@ -37,7 +37,7 @@ The `summaryRowForElementPlus` function is a summary row for Element Plus. This 
 ## Syntax
 
 ```ts
-summaryRowForElementPlus(parameter, options: Options = {})
+summaryRowForElementPlus(parameter, options);
 ```
 
 ## Parameters

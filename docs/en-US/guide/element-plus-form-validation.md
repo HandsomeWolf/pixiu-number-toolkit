@@ -97,5 +97,3 @@ const rules={
 }
 </script>
 ```
-
-In this example, the `Amount` field must be a number between 0 and 100, and can have up to 2 decimal places. If the input value does not meet these conditions, an error message will be displayed in English. If you want to display error messages in Chinese, you can use `'zh'` instead of `'en'`.
