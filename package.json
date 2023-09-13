@@ -30,13 +30,13 @@
     "build:basic": "pnpm -C packages/num-utils run build",
     "build:dev": "tsup --watch",
     "docs:dev": "pnpm -C docs/zh-CN run docs:dev",
-    "docs:dev:en-US": "pnpm -C docs/en-US run docs:dev",
+    "docs:en": "pnpm -C docs/en-US run docs:dev",
     "docs:dev:zh-CN": "pnpm -C docs/zh-CN run docs:dev",
     "release": "release-it"
   },
   "devDependencies": {
-    "@handsomewolf/eslint-config": "^0.0.18",
-    "typescript": "^5.1.6",
-    "vitest": "^0.34.2"
+    "@handsomewolf/eslint-config": "^0.2.1",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.4"
   }
 }
