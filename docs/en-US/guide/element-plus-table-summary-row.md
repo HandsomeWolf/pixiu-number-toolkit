@@ -70,7 +70,7 @@ summaryRowForElementPlus(parameter, options);
 
 ```Vue
 <script setup lang="ts">
-import {summaryRowForElementPlus} from '@handmewolf/pixiu-number-toolkit';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 const tableData = [
   {
     id: '12987122',
@@ -117,7 +117,7 @@ const tableData = [
 
 ```Vue
 <script setup lang="ts">
-import {summaryRowForElementPlus} from '@handmewolf/pixiu-number-toolkit';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 const tableData = [
   {
     id: '12987122',
@@ -164,7 +164,7 @@ const tableData = [
 
 ```Vue
 <script setup lang="ts">
-import {summaryRowForElementPlus} from '@handmewolf/pixiu-number-toolkit';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 const tableData = [
   {
     id: '12987122',
@@ -211,7 +211,7 @@ const tableData = [
 
 ```Vue
 <script setup lang="ts">
-import {summaryRowForElementPlus} from '@handmewolf/pixiu-number-toolkit';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 const tableData = [
   {
     id: '12987122',
@@ -258,7 +258,7 @@ const tableData = [
 
 ```Vue
 <script setup lang="ts">
-import {summaryRowForElementPlus} from '@handmewolf/pixiu-number-toolkit';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 const tableData = [
   {
     id: '12987122',
@@ -305,7 +305,7 @@ const tableData = [
 
 ```Vue
 <script setup lang="ts">
-import {summaryRowForElementPlus} from '@handmewolf/pixiu-number-toolkit';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 const tableData = [
   {
     id: '12987122',
@@ -352,7 +352,7 @@ const tableData = [
 
 ```Vue
 <script setup lang="ts">
-import {summaryRowForElementPlus} from '@handmewolf/pixiu-number-toolkit';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 const tableData = [
   {
     id: '12987122',
@@ -399,7 +399,7 @@ const tableData = [
 
 ```Vue
 <script setup lang="ts">
-import {summaryRowForElementPlus} from '@handmewolf/pixiu-number-toolkit';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 const tableData = [
   {
     id: '12987122',
@@ -446,7 +446,7 @@ const tableData = [
 
 ```Vue
 <script setup lang="ts">
-import {summaryRowForElementPlus} from '@handmewolf/pixiu-number-toolkit';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 const tableData = [
   {
     id: '12987122',
