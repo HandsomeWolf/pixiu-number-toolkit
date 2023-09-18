@@ -27,7 +27,7 @@ function unitConversion(value: number, fromUnit: string, toUnit: string, withUni
 ## 使用
 
 ```ts
-import { unitConversion } from "@handsomewolf/num-utils";
+import { unitConversion } from "pixiu-number-toolkit";
 
 const value = 1;
 const fromUnit = "km";

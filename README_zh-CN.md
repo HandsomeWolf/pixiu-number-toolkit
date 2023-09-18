@@ -13,7 +13,7 @@ num-utils 是一个用 TypeScript 编写的数字工具集。它提供了一组�
 要安装 `num-utils`，使用以下命令：
 
 ```command
-npm install @handsomewolf/num-utils
+npm install pixiu-number-toolkit
 ```
 
 ## 功能

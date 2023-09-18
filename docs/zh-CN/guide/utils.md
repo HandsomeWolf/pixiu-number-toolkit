@@ -67,7 +67,7 @@ function parseIdCard(value: string): IdCardInfo;
 ## 使用
 
 ```ts
-import { getDecimalInfo, getDecimalPlaces, padZero, parseIdCard } from "@handsomewolf/num-utils";
+import { getDecimalInfo, getDecimalPlaces, padZero, parseIdCard } from "pixiu-number-toolkit";
 
 const value = 123.456;
 const decimalInfo = getDecimalInfo(value);

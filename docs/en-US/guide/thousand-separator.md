@@ -43,7 +43,7 @@ The `removeThousandSeparator` function is used to remove the thousand separators
 ## Usage
 
 ```ts
-import { addThousandSeparator, removeThousandSeparator } from "@handsomewolf/num-utils";
+import { addThousandSeparator, removeThousandSeparator } from "pixiu-number-toolkit";
 
 const value = 123456789;
 const formattedValue = addThousandSeparator(value);

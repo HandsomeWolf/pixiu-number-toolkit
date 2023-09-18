@@ -27,7 +27,7 @@ The `unitConversion` function is used to convert a value from one unit to anothe
 ## Usage
 
 ```ts
-import { unitConversion } from "@handsomewolf/num-utils";
+import { unitConversion } from "pixiu-number-toolkit";
 
 const value = 1;
 const fromUnit = "km";

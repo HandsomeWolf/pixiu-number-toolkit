@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "Documentation for @handsomewolf/num-utils",
+  "description": "Documentation for pixiu-number-toolkit",
   "type": "module",
   "author": "HandsomeWolf <55856773@qq.com> (https://github.com/handsomewolf)",
   "scripts": {
@@ -11,7 +11,8 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "@handsomewolf/num-utils": "workspace:^"
+    "pixiu-number-toolkit": "workspace:^",
+    "pixiu-number-toolkit-vue": "workspace:^"
   },
   "devDependencies": {
     "element-plus": "^2.3.12",

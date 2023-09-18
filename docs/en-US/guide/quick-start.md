@@ -3,7 +3,7 @@
 To get started with num-utils, you need to install it in your project. You can do this by running the following command:
 
 ```command
-npm install @handsomewolf/num-utils
+npm install pixiu-number-toolkit
 ```
 
 Once installed, you can import the required utilities from the library and use them in your code. Here's an example:
@@ -13,7 +13,7 @@ In the following sections, we will explore each feature in detail and provide ex
 ### digitUppercase
 
 ```ts
-import { digitUppercase } from "@handsomewolf/num-utils";
+import { digitUppercase } from "pixiu-number-toolkit";
 
 console.log(digitUppercase(12345)); // Outputs: "壹万贰仟叁佰肆拾伍元整"
 ```
@@ -21,7 +21,7 @@ console.log(digitUppercase(12345)); // Outputs: "壹万贰仟叁佰肆拾伍元�
 ### addThousandSeparator & removeThousandSeparator
 
 ```ts
-import { addThousandSeparator, removeThousandSeparator } from "@handsomewolf/num-utils";
+import { addThousandSeparator, removeThousandSeparator } from "pixiu-number-toolkit";
 
 console.log(addThousandSeparator(1234567)); // Outputs: "1,234,567"
 console.log(removeThousandSeparator("1,234,567")); // Outputs: 1234567
@@ -30,7 +30,7 @@ console.log(removeThousandSeparator("1,234,567")); // Outputs: 1234567
 ### formatPercentage
 
 ```ts
-import { formatPercentage } from "@handsomewolf/num-utils";
+import { formatPercentage } from "pixiu-number-toolkit";
 
 console.log(formatPercentage(0.12345, { decimalPlaces: 2 })); // Outputs: "12.35%"
 console.log(formatPercentage(0.12345, { decimalPlaces: 2, carrySymbol: false })); // Outputs: "12.35"
@@ -39,7 +39,7 @@ console.log(formatPercentage(0.12345, { decimalPlaces: 2, carrySymbol: false }))
 ### formatCurrency
 
 ```ts
-import { formatCurrencyRenminbi } from "@handsomewolf/num-utils";
+import { formatCurrencyRenminbi } from "pixiu-number-toolkit";
 
 console.log(formatCurrencyRenminbi(12345)); // Outputs: "￥12,345.00"
 ```
@@ -47,7 +47,7 @@ console.log(formatCurrencyRenminbi(12345)); // Outputs: "￥12,345.00"
 ### Math Operations & Unit Conversion
 
 ```ts
-import { computeExpression, unitConversion } from "@handsomewolf/num-utils";
+import { computeExpression, unitConversion } from "pixiu-number-toolkit";
 
 // Using computeExpression for mathematical operations
 console.log(computeExpression("2 + 3 * 4")); // Outputs: 14
@@ -66,7 +66,7 @@ console.log(unitConversion(1, "m", "cm", true)); // Outputs: "100 cm"
 ### Decimal Information, Decimal Places & Padding Zeros
 
 ```ts
-import { getDecimalInfo, getDecimalPlaces, padZero } from "@handsomewolf/num-utils";
+import { getDecimalInfo, getDecimalPlaces, padZero } from "pixiu-number-toolkit";
 
 // Using getDecimalInfo to get decimal information of a number
 console.log(getDecimalInfo(123.45));
@@ -82,7 +82,7 @@ console.log(padZero(123.45, 4)); // Outputs: "123.4500"
 ### validation
 
 ```ts
-import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "@handsomewolf/num-utils";
+import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "pixiu-number-toolkit";
 
 // Using isValidThousandSeparatedNumber to check if a string is in thousand separated format
 console.log(isValidThousandSeparatedNumber("1,234,567.89")); // Outputs: true

@@ -70,7 +70,7 @@ This interface represents the information of an ID card.
 ## Usage
 
 ```ts
-import { getDecimalInfo, getDecimalPlaces, padZero, parseIdCard } from "@handsomewolf/num-utils";
+import { getDecimalInfo, getDecimalPlaces, padZero, parseIdCard } from "pixiu-number-toolkit";
 
 const value = 123.456;
 const decimalInfo = getDecimalInfo(value);

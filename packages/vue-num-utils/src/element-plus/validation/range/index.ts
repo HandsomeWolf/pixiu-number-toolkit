@@ -1,4 +1,4 @@
-import { removeThousandSeparator } from "../../../../basic/formatter/thousand-separator";
+import { removeThousandSeparator } from "pixiu-number-toolkit";
 
 export interface Options {
   /**

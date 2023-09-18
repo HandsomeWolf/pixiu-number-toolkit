@@ -1,4 +1,4 @@
-import { addThousandSeparator, computeExpression } from "../../../index";
+import { addThousandSeparator, computeExpression } from "pixiu-number-toolkit";
 
 // Define the Column interface (定义 Column 接口)
 interface Column {

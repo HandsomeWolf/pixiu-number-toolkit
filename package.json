@@ -31,7 +31,7 @@
     "build:dev": "tsup --watch",
     "docs:dev": "pnpm -C docs/zh-CN run docs:dev",
     "docs:en": "pnpm -C docs/en-US run docs:dev",
-    "docs:dev:zh-CN": "pnpm -C docs/zh-CN run docs:dev",
+    "docs:zh": "pnpm -C docs/zh-CN run docs:dev",
     "release": "release-it"
   },
   "devDependencies": {

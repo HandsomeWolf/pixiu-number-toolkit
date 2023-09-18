@@ -2,7 +2,7 @@
 import {ref} from 'vue'
 import { useData } from 'vitepress'
 import { ElInput } from 'element-plus'
-import {isInRangeForElementPlus} from '../../src/index.ts';
+import {isInRangeForElementPlus} from 'pixiu-number-toolkit-vue';
 
 const { site, theme, page, frontmatter } = useData()
 const form=ref({amount1:'',amount2:''})
@@ -76,7 +76,7 @@ Here is an example of how to use it:
 <script setup>
 import {ref} from 'vue'
 import { ElInput } from 'element-plus'
-import { isInRangeForElementPlus } from '@handsomewolf/num-utils';
+import { isInRangeForElementPlus } from 'pixiu-number-toolkit-vue';
 
 const form=ref({amount1:'',amount2:''})
 const rules={

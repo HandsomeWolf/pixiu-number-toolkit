@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
-import { countTo } from "../../../index";
+import { countTo } from "pixiu-number-toolkit";
 
 const properties = defineProps({
   start: {

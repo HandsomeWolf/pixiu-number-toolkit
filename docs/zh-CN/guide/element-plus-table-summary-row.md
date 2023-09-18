@@ -3,7 +3,7 @@ import {ref} from 'vue'
 import { useData } from 'vitepress'
 import { ElInput } from 'element-plus'
 import type { TableColumnCtx } from 'element-plus'
-import {summaryRowForElementPlus} from '@handsomewolf/num-utils';
+import {summaryRowForElementPlus} from 'pixiu-number-toolkit-vue';
 
 const { site, theme, page, frontmatter } = useData()
 

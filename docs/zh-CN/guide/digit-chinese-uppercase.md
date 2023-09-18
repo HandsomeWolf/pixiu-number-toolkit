@@ -21,7 +21,7 @@ digitalUppercase 函数用于将数字金额转换为其中文表示形式，这
 ## 使用
 
 ```ts
-import { digitUppercase } from "@handsomewolf/num-utils";
+import { digitUppercase } from "pixiu-number-toolkit";
 
 const amount = 1234.56;
 const result = digitUppercase(amount);

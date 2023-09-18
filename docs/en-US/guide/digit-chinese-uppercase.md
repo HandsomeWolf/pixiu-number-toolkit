@@ -21,7 +21,7 @@ The digitUppercase function is used to convert a numerical amount into its upper
 ## Usage
 
 ```ts
-import { digitUppercase } from "@handsomewolf/num-utils";
+import { digitUppercase } from "pixiu-number-toolkit";
 
 const amount = 1234.56;
 const result = digitUppercase(amount);

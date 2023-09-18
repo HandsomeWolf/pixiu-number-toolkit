@@ -47,7 +47,7 @@ function isNumeric(value: string | number): boolean;
 ## 使用
 
 ```ts
-import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "@handsomewolf/num-utils";
+import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "pixiu-number-toolkit";
 
 const value = "123,456";
 const isValid = isValidThousandSeparatedNumber(value);

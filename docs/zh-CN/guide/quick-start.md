@@ -3,7 +3,7 @@
 开始使用 `num-utils` 之前，需要将其安装到您的项目中。 可以通过运行以下命令来执行此操作：
 
 ```cmd
-npm install @handsomewolf/num-utils
+npm install pixiu-number-toolkit
 ```
 
 安装后，可以从库中导入所需的实用程序并在代码中使用它们。
@@ -13,7 +13,7 @@ npm install @handsomewolf/num-utils
 ### 数字金额转中文
 
 ```ts
-import { digitUppercase } from "@handsomewolf/num-utils";
+import { digitUppercase } from "pixiu-number-toolkit";
 const a = 123;
 
 console.log(digitUppercase(12345));
@@ -23,7 +23,7 @@ console.log(digitUppercase(12345));
 ### 添加千位分隔符 & 移除千位分隔符
 
 ```ts
-import { addThousandSeparator, removeThousandSeparator } from "@handsomewolf/num-utils";
+import { addThousandSeparator, removeThousandSeparator } from "pixiu-number-toolkit";
 
 console.log(addThousandSeparator(1234567));
 // 输出: "1,234,567"
@@ -35,7 +35,7 @@ console.log(removeThousandSeparator("1,234,567"));
 ### 格式化百分比
 
 ```ts
-import { formatPercentage } from "@handsomewolf/num-utils";
+import { formatPercentage } from "pixiu-number-toolkit";
 
 console.log(formatPercentage(0.12345, { decimalPlaces: 2 }));
 // 输出: "12.35%"
@@ -47,7 +47,7 @@ console.log(formatPercentage(0.12345, { decimalPlaces: 2, carrySymbol: false }))
 ### 格式化金额
 
 ```ts
-import { formatCurrencyRenminbi } from "@handsomewolf/num-utils";
+import { formatCurrencyRenminbi } from "pixiu-number-toolkit";
 
 console.log(formatCurrencyRenminbi(12345));
 // 输出: "￥12,345.00"
@@ -56,7 +56,7 @@ console.log(formatCurrencyRenminbi(12345));
 ### 数学运算、单位转换
 
 ```ts
-import { computeExpression, unitConversion } from "@handsomewolf/num-utils";
+import { computeExpression, unitConversion } from "pixiu-number-toolkit";
 
 // 使用computeExpression进行数学运算
 console.log(computeExpression("2 + 3 * 4"));
@@ -85,7 +85,7 @@ console.log(unitConversion(1, "m", "cm", true));
 ### 小数信息、小数位和补零
 
 ```ts
-import { getDecimalInfo, getDecimalPlaces, padZero } from "@handsomewolf/num-utils";
+import { getDecimalInfo, getDecimalPlaces, padZero } from "pixiu-number-toolkit";
 
 // 使用 getDecimalInfo 获取数字的小数信息
 console.log(getDecimalInfo(123.45));
@@ -111,7 +111,7 @@ console.log(padZero(123.45, 4));
 ### 校验
 
 ```ts
-import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "@handsomewolf/num-utils";
+import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "pixiu-number-toolkit";
 
 // 使用 isValidThousandSeparatedNumber 检查字符串是否采用千位分隔格式
 console.log(isValidThousandSeparatedNumber("1,234,567.89"));

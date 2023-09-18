@@ -31,7 +31,7 @@ The `formatPercentage` function is used to format a number into a percentage str
 ## Usage
 
 ```ts
-import { formatPercentage } from "@handsomewolf/num-utils";
+import { formatPercentage } from "pixiu-number-toolkit";
 
 const input = 0.15678;
 const result = formatPercentage(input, { decimalPlaces: 2, carrySymbol: true });

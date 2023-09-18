@@ -1,19 +1,29 @@
 {
-  "name": "@handsomewolf/vue-num-utils",
+  "name": "pixiu-number-toolkit-vue",
   "version": "1.0.0",
   "description": "A collection of number utilities.",
   "keywords": [
     "vue",
-    "num-utils"
+    "number-toolkit"
   ],
   "license": "MIT",
-  "author": "",
-  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HandsomeWolf/num-utils"
+  },
+  "author": "HandsomeWolf <55856773@qq.com> (https://github.com/handsomewolf)",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.mjs",
   "scripts": {
-    "test": "vitest"
+    "build": "tsup"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "pixiu-number-toolkit": "workspace:^"
   },
   "devDependencies": {
     "tsup": "^7.2.0"

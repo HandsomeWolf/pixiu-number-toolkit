@@ -20,9 +20,12 @@ importers:
 
   docs/en-US:
     dependencies:
-      '@handsomewolf/num-utils':
+      pixiu-number-toolkit:
         specifier: workspace:^
         version: link:../../packages/num-utils
+      pixiu-number-toolkit-vue:
+        specifier: workspace:^
+        version: link:../../packages/vue-num-utils
     devDependencies:
       element-plus:
         specifier: ^2.3.12
@@ -36,9 +39,12 @@ importers:
 
   docs/zh-CN:
     dependencies:
-      '@handsomewolf/num-utils':
+      pixiu-number-toolkit:
         specifier: workspace:^
         version: link:../../packages/num-utils
+      pixiu-number-toolkit-vue:
+        specifier: workspace:^
+        version: link:../../packages/vue-num-utils
     devDependencies:
       element-plus:
         specifier: ^2.3.12
@@ -64,6 +70,9 @@ importers:
 
   packages/vue-num-utils:
     dependencies:
+      pixiu-number-toolkit:
+        specifier: workspace:^
+        version: link:../num-utils
       vue:
         specifier: ^3.0.0
         version: 3.3.4

@@ -45,7 +45,7 @@ The `isValidThousandSeparatedNumber` function is used to check if a string is in
 ## Usage
 
 ```ts
-import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "@handsomewolf/num-utils";
+import { isBlank, isNumeric, isValidThousandSeparatedNumber } from "pixiu-number-toolkit";
 
 const value = "123,456";
 const isValid = isValidThousandSeparatedNumber(value);

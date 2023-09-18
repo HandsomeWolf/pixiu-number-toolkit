@@ -2,7 +2,7 @@
 import {ref} from 'vue'
 import { useData } from 'vitepress'
 import { ElInput } from 'element-plus'
-import {formatDecimalForElementPlus,addThousandSeparatorForElementPlus,removeThousandSeparatorForElementPlus} from '@handsomewolf/num-utils';
+import {formatDecimalForElementPlus,addThousandSeparatorForElementPlus,removeThousandSeparatorForElementPlus} from 'pixiu-number-toolkit-vue';
 
 const { site, theme, page, frontmatter } = useData()
 const input1=ref('')
@@ -49,7 +49,7 @@ value：{{ input1 }}
   import {
     addThousandSeparatorForElementPlus,
     removeThousandSeparatorForElementPlus
-  } from '@handsomewolf/num-utils';
+  } from 'pixiu-number-toolkit-vue';
   const input=ref()
 </script>
 <template>
@@ -79,7 +79,7 @@ value：{{ input2 }}
   import {
     addThousandSeparatorForElementPlus,
     removeThousandSeparatorForElementPlus
-  } from '@handsomewolf/num-utils';
+  } from 'pixiu-number-toolkit-vue';
   const input=ref()
 </script>
 <template>
@@ -109,7 +109,7 @@ value：{{ input3 }}
   import {
     addThousandSeparatorForElementPlus,
     removeThousandSeparatorForElementPlus
-  } from '@handsomewolf/num-utils';
+  } from 'pixiu-number-toolkit-vue';
   const input=ref()
 </script>
 <template>
@@ -139,7 +139,7 @@ value：{{ input4 }}
   import {
     addThousandSeparatorForElementPlus,
     formatDecimalForElementPlus
-  } from '@handsomewolf/num-utils';
+  } from 'pixiu-number-toolkit-vue';
   const input=ref()
 </script>
 <template>

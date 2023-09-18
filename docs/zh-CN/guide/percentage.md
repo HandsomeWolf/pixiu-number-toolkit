@@ -31,7 +31,7 @@ function formatPercentage(
 ## 使用
 
 ```ts
-import { formatPercentage } from "@handsomewolf/num-utils";
+import { formatPercentage } from "pixiu-number-toolkit";
 
 const input = 0.15678;
 const result = formatPercentage(input, { decimalPlaces: 2, carrySymbol: true });
