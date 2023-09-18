@@ -1,6 +1,6 @@
 # Quick Start
 
-To get started with num-utils, you need to install it in your project. You can do this by running the following command:
+To get started with pixiu-number-toolkit, you need to install it in your project. You can do this by running the following command:
 
 ```command
 npm install pixiu-number-toolkit

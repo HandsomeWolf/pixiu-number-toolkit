@@ -43,11 +43,3 @@ npm install pixiu-number-toolkit
 ## Contributing
 
 Contributions are welcome. Please submit a pull request or create an issue to contribute to the project.
-
-### 微信支付捐赠
-
-![wechatPay](docs/zh-CN/pic/wechatPay.jpg)
-
-### 支付宝扫码捐赠
-
-![wechatPay](docs/zh-CN/pic/aliPay.jpg)

@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "num-utils"
+  name: "pixiu-number-toolkit"
   text: "A collection of number utilities."
   tagline: "Your ultimate toolkit for number operations"
   actions:
@@ -21,7 +21,7 @@ features:
   - title: Math Operations && Unit Conversion
     icon: ➗
     details: Perform various mathematical operations like addition, subtraction, multiplication, and division.Convert between different units of measurement.
-    
+
   - title: Formatting
     icon: 🎨
     details: Format numbers to different styles, like currency, percentage,thousand separator, etc.
@@ -29,6 +29,4 @@ features:
   - title: Amount to Chinese Uppercase
     icon: 💹
     details: Converts numeric amounts to their Chinese uppercase equivalent, useful for financial applications in Chinese context.
-
 ---
-

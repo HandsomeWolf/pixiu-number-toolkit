@@ -1,6 +1,6 @@
 # 快速开始
 
-开始使用 `num-utils` 之前，需要将其安装到您的项目中。 可以通过运行以下命令来执行此操作：
+开始使用 `pixiu-number-toolkit` 之前，需要将其安装到您的项目中。 可以通过运行以下命令来执行此操作：
 
 ```cmd
 npm install pixiu-number-toolkit

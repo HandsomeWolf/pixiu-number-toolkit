@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "num-utils"
+  name: "pixiu-number-toolkit"
   text: "数字工具集"
   tagline: "终极数字操作工具集"
   actions:

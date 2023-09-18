@@ -22,10 +22,10 @@ importers:
     dependencies:
       pixiu-number-toolkit:
         specifier: workspace:^
-        version: link:../../packages/num-utils
+        version: link:../../packages/pixiu-number-toolkit
       pixiu-number-toolkit-vue:
         specifier: workspace:^
-        version: link:../../packages/vue-num-utils
+        version: link:../../packages/pixiu-number-toolkit-vue
     devDependencies:
       element-plus:
         specifier: ^2.3.12
@@ -41,10 +41,10 @@ importers:
     dependencies:
       pixiu-number-toolkit:
         specifier: workspace:^
-        version: link:../../packages/num-utils
+        version: link:../../packages/pixiu-number-toolkit
       pixiu-number-toolkit-vue:
         specifier: workspace:^
-        version: link:../../packages/vue-num-utils
+        version: link:../../packages/pixiu-number-toolkit-vue
     devDependencies:
       element-plus:
         specifier: ^2.3.12
@@ -56,7 +56,7 @@ importers:
         specifier: ^3.3.4
         version: 3.3.4
 
-  packages/num-utils:
+  packages/pixiu-number-toolkit:
     dependencies:
       mathjs:
         specifier: ^11.11.0
@@ -66,13 +66,13 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0(typescript@5.2.2)
 
-  packages/react-num-utils: {}
+  packages/pixiu-number-toolkit-react: {}
 
-  packages/vue-num-utils:
+  packages/pixiu-number-toolkit-vue:
     dependencies:
       pixiu-number-toolkit:
         specifier: workspace:^
-        version: link:../num-utils
+        version: link:../pixiu-number-toolkit
       vue:
         specifier: ^3.0.0
         version: 3.3.4

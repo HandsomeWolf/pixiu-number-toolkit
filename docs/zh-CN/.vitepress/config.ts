@@ -3,8 +3,8 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "zh-CN",
-  base: "/num-utils/zh-CN/",
-  title: "num-utils",
+  base: "/open_source/pixiu-number-toolkit/zh-CN/",
+  title: "pixiu-number-toolkit",
   head: [
     [
       "script",
@@ -83,7 +83,10 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/HandsomeWolf/num-utils" },
+      {
+        icon: "github",
+        link: "https://github.com/HandsomeWolf/pixiu-number-toolkit",
+      },
     ],
 
     footer: {
