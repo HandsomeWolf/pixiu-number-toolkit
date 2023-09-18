@@ -67,6 +67,10 @@ importers:
       vue:
         specifier: ^3.0.0
         version: 3.3.4
+    devDependencies:
+      tsup:
+        specifier: ^7.2.0
+        version: 7.2.0(typescript@5.2.2)
 
 packages:
 
