@@ -23,6 +23,26 @@ export function isBlank(value: string): boolean {
 }
 
 /**
+ * 判断是否为纯数字
+ * @param value - 待检查的参数
+ * @returns {boolean} 是纯数字时返回 true，否则返回 false
+ */
+export function isNumber(value: string): boolean {
+  const pureNumberRegex = /^\d+$/;
+  return pureNumberRegex.test(value);
+}
+/**
+ * 判断数组中的所有元素是否都是数字
+ * @param {Array} arr - 待检查的数组
+ * @returns {boolean} 如果数组中的所有元素都是数字，返回 true，否则返回 false
+ */
+export function areAllElementsNumbers(array: any[]): boolean {
+  if (array.length === 0) {
+    return false;
+  }
+  return array.every((item) => isNumber(item));
+}
+/**
  * 判断参数是否为数字或字符串数字
  * @param {string | number} value - 待检查的参数
  * @returns {boolean} 是数字或字符串数字时返回 true，否则返回 false
@@ -33,6 +53,17 @@ export function isNumeric(value: string | number): boolean {
     (!Number.isNaN(Number.parseFloat(value as any)) &&
       !Number.isNaN((value as any) - 0));
   return isNumber;
+}
+/**
+ * 判断数组中的所有元素是否都是数字
+ * @param {Array} arr - 待检查的数组
+ * @returns {boolean} 如果数组中的所有元素都是数字，返回 true，否则返回 false
+ */
+export function areAllElementsNumeric(array: any[]): boolean {
+  if (array.length === 0) {
+    return false;
+  }
+  return array.every((item) => isNumeric(item));
 }
 /**
  * 判断是否为身份证号码
