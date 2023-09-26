@@ -46,8 +46,8 @@ npm install pixiu-number-toolkit
 
 ### 微信支付捐赠
 
-![wechatPay](docs/zh-CN/pic/wechatPay.jpg)
+![wechatPay](https://user-images.githubusercontent.com/27292774/270533786-382d8dc9-7d8c-4f41-bb93-bc46a794f241.jpg)
 
 ### 支付宝扫码捐赠
 
-![wechatPay](docs/zh-CN/pic/aliPay.jpg)
+![wechatPay](https://user-images.githubusercontent.com/27292774/270533802-de006392-bd59-4208-ad77-fdc73c851e5e.jpg)
