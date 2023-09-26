@@ -1,5 +1,7 @@
 [README](README.md) | [中文文档](README_zh-CN.md)
 
+<!-- markdownlint-disable-next-line no-inline-html -->
+<img src="https://user-images.githubusercontent.com/27292774/270527737-a6986457-21de-41f6-8874-7bf70f404fec.png" width="180" align="right">
 # pixiu-number-toolkit 文档
 
 pixiu-number-toolkit 是一个用 TypeScript 编写的数字工具集。它提供了一组用于数字转换、财务计算、格式化和数学运算的函数。它还包括 Vue 的 Element Plus 库的实用程序。
