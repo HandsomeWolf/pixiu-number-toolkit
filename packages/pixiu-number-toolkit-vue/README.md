@@ -24,6 +24,7 @@ npm install pixiu-number-toolkit
 | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | [Digit Chinese Uppercase](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/digit-chinese-uppercase.html) | Convert numeric amount to Chinese uppercase                         |
 | [Number To Words](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/number-to-words.html)                 | Convert numeric to word representation in either English or Chinese |
+| [Count To](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/count-to.html)                               | Number Transition Effect                                            |
 | [Math](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/math.html)                                       | Performing various mathematical operations                          |
 | [Thousand Separator](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/thousand-separator.html)           | Add or remove thousand separator                                    |
 | [Percentage](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/percentage.html)                           | Convert number to percentage format                                 |
