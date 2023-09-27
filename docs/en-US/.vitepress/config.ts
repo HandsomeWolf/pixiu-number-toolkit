@@ -51,6 +51,10 @@ export default defineConfig({
               link: "/guide/number-to-words",
             },
             {
+              text: "Number Transition Effect",
+              link: "/guide/count-to",
+            },
+            {
               text: "Math",
               link: "/guide/math",
             },

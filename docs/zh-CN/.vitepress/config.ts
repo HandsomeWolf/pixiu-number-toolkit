@@ -51,6 +51,10 @@ export default defineConfig({
               link: "/guide/number-to-words",
             },
             {
+              text: "数字过渡",
+              link: "/guide/count-to",
+            },
+            {
               text: "数学",
               link: "/guide/math",
             },
