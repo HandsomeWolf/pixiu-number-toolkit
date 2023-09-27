@@ -35,8 +35,8 @@
     "release": "release-it"
   },
   "devDependencies": {
-    "@handsomewolf/eslint-config": "^0.2.1",
+    "@handsomewolf/eslint-config": "^0.2.2",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.4"
+    "vitest": "^0.34.5"
   }
 }

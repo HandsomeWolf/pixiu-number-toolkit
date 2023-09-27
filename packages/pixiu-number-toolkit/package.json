@@ -30,7 +30,7 @@
     "build:watch": "tsup --watch"
   },
   "dependencies": {
-    "mathjs": "^11.11.0"
+    "mathjs": "^11.11.1"
   },
   "devDependencies": {
     "tsup": "^7.2.0"
