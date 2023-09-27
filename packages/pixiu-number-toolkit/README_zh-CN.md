@@ -26,7 +26,7 @@ npm install pixiu-number-toolkit
 | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | [Digit Chinese Uppercase](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/digit-chinese-uppercase.html) | 将数字金额转换为中文大写             |
 | [Number To Words](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/number-to-words.html)                 | 将数字转换为英文或中文的单词表示形式 |
-| [Number To Words](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/count-to.html)                        | 数字过渡效果                         |
+| [Count To](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/count-to.html)                               | 数字过渡效果                         |
 | [Math](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/math.html)                                       | 执行各种数学运算                     |
 | [Thousand Separator](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/thousand-separator.html)           | 添加或删除千位分隔符                 |
 | [Percentage](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/percentage.html)                           | 将数字转换为百分比格式               |
