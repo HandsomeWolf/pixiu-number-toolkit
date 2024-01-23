@@ -1,7 +1,7 @@
-import { type BigNumber, type MathJsStatic, all, create } from "mathjs";
+import { type BigNumber, type MathJsInstance, all, create } from "mathjs";
 import { isValidThousandSeparatedNumber } from "../../index";
 
-export const math: MathJsStatic = create(all, { number: "BigNumber" });
+export const math: MathJsInstance = create(all, { number: "BigNumber" });
 
 interface Parameters {
   [key: string]: number | string | BigNumber;
