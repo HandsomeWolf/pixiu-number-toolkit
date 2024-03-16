@@ -15,8 +15,8 @@
     "pixiu-number-toolkit-vue": "workspace:^"
   },
   "devDependencies": {
-    "element-plus": "^2.3.12",
-    "vitepress": "1.0.0-rc.10",
-    "vue": "^3.3.4"
+    "element-plus": "^2.6.1",
+    "vitepress": "1.0.0-rc.45",
+    "vue": "^3.4.21"
   }
 }

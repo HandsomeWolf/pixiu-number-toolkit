@@ -26,6 +26,6 @@
     "pixiu-number-toolkit": "workspace:^"
   },
   "devDependencies": {
-    "tsup": "^8.0.1"
+    "tsup": "^8.0.2"
   }
 }
