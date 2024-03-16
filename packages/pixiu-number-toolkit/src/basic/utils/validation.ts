@@ -34,6 +34,9 @@ import {
   UPPERCASE_ENGLISH_LETTER_REGEX,
   URL_REGEX,
   VALID_ACCOUNT_REGEX,
+  NEW_ENERGY_LICENSE_PLATE_REGEX,
+  NON_NEW_ENERGY_LICENSE_PLATE_REGEX,
+  COMBINED_LICENSE_PLATE_REGEX
 } from "../../constants/regex";
 
 /**
@@ -392,4 +395,30 @@ export function isValidChineseIdCard(id: string) {
   }
 
   return validate[sum % 11].toUpperCase() === idArray[17].toUpperCase();
+}
+/**
+ * 判断是否为有效的新能源车牌号
+ * @param value - 待检查的车牌号
+ * @returns {boolean} 是有效的新能源车牌号时返回 true，否则返回 false
+ */
+export function isValidNewEnergyLicensePlate(value: string): boolean {
+  return NEW_ENERGY_LICENSE_PLATE_REGEX.test(value);
+}
+
+/**
+ * 判断是否为有效的非新能源车牌号
+ * @param value - 待检查的车牌号
+ * @returns {boolean} 是有效的非新能源车牌号时返回 true，否则返回 false
+ */
+export function isValidNonNewEnergyLicensePlate(value: string): boolean {
+  return NON_NEW_ENERGY_LICENSE_PLATE_REGEX.test(value);
+}
+
+/**
+ * 判断是否为有效的车牌号（包括新能源和非新能源）
+ * @param value - 待检查的车牌号
+ * @returns {boolean} 是有效的车牌号时返回 true，否则返回 false
+ */
+export function isValidLicensePlate(value: string): boolean {
+  return COMBINED_LICENSE_PLATE_REGEX.test(value);
 }

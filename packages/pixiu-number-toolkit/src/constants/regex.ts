@@ -29,7 +29,7 @@ export const NON_NEGATIVE_FLOAT_REGEX = /^\d+(\.\d+)?$/; // non-negative float(�
 export const EMAIL_REGEX =
   /^(([^\s"(),.:;<>@[\\\]]+(\.[^\s"(),.:;<>@[\\\]]+)*)|(".+"))@((\[(?:\d{1,3}\.){3}\d{1,3}])|(([\dA-Za-z-]+\.)+[A-Za-z]{2,}))$/; // email(电子邮件)
 export const IP_REGEX =
-  /^((https?|ftp|file):\/\/)?((\d{1,3}\.){3}\d{1,3}|localhost)(:\d{1,5})?(\/[\w.-]*)*\/?$/; // ip(网址)
+  /^((https?|ftp|file):\/\/)?((\d{1,3}\.){3}\d{1,3}|localhost)(:\d{1,5})?(\/[\w.-]*)*$/; // ip(网址)
 export const SUBNET_MASK_REGEX =
   /^(254|252|248|240|224|192|128)\.0\.0\.0|255\.(254|252|248|240|224|192|128|0)\.0\.0|255\.255\.(254|252|248|240|224|192|128|0)\.0|255\.255\.255\.(255|254|252|248|240|224|192|128|0)$/; // subnet mask(子网掩码)
 
@@ -70,6 +70,16 @@ export const CHINESE_TAX_NUMBER_REGEX = /^[\dA-Za-z]{15,20}$/; // chinese tax nu
 
 // account is valid (starts with a letter, allows 5-16 bytes, allows combination of letters, numbers, and underscores)
 export const VALID_ACCOUNT_REGEX = /^[A-Za-z]\w{4,15}$/;
+
+// New energy vehicle license plate(新能源车牌号)
+export const NEW_ENERGY_LICENSE_PLATE_REGEX = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z](([DF]((?![IO])[a-zA-Z0-9](?![IO]))[0-9]{4})|([0-9]{5}[DF]))$/;
+
+// Non-new energy vehicle license plate(非新能源车牌号)
+export const NON_NEW_ENERGY_LICENSE_PLATE_REGEX = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]$/;
+
+// Combined, for both new energy and non-new energy vehicle license plates(联合新能源和非新能源车牌号)
+export const COMBINED_LICENSE_PLATE_REGEX = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4,5}[A-HJ-NP-Z0-9挂学警港澳]$/;
+
 
 // chinese characters
 export const CHINESE_CHARACTERS_REGEX =
