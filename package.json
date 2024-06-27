@@ -32,7 +32,8 @@
   "scripts": {
     "test": "jest",
     "build": "tsup",
-    "build:watch": "tsup --watch"
+    "build:watch": "tsup --watch",
+    "lint": "eslint --fix --ext .ts src/**/*.ts"
   },
   "dependencies": {
     "mathjs": "^13.0.0"
