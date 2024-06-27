@@ -1,10 +1,10 @@
 // ------------------------ converter ------------------------
 
 // digit-uppercase (数字大写)
-export { digitUppercase } from "./basic/converter/digit-uppercase";
+export { digitUppercase } from './basic/converter/digit-uppercase';
 
 // number to words or Chinese (数字转换为英文单词或中文汉字)
-export { numberToWords } from "./basic/converter/number-to-words";
+export { numberToWords } from './basic/converter/number-to-words';
 
 // ------------------------ finance ------------------------
 
@@ -14,12 +14,13 @@ export {
   calculateNetAmount,
   calculateTaxAmount,
   calculateTaxRate,
-} from "./basic/finance/expressions";
+} from './basic/finance/expressions';
 // Finance Sequences (财务序列)
+
 export {
   arithmeticSequence,
   geometricSequence,
-} from "./basic/finance/sequence";
+} from './basic/finance/sequence';
 
 // ------------------------ formatter ------------------------
 
@@ -27,21 +28,21 @@ export {
 export {
   addThousandSeparator,
   removeThousandSeparator,
-} from "./basic/formatter/thousand-separator";
+} from './basic/formatter/thousand-separator';
 
 // currency (货币)
-export { formatCurrencyRenminbi } from "./basic/formatter/currency-renminbi";
+export { formatCurrencyRenminbi } from './basic/formatter/currency-renminbi';
 
 // percentage (百分比)
-export { formatPercentage } from "./basic/formatter/percentage";
+export { formatPercentage } from './basic/formatter/percentage';
 
 // ------------------------ math ------------------------
 
 // computeExpression (计算表达式)
-export { computeExpression } from "./basic/math/compute-expression";
+export { computeExpression } from './basic/math/compute-expression';
 
 // unitConversion (单位换算)
-export { unitConversion } from "./basic/math/unit-conversion";
+export { unitConversion } from './basic/math/unit-conversion';
 
 // math function (数学函数)
 export {
@@ -62,7 +63,7 @@ export {
   largerEq,
   smaller,
   smallerEq,
-} from "./basic/math/math";
+} from './basic/math/math';
 
 // ------------------------ utils ------------------------
 
@@ -108,33 +109,18 @@ export {
   isValidChineseIdCard,
   isValidNewEnergyLicensePlate,
   isValidNonNewEnergyLicensePlate,
-  isValidLicensePlate
-} from "./basic/utils/validation";
+  isValidLicensePlate,
+} from './basic/utils/validation';
 
 // getDecimalInfo (获取小数信息), getDecimalPlaces (获取小数位数), padZero (补零)
 export {
   getDecimalInfo,
   getDecimalPlaces,
   padZero,
-} from "./basic/utils/common";
+} from './basic/utils/common';
 
 // id-card (身份证)
-export { parseIdCard } from "./basic/utils/id-card";
+export { parseIdCard } from './basic/utils/id-card';
 
 // animate number change (数字变化动画)
-export { countTo } from "./basic/animate/count-to";
-
-// ------------------------ Element Plus ------------------------
-
-// // thousand-separator for Element Plus input (el-input的千位分隔符)
-// export {
-//   formatDecimalForElementPlus,
-//   addThousandSeparatorForElementPlus,
-//   removeThousandSeparatorForElementPlus,
-// } from "./vue/element-plus/utils/formatter";
-
-// // Validation rule for Element Plus form (Element Plus表单校验规则)
-// export { isInRangeForElementPlus } from "./vue/element-plus/validation/range/index";
-
-// // Summary row for Element Plus table (Element Plus表格尾合计行)
-// export { summaryRowForElementPlus } from "./vue/element-plus/utils/summary-row";
+export { countTo } from './basic/animate/count-to';
