@@ -2,5 +2,8 @@
   "root": true,
   "extends": [
     "eslint-config-ali/typescript"
-  ]
+  ],
+  "rules": {
+    "import/no-cycle": "off"
+  }
 }
