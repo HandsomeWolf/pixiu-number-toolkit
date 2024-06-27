@@ -1,4 +1,6 @@
 {
-    "root": true,
-    "extends": ["@handsomewolf/eslint-config"]
-  }
+  "root": true,
+  "extends": [
+    "eslint-config-ali/typescript"
+  ]
+}

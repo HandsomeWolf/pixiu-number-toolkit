@@ -1,5 +1,7 @@
 [README](README.md) | [中文文档](README_zh-CN.md)
 
+<!-- markdownlint-disable-next-line no-inline-html -->
+<img src="https://user-images.githubusercontent.com/27292774/270527737-a6986457-21de-41f6-8874-7bf70f404fec.png" width="180" align="right">
 # pixiu-number-toolkit 文档
 
 pixiu-number-toolkit 是一个用 TypeScript 编写的数字工具集。它提供了一组用于数字转换、财务计算、格式化和数学运算的函数。它还包括 Vue 的 Element Plus 库的实用程序。
@@ -24,6 +26,7 @@ npm install pixiu-number-toolkit
 | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | [Digit Chinese Uppercase](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/digit-chinese-uppercase.html) | 将数字金额转换为中文大写             |
 | [Number To Words](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/number-to-words.html)                 | 将数字转换为英文或中文的单词表示形式 |
+| [Count To](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/count-to.html)                               | 数字过渡效果                         |
 | [Math](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/math.html)                                       | 执行各种数学运算                     |
 | [Thousand Separator](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/thousand-separator.html)           | 添加或删除千位分隔符                 |
 | [Percentage](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/percentage.html)                           | 将数字转换为百分比格式               |

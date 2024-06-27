@@ -1,5 +1,7 @@
 [README](README.md) | [中文文档](README_zh-CN.md)
 
+<!-- markdownlint-disable-next-line no-inline-html -->
+<img src="https://user-images.githubusercontent.com/27292774/270527737-a6986457-21de-41f6-8874-7bf70f404fec.png" width="180" align="right">
 # pixiu-number-toolkit Documentation
 
 pixiu-number-toolkit is a collection of number utilities written in TypeScript. It provides a set of functions for number conversion, finance calculations, formatting, and math operations. It also includes utilities for Vue's Element Plus library.
@@ -24,6 +26,7 @@ npm install pixiu-number-toolkit
 | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | [Digit Chinese Uppercase](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/digit-chinese-uppercase.html) | Convert numeric amount to Chinese uppercase                         |
 | [Number To Words](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/number-to-words.html)                 | Convert numeric to word representation in either English or Chinese |
+| [Count To](https://www.muchappy.com/open_source/pixiu-number-toolkit/zh-CN/guide/count-to.html)                               | Number Transition Effect                                            |
 | [Math](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/math.html)                                       | Performing various mathematical operations                          |
 | [Thousand Separator](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/thousand-separator.html)           | Add or remove thousand separator                                    |
 | [Percentage](https://www.muchappy.com/open_source/pixiu-number-toolkit/en-US/guide/percentage.html)                           | Convert number to percentage format                                 |
