@@ -3,7 +3,16 @@
   "extends": [
     "eslint-config-ali/typescript"
   ],
+  "overrides": [
+    {
+      "files": ["tests/**/*"],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "rules": {
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    "no-param-reassign": "off"
   }
 }

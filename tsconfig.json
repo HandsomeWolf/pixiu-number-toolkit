@@ -10,5 +10,5 @@
     "baseUrl": "./",
     "lib": ["es2021", "dom"]
   },
-  "exclude": ["./dist", "./example", "./tests"]
+  "exclude": ["./dist", "./example"]
 }
