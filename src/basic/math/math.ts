@@ -1,34 +1,34 @@
-import { type BigNumber } from "mathjs";
-import { math } from "../utils/math";
-import { isNumeric } from "../utils/validation";
+import { type BigNumber } from 'mathjs';
+import { math } from '../utils/math';
+import { isNumeric } from '../utils/validation';
 
 // Check parameters (检查参数)
-function checkParameters(values: (number | string)[], length?: number): void {
+function checkParameters(values: Array<number | string>, length?: number): void {
   if (length !== undefined && values.length < length) {
     throw new TypeError(
-      "Invalid parameter: at least two parameters are required",
+      'Invalid parameter: at least two parameters are required',
     );
   }
   for (const item of values) {
     if (!isNumeric(item)) {
       throw new TypeError(
-        "Invalid parameter: parameter must be a number or a string number",
+        'Invalid parameter: parameter must be a number or a string number',
       );
     }
   }
 }
 
-function arrayToBigNumber(values: (number | string)[]): BigNumber[] {
+function arrayToBigNumber(values: Array<number | string>): BigNumber[] {
   return values.map((value) => math.bignumber(value));
 }
 
 // ------------------------ Arithmetic (算术) ------------------------
 
-export function add(...values: (number | string)[]): number {
+export function add(...values: Array<number | string>): number {
   checkParameters(values, 2);
   return Number(math.add(...arrayToBigNumber(values)));
 }
-export function subtract(...values: (number | string)[]): number {
+export function subtract(...values: Array<number | string>): number {
   checkParameters(values, 2);
   const bigNumberValues = arrayToBigNumber(values);
   let result = bigNumberValues[0];
@@ -37,11 +37,11 @@ export function subtract(...values: (number | string)[]): number {
   }
   return Number(result);
 }
-export function multiply(...values: (number | string)[]): number {
+export function multiply(...values: Array<number | string>): number {
   checkParameters(values, 2);
   return Number(math.multiply(...arrayToBigNumber(values)));
 }
-export function divide(...values: (number | string)[]): number {
+export function divide(...values: Array<number | string>): number {
   checkParameters(values, 2);
   const bigNumberValues = arrayToBigNumber(values);
   let result = bigNumberValues[0];
@@ -53,15 +53,15 @@ export function divide(...values: (number | string)[]): number {
 export function modulo(value: number, divisor: number): number {
   if (!isNumeric(value) || !isNumeric(divisor)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.mod(value, divisor);
 }
-export function round(value: number, decimalPlaces: number = 0): number {
+export function round(value: number, decimalPlaces = 0): number {
   if (!isNumeric(value) || !isNumeric(decimalPlaces)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.round(value, decimalPlaces);
@@ -69,7 +69,7 @@ export function round(value: number, decimalPlaces: number = 0): number {
 export function ceil(value: number): number {
   if (!isNumeric(value)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.ceil(value);
@@ -77,7 +77,7 @@ export function ceil(value: number): number {
 export function floor(value: number): number {
   if (!isNumeric(value)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.floor(value);
@@ -104,14 +104,14 @@ export function randomInt(min: number, max?: number): number {
   if (max === undefined) {
     if (!isNumeric(min)) {
       throw new TypeError(
-        "Invalid parameter: parameter must be a number or a string number",
+        'Invalid parameter: parameter must be a number or a string number',
       );
     }
     return math.randomInt(min);
   }
   if (!isNumeric(min) || !isNumeric(max)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.randomInt(min, max);
@@ -121,7 +121,7 @@ export function randomInt(min: number, max?: number): number {
 export function equal(x: number | string, y: number | string): boolean {
   if (!isNumeric(x) || !isNumeric(y)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.equal(x, y) as boolean;
@@ -129,7 +129,7 @@ export function equal(x: number | string, y: number | string): boolean {
 export function unequal(x: number | string, y: number | string): boolean {
   if (!isNumeric(x) || !isNumeric(y)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.unequal(x, y) as boolean;
@@ -137,7 +137,7 @@ export function unequal(x: number | string, y: number | string): boolean {
 export function larger(x: number | string, y: number | string): boolean {
   if (!isNumeric(x) || !isNumeric(y)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.larger(x, y) as boolean;
@@ -145,7 +145,7 @@ export function larger(x: number | string, y: number | string): boolean {
 export function largerEq(x: number | string, y: number | string): boolean {
   if (!isNumeric(x) || !isNumeric(y)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.largerEq(x, y) as boolean;
@@ -153,7 +153,7 @@ export function largerEq(x: number | string, y: number | string): boolean {
 export function smaller(x: number | string, y: number | string): boolean {
   if (!isNumeric(x) || !isNumeric(y)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.smaller(x, y) as boolean;
@@ -161,7 +161,7 @@ export function smaller(x: number | string, y: number | string): boolean {
 export function smallerEq(x: number | string, y: number | string): boolean {
   if (!isNumeric(x) || !isNumeric(y)) {
     throw new TypeError(
-      "Invalid parameter: parameter must be a number or a string number",
+      'Invalid parameter: parameter must be a number or a string number',
     );
   }
   return math.smallerEq(x, y) as boolean;

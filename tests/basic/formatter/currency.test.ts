@@ -1,8 +1,8 @@
-import {describe, it, expect} from '@jest/globals'
-import { formatCurrencyRenminbi } from "../../../src";
+import { describe, it, expect } from '@jest/globals';
+import { formatCurrencyRMB } from '../../../src';
 
-describe("formatter", () => {
-  it("formatCurrencyRenminbi", () => {
-    expect(formatCurrencyRenminbi(123_456_789)).toBe("¥123,456,789.00");
+describe('formatter', () => {
+  it('formatCurrencyRMB', () => {
+    expect(formatCurrencyRMB(123_456_789)).toBe('¥123,456,789.00');
   });
 });

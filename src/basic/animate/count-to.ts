@@ -1,4 +1,4 @@
-import { computeExpression } from "../math/compute-expression";
+import { computeExpression } from '../math/compute-expression';
 
 export function countTo(
   start: number,

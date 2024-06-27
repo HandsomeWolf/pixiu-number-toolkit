@@ -9,6 +9,7 @@ import {
   CHINESE_REGEX,
   CHINESE_TAX_NUMBER_REGEX,
   CHINESE_TEL_REGEX,
+  COMBINED_LICENSE_PLATE_REGEX,
   DECIMAL_SCIENTIFIC_NOTATION_REGEX,
   EMAIL_REGEX,
   ENGLISH_LETTER_REGEX,
@@ -19,8 +20,10 @@ import {
   MAC_ADDRESS_REGEX,
   NEGATIVE_FLOAT_REGEX,
   NEGATIVE_INTEGER_REGEX,
+  NEW_ENERGY_LICENSE_PLATE_REGEX,
   NON_NEGATIVE_FLOAT_REGEX,
   NON_NEGATIVE_INTEGER_REGEX,
+  NON_NEW_ENERGY_LICENSE_PLATE_REGEX,
   NON_POSITIVE_FLOAT_REGEX,
   NON_POSITIVE_INTEGER_REGEX,
   NUMBER_CURRENCY_REGEX,
@@ -34,10 +37,7 @@ import {
   UPPERCASE_ENGLISH_LETTER_REGEX,
   URL_REGEX,
   VALID_ACCOUNT_REGEX,
-  NEW_ENERGY_LICENSE_PLATE_REGEX,
-  NON_NEW_ENERGY_LICENSE_PLATE_REGEX,
-  COMBINED_LICENSE_PLATE_REGEX
-} from "../../constants/regex";
+} from '../../constants/regex';
 
 /**
  *  判断是否为千分位格式
@@ -67,8 +67,8 @@ export function isNumber(value: string): boolean {
 }
 /**
  * 判断数组中的所有元素是否都是数字
- * @param {Array} arr - 待检查的数组
  * @returns {boolean} 如果数组中的所有元素都是数字，返回 true，否则返回 false
+ * @param array
  */
 export function areAllElementsNumbers(array: any[]): boolean {
   if (array.length === 0) {
@@ -82,16 +82,14 @@ export function areAllElementsNumbers(array: any[]): boolean {
  * @returns {boolean} 是数字或字符串数字时返回 true，否则返回 false
  */
 export function isNumeric(value: string | number): boolean {
-  const isNumber =
-    (!Number.isNaN(value) && typeof value === "number") ||
+  return (!Number.isNaN(value) && typeof value === 'number') ||
     (!Number.isNaN(Number.parseFloat(value as any)) &&
       !Number.isNaN((value as any) - 0));
-  return isNumber;
 }
 /**
  * 判断数组中的所有元素是否都是数字
- * @param {Array} arr - 待检查的数组
  * @returns {boolean} 如果数组中的所有元素都是数字，返回 true，否则返回 false
+ * @param array
  */
 export function areAllElementsNumeric(array: any[]): boolean {
   if (array.length === 0) {
@@ -386,12 +384,12 @@ export function isValidChineseIdCard(id: string) {
   }
 
   const weight = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
-  const validate = ["1", "0", "X", "9", "8", "7", "6", "5", "4", "3", "2"];
+  const validate = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'];
   const idArray = [...id];
   let sum = 0;
 
   for (let index = 0; index < 17; index++) {
-    sum += Number.parseInt(idArray[index]) * weight[index];
+    sum += Number.parseInt(idArray[index], 10) * weight[index];
   }
 
   return validate[sum % 11].toUpperCase() === idArray[17].toUpperCase();

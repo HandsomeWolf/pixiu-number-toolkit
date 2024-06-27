@@ -1,5 +1,5 @@
-import { addThousandSeparator, padZero } from "../../index";
-import { convertToBigNumbers, math } from "../utils/math";
+import { addThousandSeparator, padZero } from '../../index';
+import { convertToBigNumbers, math } from '../utils/math';
 
 interface ComputeExpressionOptions {
   parameters?: NumberDictionary;
@@ -12,7 +12,7 @@ export function computeExpression(
   options: ComputeExpressionOptions = {},
 ): string {
   let result;
-  const formulaResult = formula.replaceAll(",", "");
+  const formulaResult = formula.replaceAll(',', '');
 
   // Check if parameters are provided (检查是否提供了参数)
   result =

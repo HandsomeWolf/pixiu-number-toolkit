@@ -31,7 +31,7 @@ export {
 } from './basic/formatter/thousand-separator';
 
 // currency (货币)
-export { formatCurrencyRenminbi } from './basic/formatter/currency-renminbi';
+export { formatCurrencyRMB } from './basic/formatter/currency-renminbi';
 
 // percentage (百分比)
 export { formatPercentage } from './basic/formatter/percentage';

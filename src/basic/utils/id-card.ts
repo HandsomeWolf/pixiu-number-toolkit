@@ -1,4 +1,4 @@
-import { isValidChineseIdCard } from "./validation";
+import { isValidChineseIdCard } from './validation';
 
 export interface IdCardInfo {
   /**
@@ -22,9 +22,9 @@ export interface IdCardInfo {
 export function parseIdCard(id: string): IdCardInfo {
   if (!isValidChineseIdCard(id)) {
     return {
-      region: "",
-      birthdate: "",
-      gender: "",
+      region: '',
+      birthdate: '',
+      gender: '',
       valid: false,
     };
   }
@@ -33,7 +33,7 @@ export function parseIdCard(id: string): IdCardInfo {
     12,
     14,
   )}`;
-  const gender = Number.parseInt(id.slice(14, 17)) % 2 === 0 ? "女" : "男";
+  const gender = Number.parseInt(id.slice(14, 17), 10) % 2 === 0 ? '女' : '男';
   const region = regionCode;
 
   return {

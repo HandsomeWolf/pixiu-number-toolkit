@@ -32,7 +32,7 @@ export interface DecimalInfo {
  */
 export const getDecimalInfo = (value: number): DecimalInfo => {
   const valueString = value.toString();
-  const [integerPart, decimalPart = ""] = valueString.split(".");
+  const [integerPart, decimalPart = ''] = valueString.split('.');
   const decimalIndex = integerPart.length;
   const decimalLength = decimalPart.length;
   const integerLength = integerPart.length;
@@ -64,15 +64,16 @@ export const getDecimalPlaces = (value: number): number => {
  * 为数字填充零
  * @param value - The number to be padded (需要填充的数字)
  * @param decimalLength - The number of decimal places (小数位数)
- * @returns If no decimal places are specified, return the original number string; otherwise, return the padded number string
+ * @returns If no decimal places are specified, return the original number string;
+ *          otherwise, return the padded number string
  *          如果没有指定小数位数，返回原数字字符串；否则，返回填充后的数字字符串
  */
-export const padZero = (value: number, decimalLength: number = 0): string => {
+export const padZero = (value: number, decimalLength = 0): string => {
   const { valueString, decimalLength: currentDecimalPlaces } =
     getDecimalInfo(value);
   if (currentDecimalPlaces < decimalLength) {
     const zeroCount = decimalLength - currentDecimalPlaces;
-    return `${valueString}${currentDecimalPlaces === 0 ? "." : ""}${"0".repeat(
+    return `${valueString}${currentDecimalPlaces === 0 ? '.' : ''}${'0'.repeat(
       zeroCount,
     )}`;
   }

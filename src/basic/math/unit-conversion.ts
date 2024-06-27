@@ -1,4 +1,5 @@
-import { math } from "../utils/math";
+import { math } from '../utils/math';
+
 export function unitConversion(
   value: number,
   fromUnit: string,

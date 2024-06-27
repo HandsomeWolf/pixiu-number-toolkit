@@ -25,11 +25,17 @@ export const NEGATIVE_FLOAT_REGEX = /^-\d+\.\d+$/; // negative float(负浮点�
 export const NON_POSITIVE_FLOAT_REGEX = /^((-\d+\.\d+)|(0+(\.0+)?))$/; // non-positive float(非正浮点数)
 export const NON_NEGATIVE_FLOAT_REGEX = /^\d+(\.\d+)?$/; // non-negative float(非负浮点数)
 
+// string
+export const NON_SPECIAL_CHARACTERS = /^[^!@#$%^&*()_+\-=\[\]{};:"|,.<>\/?]*$/; // eslint-disable-line no-useless-escape
+
+
 // other
+export const EMOJI_REGEX = /(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]/;
 export const EMAIL_REGEX =
   /^(([^\s"(),.:;<>@[\\\]]+(\.[^\s"(),.:;<>@[\\\]]+)*)|(".+"))@((\[(?:\d{1,3}\.){3}\d{1,3}])|(([\dA-Za-z-]+\.)+[A-Za-z]{2,}))$/; // email(电子邮件)
 export const IP_REGEX =
   /^((https?|ftp|file):\/\/)?((\d{1,3}\.){3}\d{1,3}|localhost)(:\d{1,5})?(\/[\w.-]*)*$/; // ip(网址)
+export const IPV4_REGEX = /^(([01]?\d\d?|2[0-4]\d|25[0-5])((:([1-9]\d{0,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$|\.(?!$))){4}/;
 export const SUBNET_MASK_REGEX =
   /^(254|252|248|240|224|192|128)\.0\.0\.0|255\.(254|252|248|240|224|192|128|0)\.0\.0|255\.255\.(254|252|248|240|224|192|128|0)\.0|255\.255\.255\.(255|254|252|248|240|224|192|128|0)$/; // subnet mask(子网掩码)
 
@@ -68,7 +74,8 @@ export const CHINESE_BANK_CARD_REGEX = /^[1-9]\d{9,29}$/; // chinese bank card(�
 
 export const CHINESE_TAX_NUMBER_REGEX = /^[\dA-Za-z]{15,20}$/; // chinese tax number(中国税号)
 
-// account is valid (starts with a letter, allows 5-16 bytes, allows combination of letters, numbers, and underscores)
+// account is valid
+// starts with a letter, allows 5-16 bytes, allows combination of letters, numbers, and underscores
 export const VALID_ACCOUNT_REGEX = /^[A-Za-z]\w{4,15}$/;
 
 // New energy vehicle license plate(新能源车牌号)

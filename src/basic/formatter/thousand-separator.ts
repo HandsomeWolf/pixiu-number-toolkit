@@ -1,8 +1,8 @@
 import {
   REMOVE_THOUSAND_SEPARATOR_REGEX,
   THOUSAND_SEPARATOR_REGEX,
-} from "../../constants/regex";
-import { isValidThousandSeparatedNumber } from "../utils/validation";
+} from '../../constants/regex';
+import { isValidThousandSeparatedNumber } from '../utils/validation';
 
 /**
  *  转换为千分位格式
@@ -16,14 +16,14 @@ export function addThousandSeparator(
   value: string | number,
   asString = false,
 ): IOType {
-  if (value === null || value === undefined || value === 0 || value === "") {
+  if (value === null || value === undefined || value === 0 || value === '') {
     return asString ? String(value) : value;
   }
 
-  const [integerPart, decimalPart] = String(value).split(".");
+  const [integerPart, decimalPart] = String(value).split('.');
   const formattedIntegerPart = integerPart.replaceAll(
     THOUSAND_SEPARATOR_REGEX,
-    ",",
+    ',',
   );
 
   return decimalPart
@@ -34,6 +34,7 @@ export function addThousandSeparator(
 /**
  *  移除千分位格式
  * @param input 要移除千分位格式的字符串数字
+ * @param defaultReturn
  * @returns 如果input为数字或字符串，返回移除千分位格式后的数字；
  *          如果input为null或undefined或空字符串，返回0。
  */
@@ -42,9 +43,9 @@ export function removeThousandSeparator(
   defaultReturn?: any,
 ): IOType {
   const getDefaultReturn = (result: IOType) =>
-    defaultReturn === undefined ? result : defaultReturn;
+    (defaultReturn === undefined ? result : defaultReturn);
 
-  if (input === null || input === undefined || input === "") {
+  if (input === null || input === undefined || input === '') {
     console.warn(`removeThousandSeparator: parameter is ${input}`);
     return getDefaultReturn(input);
   }
@@ -55,11 +56,11 @@ export function removeThousandSeparator(
     );
   }
 
-  if (typeof input === "number") {
+  if (typeof input === 'number') {
     return input;
   }
 
-  const result = input.replaceAll(REMOVE_THOUSAND_SEPARATOR_REGEX, "");
+  const result = input.replaceAll(REMOVE_THOUSAND_SEPARATOR_REGEX, '');
 
-  return result === "" ? getDefaultReturn(result) : Number(result);
+  return result === '' ? getDefaultReturn(result) : Number(result);
 }
