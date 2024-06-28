@@ -1,5 +1,6 @@
 import { addThousandSeparator, padZero } from '../../index';
 import { convertToBigNumbers, math } from '../utils/math';
+import { NumberDictionary } from '../../../types/common';
 
 interface ComputeExpressionOptions {
   parameters?: NumberDictionary;

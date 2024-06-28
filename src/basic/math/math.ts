@@ -1,6 +1,6 @@
 import { type BigNumber } from 'mathjs';
 import { math } from '../utils/math';
-import { isNumeric } from '../utils/validation';
+import { isValidNumeric } from '../utils/validation';
 
 // Check parameters (检查参数)
 function checkParameters(values: Array<number | string>, length?: number): void {
@@ -10,7 +10,7 @@ function checkParameters(values: Array<number | string>, length?: number): void 
     );
   }
   for (const item of values) {
-    if (!isNumeric(item)) {
+    if (!isValidNumeric(item)) {
       throw new TypeError(
         'Invalid parameter: parameter must be a number or a string number',
       );
@@ -51,7 +51,7 @@ export function divide(...values: Array<number | string>): number {
   return Number(result);
 }
 export function modulo(value: number, divisor: number): number {
-  if (!isNumeric(value) || !isNumeric(divisor)) {
+  if (!isValidNumeric(value) || !isValidNumeric(divisor)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -59,7 +59,7 @@ export function modulo(value: number, divisor: number): number {
   return math.mod(value, divisor);
 }
 export function round(value: number, decimalPlaces = 0): number {
-  if (!isNumeric(value) || !isNumeric(decimalPlaces)) {
+  if (!isValidNumeric(value) || !isValidNumeric(decimalPlaces)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -67,7 +67,7 @@ export function round(value: number, decimalPlaces = 0): number {
   return math.round(value, decimalPlaces);
 }
 export function ceil(value: number): number {
-  if (!isNumeric(value)) {
+  if (!isValidNumeric(value)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -75,7 +75,7 @@ export function ceil(value: number): number {
   return math.ceil(value);
 }
 export function floor(value: number): number {
-  if (!isNumeric(value)) {
+  if (!isValidNumeric(value)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -102,14 +102,14 @@ export function random(min?: number, max?: number): number {
 }
 export function randomInt(min: number, max?: number): number {
   if (max === undefined) {
-    if (!isNumeric(min)) {
+    if (!isValidNumeric(min)) {
       throw new TypeError(
         'Invalid parameter: parameter must be a number or a string number',
       );
     }
     return math.randomInt(min);
   }
-  if (!isNumeric(min) || !isNumeric(max)) {
+  if (!isValidNumeric(min) || !isValidNumeric(max)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -119,7 +119,7 @@ export function randomInt(min: number, max?: number): number {
 
 // ------------------------ Relational (关系) ------------------------
 export function equal(x: number | string, y: number | string): boolean {
-  if (!isNumeric(x) || !isNumeric(y)) {
+  if (!isValidNumeric(x) || !isValidNumeric(y)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -127,7 +127,7 @@ export function equal(x: number | string, y: number | string): boolean {
   return math.equal(x, y) as boolean;
 }
 export function unequal(x: number | string, y: number | string): boolean {
-  if (!isNumeric(x) || !isNumeric(y)) {
+  if (!isValidNumeric(x) || !isValidNumeric(y)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -135,7 +135,7 @@ export function unequal(x: number | string, y: number | string): boolean {
   return math.unequal(x, y) as boolean;
 }
 export function larger(x: number | string, y: number | string): boolean {
-  if (!isNumeric(x) || !isNumeric(y)) {
+  if (!isValidNumeric(x) || !isValidNumeric(y)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -143,7 +143,7 @@ export function larger(x: number | string, y: number | string): boolean {
   return math.larger(x, y) as boolean;
 }
 export function largerEq(x: number | string, y: number | string): boolean {
-  if (!isNumeric(x) || !isNumeric(y)) {
+  if (!isValidNumeric(x) || !isValidNumeric(y)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -151,7 +151,7 @@ export function largerEq(x: number | string, y: number | string): boolean {
   return math.largerEq(x, y) as boolean;
 }
 export function smaller(x: number | string, y: number | string): boolean {
-  if (!isNumeric(x) || !isNumeric(y)) {
+  if (!isValidNumeric(x) || !isValidNumeric(y)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );
@@ -159,7 +159,7 @@ export function smaller(x: number | string, y: number | string): boolean {
   return math.smaller(x, y) as boolean;
 }
 export function smallerEq(x: number | string, y: number | string): boolean {
-  if (!isNumeric(x) || !isNumeric(y)) {
+  if (!isValidNumeric(x) || !isValidNumeric(y)) {
     throw new TypeError(
       'Invalid parameter: parameter must be a number or a string number',
     );

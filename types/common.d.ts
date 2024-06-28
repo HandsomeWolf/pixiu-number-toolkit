@@ -1,8 +1,8 @@
-interface NumberDictionary {
+export interface NumberDictionary {
   [key: string]: number;
 }
 
-type IOType = number | string | null | undefined;
+export type IOType = number | string | null | undefined;
 
 export interface RegexOptions {
   // 是否进行全字符串匹配。为true时，使边界字符`^`和`$`可以匹配文本的开始和结束，以及多行文本中的行开始和行结束。

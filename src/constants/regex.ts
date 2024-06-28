@@ -32,13 +32,13 @@ export const REGEX = {
   // float(浮点数)
   FLOAT: /-?\d+\.\d+/,
   // positive float(正浮点数)
-  POSITIVE_FLOAT_REGEX: /\d+\.\d+/,
+  POSITIVE_FLOAT: /\d+\.\d+/,
   // negative float(负浮点数)
-  NEGATIVE_FLOAT_REGEX: /-\d+\.\d+/,
+  NEGATIVE_FLOAT: /-\d+\.\d+/,
   // non-positive float(非正浮点数)
-  NON_POSITIVE_FLOAT_REGEX: /((-\d+\.\d+)|(0+(\.0+)?))/,
+  NON_POSITIVE_FLOAT: /((-\d+\.\d+)|(0+(\.0+)?))/,
   // non-negative float(非负浮点数)
-  NON_NEGATIVE_FLOAT_REGEX: /\d+(\.\d+)?/,
+  NON_NEGATIVE_FLOAT: /\d+(\.\d+)?/,
   // Numeric/currency amount (supports negative numbers, thousand separators)
   // 数字/货币金额（支持负数、千分位分隔符）
   NUMBER_CURRENCY: /-?\d{1,3}(,\d{3})*(\.\d{1,2})?/,
@@ -85,11 +85,11 @@ export const REGEX = {
   // loose unified social credit identifier(宽松统一社会信用代码)
   LOOSE_UNIFIED_SOCIAL_CREDIT_IDENTIFIER: /(([\dA-Za-z]{15})|([\dA-Za-z]{18})|([\dA-Za-z]{20}))/,
   // New energy vehicle license plate(新能源车牌号)
-  NEW_ENERGY_LICENSE_PLATE_REGEX: /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z](([DF]((?![IO])[a-zA-Z0-9](?![IO]))[0-9]{4})|([0-9]{5}[DF]))/,
+  NEW_ENERGY_LICENSE_PLATE: /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z](([DF]((?![IO])[a-zA-Z0-9](?![IO]))[0-9]{4})|([0-9]{5}[DF]))/,
   // Non-new energy vehicle license plate(非新能源车牌号)
-  NON_NEW_ENERGY_LICENSE_PLATE_REGEX: /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]/,
+  NON_NEW_ENERGY_LICENSE_PLATE: /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]/,
   // Combined, for both new energy and non-new energy vehicle license plates(联合新能源和非新能源车牌号)
-  COMBINED_LICENSE_PLATE_REGEX: /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4,5}[A-HJ-NP-Z0-9挂学警港澳]/,
+  COMBINED_LICENSE_PLATE: /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领][A-HJ-NP-Z][A-HJ-NP-Z0-9]{4,5}[A-HJ-NP-Z0-9挂学警港澳]/,
   // starts with a letter, allows 5-16 bytes,
   // allows combination of letters, numbers, and underscores
   // 以字母开头，允许5-16个字节，
@@ -101,11 +101,11 @@ export const REGEX = {
   // hexadecimal color(十六进制颜色#cf0cf0)
   HEX_COLOR: /#?([\dA-Fa-f]{6}|[\dA-Fa-f]{3}|[\dA-Fa-f]{8}|[\dA-Fa-f]{4})/,
   // english letters(英文字母)
-  ENGLISH_LETTER_REGEX: /[A-Za-z]+/,
+  ENGLISH_LETTER: /[A-Za-z]+/,
   // lower case english letters(小写英文字母)
-  LOWERCASE_ENGLISH_LETTER_REGEX: /[a-z]+/,
+  LOWERCASE_ENGLISH_LETTER: /[a-z]+/,
   // upper case english letters(大写英文字母)
-  UPPERCASE_ENGLISH_LETTER_REGEX: /[A-Z]+/,
+  UPPERCASE_ENGLISH_LETTER: /[A-Z]+/,
 
   // },
 };

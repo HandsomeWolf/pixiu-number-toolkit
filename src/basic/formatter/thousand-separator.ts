@@ -3,6 +3,7 @@ import {
   THOUSAND_SEPARATOR_REGEX,
 } from '../../constants/regex';
 import { isValidThousandSeparatedNumber } from '../utils/validation';
+import { IOType } from '../../../types/common';
 
 /**
  *  转换为千分位格式

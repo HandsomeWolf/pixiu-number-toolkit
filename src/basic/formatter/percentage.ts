@@ -7,7 +7,8 @@ import { computeExpression, padZero } from '../../index';
  *              要格式化的数字或字符串，可以是数字、字符串、null或undefined。
  * @param options Optional parameters:
  *                可选参数：
- *                - decimalPlaces: The number of decimal places. If boolean, it's regarded as carrySymbol.
+ *                - decimalPlaces: The number of decimal places.
+ *                If boolean, it's regarded as carrySymbol.
  *                                 小数位数，如果为boolean类型，将被视为carrySymbol参数。
  *                - carrySymbol: Whether to include the percent symbol. Defaults to true.
  *                               是否带有百分号，默认为true。
