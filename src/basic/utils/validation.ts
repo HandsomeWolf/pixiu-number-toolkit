@@ -20,7 +20,7 @@ export function isValidThousandSeparatedNumber(
  * @param options
  * @returns {boolean} 是空字符串或只包含空格时返回 true，否则返回 false
  */
-export function isBlank(value: string, options: RegexOptions = { strict: true }): boolean {
+export function isValidBlank(value: string, options: RegexOptions = { strict: true }): boolean {
   return !value || buildRegex(REGEX.BLANK, options).test(value);
 }
 
@@ -30,7 +30,7 @@ export function isBlank(value: string, options: RegexOptions = { strict: true })
  * @param options
  * @returns {boolean} 是纯数字时返回 true，否则返回 false
  */
-export function isNumber(value: string, options: RegexOptions = { strict: true }): boolean {
+export function isValidNumber(value: string, options: RegexOptions = { strict: true }): boolean {
   return buildRegex(REGEX.NUMBER, options).test(value);
 }
 
@@ -45,7 +45,7 @@ export function areAllElementsNumbers(
   if (array.length === 0) {
     return false;
   }
-  return array.every((item) => isNumber(item));
+  return array.every((item) => isValidNumber(item));
 }
 
 /**
@@ -53,14 +53,14 @@ export function areAllElementsNumbers(
  * @param {string | number} value - 待检查的参数
  * @returns {boolean} 是数字或字符串数字时返回 true，否则返回 false
  */
-export function isNumeric(value: string | number): boolean {
+export function isValidNumeric(value: string | number): boolean {
   return (!Number.isNaN(value) && typeof value === 'number') ||
     (!Number.isNaN(Number.parseFloat(value as any)) &&
       !Number.isNaN((value as any) - 0));
 }
 
 /**
- * 判断数组中的所有元素是否都是数字
+ * 判断数组中的所有元素是否都是数字或字符串数字
  * @returns {boolean} 如果数组中的所有元素都是数字，返回 true，否则返回 false
  * @param array
  */
@@ -68,7 +68,7 @@ export function areAllElementsNumeric(array: any[]): boolean {
   if (array.length === 0) {
     return false;
   }
-  return array.every((item) => isNumeric(item));
+  return array.every((item) => isValidNumeric(item));
 }
 
 /**
@@ -77,7 +77,7 @@ export function areAllElementsNumeric(array: any[]): boolean {
  * @param options
  * @returns {boolean} 是正整数时返回 true，否则返回 false
  */
-export function isPositiveInteger(
+export function isValidPositiveInteger(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -90,7 +90,7 @@ export function isPositiveInteger(
  * @param options
  * @returns {boolean} 是负整数时返回 true，否则返回 false
  */
-export function isNegativeInteger(
+export function isValidNegativeInteger(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -103,7 +103,7 @@ export function isNegativeInteger(
  * @param options
  * @returns {boolean} 是非正整数时返回 true，否则返回 false
  */
-export function isNonPositiveInteger(
+export function isValidNonPositiveInteger(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -116,7 +116,7 @@ export function isNonPositiveInteger(
  * @param options
  * @returns {boolean} 是浮点数时返回 true，否则返回 false
  */
-export function isFloat(
+export function isValidFloat(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -129,7 +129,7 @@ export function isFloat(
  * @param options
  * @returns {boolean} 是正浮点数时返回 true，否则返回 false
  */
-export function isPositiveFloat(
+export function isValidPositiveFloat(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -142,7 +142,7 @@ export function isPositiveFloat(
  * @param options
  * @returns {boolean} 是负浮点数时返回 true，否则返回 false
  */
-export function isNegativeFloat(
+export function isValidNegativeFloat(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -155,7 +155,7 @@ export function isNegativeFloat(
  * @param options
  * @returns {boolean} 是非正浮点数时返回 true，否则返回 false
  */
-export function isNonPositiveFloat(
+export function isValidNonPositiveFloat(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -168,7 +168,7 @@ export function isNonPositiveFloat(
  * @param options
  * @returns {boolean} 是非负浮点数时返回 true，否则返回 false
  */
-export function isNonNegativeFloat(
+export function isValidNonNegativeFloat(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -181,7 +181,7 @@ export function isNonNegativeFloat(
  * @param options
  * @returns {boolean} 是电子邮件时返回 true，否则返回 false
  */
-export function isEmail(
+export function isValidEmail(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -194,7 +194,7 @@ export function isEmail(
  * @param options
  * @returns {boolean} 是网址时返回 true，否则返回 false
  */
-export function isIP(
+export function isValidIP(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -207,7 +207,7 @@ export function isIP(
  * @param options
  * @returns {boolean} 是子网掩码时返回 true，否则返回 false
  */
-export function isSubnetMask(
+export function isValidSubnetMask(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -220,7 +220,7 @@ export function isSubnetMask(
  * @param options
  * @returns {boolean} 是URL时返回 true，否则返回 false
  */
-export function isURL(
+export function isValidURL(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -233,7 +233,7 @@ export function isURL(
  * @param options
  * @returns {boolean} 是中文时返回 true，否则返回 false
  */
-export function isChinese(
+export function isValidChinese(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -246,7 +246,7 @@ export function isChinese(
  * @param options
  * @returns {boolean} 是中文姓名时返回 true，否则返回 false
  */
-export function isChineseName(
+export function isValidChineseName(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -259,7 +259,7 @@ export function isChineseName(
  * @param options
  * @returns {boolean} 是统一社会信用代码时返回 true，否则返回 false
  */
-export function isUnifiedSocialCreditIdentifier(
+export function isValidUnifiedSocialCreditIdentifier(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -272,7 +272,7 @@ export function isUnifiedSocialCreditIdentifier(
  * @param options
  * @returns {boolean} 是数字/货币金额时返回 true，否则返回 false
  */
-export function isNumberCurrency(
+export function isValidNumberCurrency(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -285,7 +285,7 @@ export function isNumberCurrency(
  * @param options
  * @returns {boolean} 是中国邮政编码时返回 true，否则返回 false
  */
-export function isChinesePostalCode(
+export function isValidChinesePostalCode(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -298,7 +298,7 @@ export function isChinesePostalCode(
  * @param options
  * @returns {boolean} 是中国手机号时返回 true，否则返回 false
  */
-export function isChineseMobile(
+export function isValidChineseMobile(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -311,7 +311,7 @@ export function isChineseMobile(
  * @param options
  * @returns {boolean} 是中国固话号码时返回 true，否则返回 false
  */
-export function isChineseTel(
+export function isValidChineseTel(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -324,7 +324,7 @@ export function isChineseTel(
  * @param options
  * @returns {boolean} 是中国银行卡号时返回 true，否则返回 false
  */
-export function isChineseBankCard(
+export function isValidChineseBankCard(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -337,7 +337,7 @@ export function isChineseBankCard(
  * @param options
  * @returns {boolean} 是中国税号时返回 true，否则返回 false
  */
-export function isChineseTaxNumber(
+export function isValidChineseTaxNumber(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -365,7 +365,7 @@ export function isValidAccount(
  * @param options
  * @returns {boolean} 是中文字符时返回 true，否则返回 false
  */
-export function isChineseCharacters(
+export function isValidChineseCharacters(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -378,7 +378,7 @@ export function isChineseCharacters(
  * @param options
  * @returns {boolean} 是十进制数时返回 true，否则返回 false
  */
-export function isDecimalScientificNotation(
+export function isValidDecimalScientificNotation(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -391,7 +391,7 @@ export function isDecimalScientificNotation(
  * @param options
  * @returns {boolean} 是英文字母时返回 true，否则返回 false
  */
-export function isEnglishLetter(
+export function isValidEnglishLetter(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -404,7 +404,7 @@ export function isEnglishLetter(
  * @param options
  * @returns {boolean} 是小写英文字母时返回 true，否则返回 false
  */
-export function isLowercaseEnglishLetter(
+export function isValidLowercaseEnglishLetter(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -417,7 +417,7 @@ export function isLowercaseEnglishLetter(
  * @param options
  * @returns {boolean} 是大写英文字母时返回 true，否则返回 false
  */
-export function isUppercaseEnglishLetter(
+export function isValidUppercaseEnglishLetter(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -430,7 +430,7 @@ export function isUppercaseEnglishLetter(
  * @param options
  * @returns {boolean} 是十六进制颜色时返回 true，否则返回 false
  */
-export function isHexColor(
+export function isValidHexColor(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
@@ -443,7 +443,7 @@ export function isHexColor(
  * @param options
  * @returns {boolean} 是MAC地址时返回 true，否则返回 false
  */
-export function isMacAddress(
+export function isValidMacAddress(
   value: string,
   options: RegexOptions = { strict: true },
 ): boolean {
