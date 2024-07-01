@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   mathjs:
-    specifier: ^13.0.0
-    version: 13.0.0
+    specifier: ^13.0.1
+    version: 13.0.1
 
 devDependencies:
   '@jest/globals':
@@ -4026,8 +4026,8 @@ packages:
       tmpl: 1.0.5
     dev: true
 
-  /mathjs@13.0.0:
-    resolution: {integrity: sha512-Jy9/01M5lTRLxlkxnvPmvWq6EFwzq8guIspeQ9p66AY+8Pih3Jf8Us5fSZ9kC8gl7iRNHUQ+SJpitX41aa6agw==}
+  /mathjs@13.0.1:
+    resolution: {integrity: sha512-38IzJ/MY0erNp7apXJp6DZwUYHOuvlqRqk2KtMo9GPqrTmCaLb1vTzw/Fib3PessXEMs52wnJaga0pd9xkIjjA==}
     engines: {node: '>= 18'}
     hasBin: true
     dependencies:

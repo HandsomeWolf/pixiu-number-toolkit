@@ -36,7 +36,7 @@
     "lint": "eslint --fix --ext .ts src/**/*.ts"
   },
   "dependencies": {
-    "mathjs": "^13.0.0"
+    "mathjs": "^13.0.1"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
