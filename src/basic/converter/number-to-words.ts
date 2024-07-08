@@ -21,7 +21,7 @@ const thousandsZh = ['', '万', '亿', '兆'];
  * @param lang - The language for the conversion ('en' for English, 'zh' for Chinese) (转换的语言)
  * @returns The number in words (文字形式的数字)
  */
-export function numberToWords(number_: number, lang: 'en' | 'zh'): string {
+export function numberToWords(number_: number, lang: 'en' | 'zh' = 'zh'): string {
   if (number_ === 0) return lang === 'en' ? 'zero' : '零';
 
   let words = '';
