@@ -13,13 +13,12 @@ export function computeExpression(
   options: ComputeExpressionOptions = {},
 ): string {
   let result;
-  const formulaResult = formula.replaceAll(',', '');
 
   // Check if parameters are provided (检查是否提供了参数)
   result =
     options.parameters === undefined
-      ? math.evaluate(formulaResult)
-      : math.evaluate(formulaResult, convertToBigNumbers(options.parameters));
+      ? math.evaluate(formula)
+      : math.evaluate(formula, convertToBigNumbers(options.parameters));
 
   // Check if useThousandSeparator is provided (检查是否提供了 useThousandSeparator)
   if (options.useThousandSeparator) {
