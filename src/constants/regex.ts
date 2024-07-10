@@ -1,9 +1,11 @@
-// thousand separator(千分位分隔符)
 import { RegexOptions } from '../../types/common';
 
+// thousand separator(千分位分隔符)
+// example: "1234567890".replace(THOUSAND_SEPARATOR_REGEX, ','); -> "1,234,567,890"
 export const THOUSAND_SEPARATOR_REGEX = /\B(?=(\d{3})+(?!\d))/g;
-export const REMOVE_THOUSAND_SEPARATOR_REGEX = /\$\s?|(,*)/g; // remove thousand separator(移除千分位分隔符)
 
+// export const TRIM_NON_NUMERIC_REGEX = /^[^\d.-]+|[^\d.-]+$/g;
+export const TRIM_NON_NUMERIC_REGEX = /[^\d.-]+/g;
 // digit-uppercase
 // export const ZERO_DOT_REGEX = /零./;
 export const ZERO_DOT_END_REGEX = /(零.)*零$/;
@@ -18,7 +20,7 @@ export const WHOLE_REGEX = /^整$/;
 export const REGEX = {
 
   /**
-   *  a thousand separated number(千分位数字)
+   * a thousand separated number(千分位数字)
    */
   THOUSAND_SEPARATED_NUMBER: /\d{1,3}(,\d{3})+(\.\d+)?/,
 
