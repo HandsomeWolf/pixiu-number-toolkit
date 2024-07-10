@@ -1,4 +1,4 @@
-import { addThousandSeparator, padZero } from '../../index';
+import { currency, padZero } from '../../index';
 import { convertToBigNumbers, math } from '../utils/math';
 import { NumberDictionary } from '../../../types/common';
 
@@ -31,7 +31,7 @@ export function computeExpression(
 
   // Check if useThousandSeparator is provided (检查是否提供了 useThousandSeparator)
   if (options.useThousandSeparator) {
-    result = addThousandSeparator(result);
+    result = currency(result);
   }
 
   return result.toString();
