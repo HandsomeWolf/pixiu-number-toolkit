@@ -21,17 +21,21 @@ export function computeExpression(
       ? math.evaluate(formulaResult)
       : math.evaluate(formulaResult, convertToBigNumbers(options.parameters));
 
-  // Check if decimalPlaces are provided (检查是否提供了 decimalPlaces)
-  if (options.decimalPlaces !== undefined) {
+  // Check if useThousandSeparator is provided (检查是否提供了 useThousandSeparator)
+  if (options.useThousandSeparator) {
+    if (options.decimalPlaces !== undefined) {
+      result = currency(result.toFixed(), {
+        minimumFractionDigits: options.decimalPlaces,
+        maximumFractionDigits: options.decimalPlaces,
+      });
+    } else {
+      result = currency(result.toFixed());
+    }
+  } else if (options.decimalPlaces !== undefined) {
     result = padZero(
       result.toFixed(options.decimalPlaces),
       options.decimalPlaces,
     );
-  }
-
-  // Check if useThousandSeparator is provided (检查是否提供了 useThousandSeparator)
-  if (options.useThousandSeparator) {
-    result = currency(result);
   }
 
   return result.toString();

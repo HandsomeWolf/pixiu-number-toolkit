@@ -43,10 +43,12 @@ describe('currency', () => {
     expect(currency(0.35, { style: 'percent' })).toBe('35%');
     expect(currency(0, { style: 'percent' })).toBe('0%');
     expect(currency('0', { style: 'percent' })).toBe('0%');
-    expect(currency('', { style: 'percent' })).toBe('0%');
-    expect(currency('0.15678', { style: 'percent' })).toBe('15.678%');
-    expect(currency(null as any, { style: 'percent' })).toBe('15.678%');
-    expect(currency(undefined as any, { style: 'percent' })).toBe('15.678%');
+    expect(() => currency('')).toThrow('Invalid value type: string ');
+    expect(currency('0.15678', { style: 'percent', minimumFractionDigits: 3 })).toBe('15.678%');
+    expect(currency('0.15678', { style: 'percent', minimumFractionDigits: 4 })).toBe('15.6780%');
+    expect(currency('0.15678', { style: 'percent' })).toBe('16%');
+    expect(() => currency(null as any, { style: 'percent' })).toThrow('Invalid value type: object null');
+    expect(() => currency(undefined as any, { style: 'percent' })).toThrow('Invalid value type: undefined undefined');
   });
   it('单位格式', () => {
     expect(currency(3500, { style: 'unit', unit: CurrencyUnit.Liter })).toBe('3,500升');
