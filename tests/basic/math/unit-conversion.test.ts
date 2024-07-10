@@ -33,11 +33,9 @@ describe('unitConversion', () => {
     expect(unitConversion(1, 'm/s', 'km/h')).toBe(3.6); // 米/秒 -> 千米/小时
   });
 
-  // TODO:有精度问题
   it('温度单位', () => {
-    // console.log(unitConversion(1, "degC", "degF"));
-    // expect(unitConversion(1, "degC", "degF")).toBe(33.8); // 摄氏度 -> 华氏度
-    // expect(unitConversion(1, "degF", "degC")).toBe(-17.222_222_222_222_22); // 华氏度 -> 摄氏度
+    expect(unitConversion(1, 'degC', 'degF')).toBe(33.8); // 摄氏度 -> 华氏度
+    expect(unitConversion(1, 'degF', 'degC')).toBe(-17.222_222_222_222_22); // 华氏度 -> 摄氏度
   });
 
   it('压力单位', () => {
