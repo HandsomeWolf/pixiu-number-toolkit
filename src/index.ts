@@ -1,5 +1,9 @@
 // ------------------------ converter ------------------------
 
+export { currency, CurrencyCodeType, CurrencyUnitType, CurrencyOptions, convertCurrencyToNumber, getCurrencySeparators } from './basic/currency';
+
+export { CurrencyUnit, CurrencyCode } from './constants/enum';
+
 // digit-uppercase (数字大写)
 export { digitUppercase } from './basic/converter/digit-uppercase';
 
@@ -24,17 +28,9 @@ export {
 
 // ------------------------ formatter ------------------------
 
-// Thousand Separator (千位分隔符)
-export {
-  addThousandSeparator,
-  removeThousandSeparator,
-} from './basic/formatter/thousand-separator';
 
 // currency (货币)
 export { formatCurrencyRMB } from './basic/formatter/currency-renminbi';
-
-// percentage (百分比)
-export { formatPercentage } from './basic/formatter/percentage';
 
 // ------------------------ math ------------------------
 
@@ -125,3 +121,4 @@ export { countTo } from './basic/animate/count-to';
 
 // regex (正则)
 export { REGEX } from './constants/regex';
+
