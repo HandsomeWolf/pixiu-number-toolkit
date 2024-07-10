@@ -29,9 +29,6 @@ export {
 // ------------------------ formatter ------------------------
 
 
-// currency (货币)
-export { formatCurrencyRMB } from './basic/formatter/currency-renminbi';
-
 // ------------------------ math ------------------------
 
 // computeExpression (计算表达式)
