@@ -8,7 +8,7 @@ export interface IdCardInfo {
   /**
    * 出生日期
    */
-  birthdate: string;
+  birthDate: string;
   /**
    * 性别
    */
@@ -23,13 +23,13 @@ export function parseIdCard(id: string): IdCardInfo {
   if (!isValidChineseIdCard(id)) {
     return {
       region: '',
-      birthdate: '',
+      birthDate: '',
       gender: '',
       valid: false,
     };
   }
   const regionCode = id.slice(0, 6);
-  const birthdate = `${id.slice(6, 10)}-${id.slice(10, 12)}-${id.slice(
+  const birthDate = `${id.slice(6, 10)}-${id.slice(10, 12)}-${id.slice(
     12,
     14,
   )}`;
@@ -38,7 +38,7 @@ export function parseIdCard(id: string): IdCardInfo {
 
   return {
     region,
-    birthdate,
+    birthDate,
     gender,
     valid: true,
   };
