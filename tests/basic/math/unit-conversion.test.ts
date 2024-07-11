@@ -63,5 +63,46 @@ describe('unitConversion', () => {
     expect(unitConversion(1, 'A', 'kA')).toBe(0.001); // 安 -> 千安
   });
 
-  // 添加更多的测试用例以覆盖所有的单位和边界情况
+  it('时间单位', () => {
+    expect(unitConversion(1, 'h', 'min')).toBe(60); // 小时 -> 分钟
+    expect(unitConversion(1, 'min', 's')).toBe(60); // 分钟 -> 秒
+    expect(unitConversion(1, 'day', 'h')).toBe(24); // 天 -> 小时
+    expect(unitConversion(1, 'week', 'day')).toBe(7); // 周 -> 天
+    expect(unitConversion(1, 'year', 'day')).toBe(365.25); // 年 -> 天
+    expect(unitConversion(1, 'year', 'month')).toBe(12); // 年 -> 月
+  });
+
+  it('角度单位', () => {
+    expect(unitConversion(180, 'deg', 'rad')).toBeCloseTo(Math.PI, 5); // 度 -> 弧度
+    expect(unitConversion(Math.PI, 'rad', 'deg')).toBeCloseTo(180, 5); // 弧度 -> 度
+    expect(unitConversion(1, 'deg', 'grad')).toBeCloseTo(1.1111111, 5); // 度 -> 百分度
+  });
+
+  it('数据存储单位', () => {
+    expect(unitConversion(1, 'GB', 'MB')).toBe(1000); // 吉字节 -> 兆字节
+    expect(unitConversion(1, 'MB', 'kB')).toBe(1000); // 兆字节 -> 千字节
+    expect(unitConversion(1, 'kB', 'B')).toBe(1000); // 千字节 -> 字节
+    expect(unitConversion(1, 'B', 'bit')).toBe(8); // 字节 -> 比特
+  });
+
+  it('频率单位', () => {
+    expect(unitConversion(1, 'kHz', 'Hz')).toBe(1000); // 千赫兹 -> 赫兹
+    expect(unitConversion(1, 'MHz', 'kHz')).toBe(1000); // 兆赫兹 -> 千赫兹
+  });
+
+  it('力单位', () => {
+    expect(unitConversion(1, 'kN', 'N')).toBe(1000); // 千牛顿 -> 牛顿
+    expect(unitConversion(1, 'N', 'lbf')).toBeCloseTo(0.224809, 5); // 牛顿 -> 磅力
+  });
+
+  it('压强单位', () => {
+    expect(unitConversion(1, 'bar', 'Pa')).toBe(100000); // 巴 -> 帕斯卡
+    expect(unitConversion(1, 'atm', 'Pa')).toBeCloseTo(101325, 0); // 标准大气压 -> 帕斯卡
+    expect(unitConversion(760, 'mmHg', 'atm')).toBeCloseTo(1, 5); // 毫米汞柱 -> 标准大气压
+  });
+
+  it('复合单位', () => {
+    expect(unitConversion(1, 'N*m', 'J')).toBe(1); // 牛顿米 -> 焦耳
+    expect(unitConversion(1, 'kg*m/s^2', 'N')).toBe(1); // 千克米每平方秒 -> 牛顿
+  });
 });
