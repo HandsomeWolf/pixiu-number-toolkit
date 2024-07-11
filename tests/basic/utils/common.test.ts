@@ -14,8 +14,8 @@ describe('getDecimalInfo', () => {
     });
 
     it('when decimal places is 2', () => {
-      const decimalInfo = getDecimalInfo(123.45);
-      expect(decimalInfo.valueString).toBe('123.45');
+      const decimalInfo = getDecimalInfo(-123.45);
+      expect(decimalInfo.valueString).toBe('-123.45');
       expect(decimalInfo.decimalIndex).toBe(3);
       expect(decimalInfo.decimalLength).toBe(2);
       expect(decimalInfo.integerPart).toBe('123');
