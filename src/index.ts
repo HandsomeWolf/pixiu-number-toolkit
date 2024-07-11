@@ -117,5 +117,5 @@ export { parseIdCard } from './basic/utils/id-card';
 export { countTo } from './basic/animate/count-to';
 
 // regex (正则)
-export { REGEX } from './constants/regex';
+export { REGEX, buildRegex } from './constants/regex';
 
