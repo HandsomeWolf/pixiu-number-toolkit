@@ -1,3 +1,6 @@
+import { CurrencyCode } from '../../constants/enum';
+import { CurrencyCodeType, getCurrencySeparators } from '../currency';
+
 export interface DecimalInfo {
   /**
    * The string form of the number (数字的字符串形式)
@@ -30,9 +33,15 @@ export interface DecimalInfo {
  * @param value - The input number (输入的数字)
  * @returns The decimal information object (小数信息对象)
  */
-export const getDecimalInfo = (value: number): DecimalInfo => {
+export const getDecimalInfo = (
+  value: number,
+  locale: CurrencyCodeType = CurrencyCode.CNY,
+): DecimalInfo => {
   const valueString = value.toString();
-  const [integerPart, decimalPart = ''] = valueString.split('.');
+  const { decimalSeparator } = getCurrencySeparators(locale);
+  const isNegative = value < 0;
+  const unsignedValueString = isNegative ? valueString.slice(1) : valueString;
+  const [integerPart, decimalPart = ''] = unsignedValueString.split(decimalSeparator);
   const decimalIndex = integerPart.length;
   const decimalLength = decimalPart.length;
   const integerLength = integerPart.length;
