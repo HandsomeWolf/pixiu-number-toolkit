@@ -11,17 +11,7 @@ export function isValidThousandSeparatedNumber(
   value: string,
   options: RegexOptions = { strict: true },
 ) {
-  return buildRegex(REGEX.THOUSAND_SEPARATED_NUMBER, options).test(value);
-}
-
-/**
- * 判断字符串是否为空或只包含空格
- * @param {string} value - 待检查的字符串
- * @param options
- * @returns {boolean} 是空字符串或只包含空格时返回 true，否则返回 false
- */
-export function isValidBlank(value: string, options: RegexOptions = { strict: true }): boolean {
-  return !value || buildRegex(REGEX.BLANK, options).test(value);
+  return buildRegex(REGEX.NUMBER_CURRENCY, options).test(value);
 }
 
 /**
@@ -32,43 +22,6 @@ export function isValidBlank(value: string, options: RegexOptions = { strict: tr
  */
 export function isValidNumber(value: string, options: RegexOptions = { strict: true }): boolean {
   return buildRegex(REGEX.NUMBER, options).test(value);
-}
-
-/**
- * 判断数组中的所有元素是否都是数字
- * @returns {boolean} 如果数组中的所有元素都是数字，返回 true，否则返回 false
- * @param array
- */
-export function areAllElementsNumbers(
-  array: any[],
-): boolean {
-  if (array.length === 0) {
-    return false;
-  }
-  return array.every((item) => isValidNumber(item));
-}
-
-/**
- * 判断参数是否为数字或字符串数字
- * @param {string | number} value - 待检查的参数
- * @returns {boolean} 是数字或字符串数字时返回 true，否则返回 false
- */
-export function isValidNumeric(value: string | number): boolean {
-  return (!Number.isNaN(value) && typeof value === 'number') ||
-    (!Number.isNaN(Number.parseFloat(value as any)) &&
-      !Number.isNaN((value as any) - 0));
-}
-
-/**
- * 判断数组中的所有元素是否都是数字或字符串数字
- * @returns {boolean} 如果数组中的所有元素都是数字，返回 true，否则返回 false
- * @param array
- */
-export function areAllElementsNumeric(array: any[]): boolean {
-  if (array.length === 0) {
-    return false;
-  }
-  return array.every((item) => isValidNumeric(item));
 }
 
 /**
@@ -121,6 +74,55 @@ export function isValidFloat(
   options: RegexOptions = { strict: true },
 ): boolean {
   return buildRegex(REGEX.FLOAT, options).test(value);
+}
+
+
+/**
+ * 判断字符串是否为空或只包含空格
+ * @param {string} value - 待检查的字符串
+ * @param options
+ * @returns {boolean} 是空字符串或只包含空格时返回 true，否则返回 false
+ */
+export function isValidBlank(value: string, options: RegexOptions = { strict: true }): boolean {
+  return !value || buildRegex(REGEX.BLANK, options).test(value);
+}
+
+
+/**
+ * 判断数组中的所有元素是否都是数字
+ * @returns {boolean} 如果数组中的所有元素都是数字，返回 true，否则返回 false
+ * @param array
+ */
+export function areAllElementsNumbers(
+  array: any[],
+): boolean {
+  if (array.length === 0) {
+    return false;
+  }
+  return array.every((item) => isValidNumber(item));
+}
+
+/**
+ * 判断参数是否为数字或字符串数字
+ * @param {string | number} value - 待检查的参数
+ * @returns {boolean} 是数字或字符串数字时返回 true，否则返回 false
+ */
+export function isValidNumeric(value: string | number): boolean {
+  return (!Number.isNaN(value) && typeof value === 'number') ||
+    (!Number.isNaN(Number.parseFloat(value as any)) &&
+      !Number.isNaN((value as any) - 0));
+}
+
+/**
+ * 判断数组中的所有元素是否都是数字或字符串数字
+ * @returns {boolean} 如果数组中的所有元素都是数字，返回 true，否则返回 false
+ * @param array
+ */
+export function areAllElementsNumeric(array: any[]): boolean {
+  if (array.length === 0) {
+    return false;
+  }
+  return array.every((item) => isValidNumeric(item));
 }
 
 /**
@@ -251,32 +253,6 @@ export function isValidChineseName(
   options: RegexOptions = { strict: true },
 ): boolean {
   return buildRegex(REGEX.CHINESE_NAME, options).test(value);
-}
-
-/**
- * 判断是否为统一社会信用代码
- * @param value - 待检查的参数
- * @param options
- * @returns {boolean} 是统一社会信用代码时返回 true，否则返回 false
- */
-export function isValidUnifiedSocialCreditIdentifier(
-  value: string,
-  options: RegexOptions = { strict: true },
-): boolean {
-  return buildRegex(REGEX.UNIFIED_SOCIAL_CREDIT_IDENTIFIER, options).test(value);
-}
-
-/**
- * 判断是否为数字/货币金额
- * @param value - 待检查的参数
- * @param options
- * @returns {boolean} 是数字/货币金额时返回 true，否则返回 false
- */
-export function isValidNumberCurrency(
-  value: string,
-  options: RegexOptions = { strict: true },
-): boolean {
-  return buildRegex(REGEX.NUMBER_CURRENCY, options).test(value);
 }
 
 /**
@@ -514,3 +490,95 @@ export function isValidLicensePlate(
 ): boolean {
   return buildRegex(REGEX.COMBINED_LICENSE_PLATE, options).test(value);
 }
+
+/**
+ * 检查字符串是否不包含特殊字符
+ * @param value - 待检查的字符串
+ * @param options
+ * @returns {boolean} 不包含特殊字符时返回 true，否则返回 false
+ */
+export function hasNoSpecialCharacters(
+  value: string,
+  options: RegexOptions = { strict: true },
+): boolean {
+  return buildRegex(REGEX.NON_SPECIAL_CHARACTERS, options).test(value);
+}
+
+/**
+ * 检查字符串是否包含表情符号
+ * @param value - 待检查的字符串
+ * @param options
+ * @returns {boolean} 包含表情符号时返回 true，否则返回 false
+ */
+export function containsEmoji(
+  value: string,
+  options: RegexOptions = { strict: true },
+): boolean {
+  return buildRegex(REGEX.EMOJI, options).test(value);
+}
+
+/**
+ * 验证是否为有效的 IPv4 地址
+ * @param value - 待验证的 IP 地址
+ * @param options
+ * @returns {boolean} 是有效的 IPv4 地址时返回 true，否则返回 false
+ */
+export function isValidIPv4(
+  value: string,
+  options: RegexOptions = { strict: true },
+): boolean {
+  return buildRegex(REGEX.IPV4, options).test(value);
+}
+
+/**
+ * 验证是否为有效的中国身份证号（一代）
+ * @param value - 待验证的身份证号
+ * @param options
+ * @returns {boolean} 是有效的一代身份证号时返回 true，否则返回 false
+ */
+export function isValidChineseIDCard1(
+  value: string,
+  options: RegexOptions = { strict: true },
+): boolean {
+  return buildRegex(REGEX.CHINESE_ID_CARD_1, options).test(value);
+}
+
+/**
+ * 验证是否为有效的中国身份证号（二代）
+ * @param value - 待验证的身份证号
+ * @param options
+ * @returns {boolean} 是有效的二代身份证号时返回 true，否则返回 false
+ */
+export function isValidChineseIDCard2(
+  value: string,
+  options: RegexOptions = { strict: true },
+): boolean {
+  return buildRegex(REGEX.CHINESE_ID_CARD_2, options).test(value);
+}
+
+/**
+ * 判断是否为统一社会信用代码（严格模式）
+ * @param value - 待检查的参数
+ * @param options
+ * @returns {boolean} 是统一社会信用代码时返回 true，否则返回 false
+ */
+export function isValidUnifiedSocialCreditIdentifierStrict(
+  value: string,
+  options: RegexOptions = { strict: true },
+): boolean {
+  return buildRegex(REGEX.UNIFIED_SOCIAL_CREDIT_IDENTIFIER, options).test(value);
+}
+
+/**
+ * 验证是否为有效的统一社会信用代码（宽松模式）
+ * @param value - 待验证的统一社会信用代码
+ * @param options
+ * @returns {boolean} 是有效的统一社会信用代码时返回 true，否则返回 false
+ */
+export function isValidUnifiedSocialCreditIdentifierLoose(
+  value: string,
+  options: RegexOptions = { strict: true },
+): boolean {
+  return buildRegex(REGEX.LOOSE_UNIFIED_SOCIAL_CREDIT_IDENTIFIER, options).test(value);
+}
+

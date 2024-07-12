@@ -77,7 +77,7 @@ export const REGEX = {
    *   Numeric/currency amount (supports negative numbers, thousand separators)
    *   数字/货币金额（支持负数、千分位分隔符）
    */
-  NUMBER_CURRENCY: /-?\d{1,3}(,\d{3})*(\.\d{1,2})?/,
+  NUMBER_CURRENCY: /-?\d{1,3}(,\d{3})*(\.\d+)?/,
 
   /**
    * chinese postal code(中国邮政编码)

@@ -68,7 +68,6 @@ export {
   isValidBlank,
   areAllElementsNumbers,
   areAllElementsNumeric,
-  isValidNumberCurrency,
   isValidNegativeInteger,
   isValidPositiveInteger,
   isValidNegativeFloat,
@@ -92,7 +91,6 @@ export {
   isValidIP,
   isValidSubnetMask,
   isValidURL,
-  isValidUnifiedSocialCreditIdentifier,
   isValidAccount,
   isValidUppercaseEnglishLetter,
   isValidHexColor,
@@ -101,6 +99,13 @@ export {
   isValidNewEnergyLicensePlate,
   isValidNonNewEnergyLicensePlate,
   isValidLicensePlate,
+  isValidUnifiedSocialCreditIdentifierStrict,
+  isValidUnifiedSocialCreditIdentifierLoose,
+  isValidChineseIDCard2,
+  isValidChineseIDCard1,
+  isValidIPv4,
+  containsEmoji,
+  hasNoSpecialCharacters,
 } from './basic/utils/validation';
 
 // getDecimalInfo (获取小数信息), getDecimalPlaces (获取小数位数), padZero (补零)
