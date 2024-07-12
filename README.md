@@ -21,7 +21,7 @@ npm install pixiu-number-toolkit
 
 - [货币格式化](https://www.muchappy.com/open_source/pixiu-number-toolkit/basic/currency)：提供了一套完整的货币处理工具，包括货币格式化、货币字符串到数字的转换以及获取货币的千位分隔符和小数点符号等功能。这些功能基于 `Intl.NumberFormat` 对象实现，能够适应多种语言环境下的货币显示需求。
 - [数字、大写金额相互转换](https://www.muchappy.com/open_source/pixiu-number-toolkit/basic/digit-chinese-uppercase)：提供了将数值金额转换为其汉字大写形式的功能，适用于需要将金额正式表述的财务情境。
-- [数字、中文文字相互转换](https://www.muchappy.com/open_source/pixiu-number-toolkit/basic/number-to-words)：提供了将数字转换为中文的大写文字形式，适用于需要将数字以中文文字形式展示的场合。
+- [数字转中文文字](https://www.muchappy.com/open_source/pixiu-number-toolkit/basic/number-to-words)：提供了将数字转换为中文的大写文字形式，适用于需要将数字以中文文字形式展示的场合。
 - [计算数学表达式](https://www.muchappy.com/open_source/pixiu-number-toolkit/basic/compute-expression)：提供了计算数学表达式的能力，支持参数化计算、自定义小数位数以及千位分隔符的显示选项，适用于各种数学和财务计算场景。解决 JavaScript 浮点数精度丢失问题
 - [解析中国身份证信息](https://www.muchappy.com/open_source/pixiu-number-toolkit/basic/id-card)：提供了对中国居民身份证号的解析能力，能够提取出生日期、性别及所属地区信息，并验证身份证号的有效性。这在身份验证、人口统计分析及各类用户信息处理场景中极为有用。
 - [数字过渡动画](https://www.muchappy.com/open_source/pixiu-number-toolkit/basic/animate)：用于在给定时间内从一个数值平滑过渡到另一个数值，常用于创建动态计数器、数据可视化中的数值变化等动画效果。
