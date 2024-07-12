@@ -1,6 +1,6 @@
 // ------------------------ converter ------------------------
 
-export { currency, CurrencyCodeType, CurrencyUnitType, CurrencyOptions, convertCurrencyToNumber, getCurrencySeparators } from './basic/currency';
+export { currency, CurrencyCodeType, CurrencyUnitType, CurrencyOptions, convertCurrencyToNumber, getCurrencySeparators } from './basic/converter/currency';
 
 export { CurrencyUnit, CurrencyCode } from './constants/enum';
 

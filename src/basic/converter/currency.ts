@@ -1,5 +1,5 @@
-import { CurrencyCode, CurrencyUnit } from '../constants/enum';
-import { TRIM_NON_NUMERIC_REGEX } from '../constants/regex';
+import { CurrencyCode, CurrencyUnit } from '../../constants/enum';
+import { TRIM_NON_NUMERIC_REGEX } from '../../constants/regex';
 
 
 export type CurrencyCodeType = keyof typeof CurrencyCode;
