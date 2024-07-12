@@ -5,7 +5,7 @@ export { currency, CurrencyCodeType, CurrencyUnitType, CurrencyOptions, convertC
 export { CurrencyUnit, CurrencyCode } from './constants/enum';
 
 // digit-uppercase (数字大写)
-export { digitUppercase } from './basic/converter/digit-uppercase';
+export { digitUppercase, uppercaseToDigit } from './basic/converter/digit-uppercase';
 
 // number to words or Chinese (数字转换为英文单词或中文汉字)
 export { numberToWords } from './basic/converter/number-to-words';

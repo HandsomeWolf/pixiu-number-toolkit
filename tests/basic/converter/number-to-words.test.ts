@@ -37,4 +37,17 @@ describe('numberToWords', () => {
     const result4 = numberToWords(10);
     expect(result4).toBe('十');
   });
+  it('负数与小数', () => {
+    const result1 = numberToWords(123.45);
+    expect(result1).toBe('一百二十三点四五');
+
+    const result2 = numberToWords(-0.789);
+    expect(result2).toBe('负零点七八九');
+
+    const result3 = numberToWords(-123);
+    expect(result3).toBe('负一百二十三');
+
+    const result4 = numberToWords(-1000000);
+    expect(result4).toBe('负一百万');
+  });
 });

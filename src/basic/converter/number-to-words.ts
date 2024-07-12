@@ -1,7 +1,9 @@
+import { computeExpression } from '../math/compute-expression';
+
 const onesZh = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
 const tensZh = ['', '十', '百', '千'];
-const thousandsZh = ['', '万', '亿', '兆'];
-
+const thousandsZh = ['', '万', '亿'];
+const MAX_SAFE_INTEGER = 100_000_000_000; // 1000亿
 /**
  * Convert number to words in English or Chinese.
  * 将数字转换为英文或中文表示的文字
@@ -10,24 +12,48 @@ const thousandsZh = ['', '万', '亿', '兆'];
  * @returns The number in words (文字形式的数字)
  */
 export function numberToWords(number_: number): string {
+  if (Math.abs(number_) >= MAX_SAFE_INTEGER) {
+    throw new Error('输入的整数部分必须在-1000亿到1000亿之间');
+  }
+
   if (number_ === 0) return '零';
 
+  const isNegative = number_ < 0;
+  number_ = Math.abs(number_);
+
+  const integerPart = Math.floor(number_);
+  const decimalPart = Number(computeExpression(`${number_} - ${integerPart}`));
+
+  let words = integerPart === 0 ? '零' : convertInteger(integerPart);
+
+  if (decimalPart > 0) {
+    words += `点${convertDecimal(decimalPart)}`;
+  }
+
+  return isNegative ? `负${words}` : words;
+}
+
+function convertInteger(number_: number): string {
   let words = '';
-  let previousPart = 0; // 用于记录前一部分的数字
+  let previousPart = 0;
   for (let index = 0; number_ > 0; index++) {
     const currentPart = number_ % 10_000;
     if (currentPart !== 0) {
       const currentWords = helperZh(currentPart);
       if (previousPart < 1000 && previousPart !== 0 && index > 0) {
-        // 如果当前部分小于1000且不为0，且不是第一部分，则在前一部分和当前部分之间添加“零”
         words = `零${words}`;
       }
-      words = currentWords + thousandsZh[index] + words;
+      words = currentWords + (index > 0 ? thousandsZh[index] : '') + words;
     }
     previousPart = currentPart;
     number_ = Math.floor(number_ / 10_000);
   }
   return words.trim();
+}
+
+function convertDecimal(decimal: number): string {
+  const decimalStr = decimal.toString().slice(2); // 去掉"0."
+  return decimalStr.split('').map((digit) => onesZh[parseInt(digit, 10)]).join('');
 }
 
 /**

@@ -1,5 +1,5 @@
 import { CurrencyCode } from '../../constants/enum';
-import { CurrencyCodeType, getCurrencySeparators } from '../currency';
+import { CurrencyCodeType, getCurrencySeparators } from '../converter/currency';
 
 export interface DecimalInfo {
   /**
