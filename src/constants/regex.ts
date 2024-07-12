@@ -25,6 +25,12 @@ export const REGEX = {
   THOUSAND_SEPARATED_NUMBER: /\d{1,3}(,\d{3})+(\.\d+)?/,
 
   /**
+   *   Numeric/currency amount (supports negative numbers, thousand separators)
+   *   数字/货币金额（支持负数、千分位分隔符）
+   */
+  NUMBER_CURRENCY: /-?\d{1,3}(,\d{3})*(\.\d+)?/,
+
+  /**
    * number(数字)
    */
   NUMBER: /-?\d+(\.\d+)?/,
@@ -72,12 +78,6 @@ export const REGEX = {
    * non-negative float(非负浮点数)
    */
   NON_NEGATIVE_FLOAT: /\d+(\.\d+)?/,
-
-  /**
-   *   Numeric/currency amount (supports negative numbers, thousand separators)
-   *   数字/货币金额（支持负数、千分位分隔符）
-   */
-  NUMBER_CURRENCY: /-?\d{1,3}(,\d{3})*(\.\d+)?/,
 
   /**
    * chinese postal code(中国邮政编码)
