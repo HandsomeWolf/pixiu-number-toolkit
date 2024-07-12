@@ -11,7 +11,7 @@ export function isValidThousandSeparatedNumber(
   value: string,
   options: RegexOptions = { strict: true },
 ) {
-  return buildRegex(REGEX.NUMBER_CURRENCY, options).test(value);
+  return buildRegex(REGEX.THOUSAND_SEPARATED_NUMBER, options).test(value);
 }
 
 /**
