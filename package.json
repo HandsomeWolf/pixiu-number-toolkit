@@ -1,6 +1,6 @@
 {
   "name": "pixiu-number-toolkit",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "A collection of number utilities.",
   "type": "module",
   "keywords": [
