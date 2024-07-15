@@ -296,15 +296,29 @@ export function isValidChineseTel(
 
 /**
  * 判断是否为中国银行卡号
- * @param value - 待检查的参数
+ * @param cardNumber - 待检查的参数
  * @param options
  * @returns {boolean} 是中国银行卡号时返回 true，否则返回 false
  */
-export function isValidChineseBankCard(
-  value: string,
-  options: RegexOptions = { strict: true },
-): boolean {
-  return buildRegex(REGEX.CHINESE_BANK_CARD, options).test(value);
+export function isValidChineseBankCard(cardNumber: string,
+  options: RegexOptions = { strict: true }) {
+  if (!buildRegex(REGEX.CHINESE_BANK_CARD, options).test(cardNumber)) return false;
+
+  let sum = 0;
+  let isEven = false;
+  for (let i = cardNumber.length - 1; i >= 0; i--) {
+    let digit = parseInt(cardNumber.charAt(i), 10);
+
+    if (isEven) {
+      digit *= 2;
+      if (digit > 9) digit -= 9;
+    }
+
+    sum += digit;
+    isEven = !isEven;
+  }
+
+  return sum % 10 === 0;
 }
 
 /**
@@ -582,3 +596,13 @@ export function isValidUnifiedSocialCreditIdentifierLoose(
   return buildRegex(REGEX.LOOSE_UNIFIED_SOCIAL_CREDIT_IDENTIFIER, options).test(value);
 }
 
+/**
+ * 验证是否为有效的文件扩展名
+ * @param filename - 待验证的文件名
+ * @param allowedExtensions - 允许的文件扩展名
+ * @returns {boolean} 是有效的文件扩展名时返回 true，否则返回 false
+ */
+export function isValidFileExtension(filename: string, allowedExtensions: string[]) {
+  const regex = new RegExp(`\\.(${allowedExtensions.join('|')})$`, 'i');
+  return regex.test(filename);
+}

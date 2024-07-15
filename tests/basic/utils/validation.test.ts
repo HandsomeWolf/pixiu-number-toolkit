@@ -1,6 +1,8 @@
 import { describe, it, expect } from '@jest/globals';
 import {
   isValidBlank,
+  isValidChineseBankCard,
+  isValidFileExtension,
   isValidNumeric,
   isValidThousandSeparatedNumber,
 } from '../../../src';
@@ -66,6 +68,18 @@ describe('validation', () => {
       expect(isValidThousandSeparatedNumber('1,00.1')).toBe(false);
       expect(isValidThousandSeparatedNumber('1,,000.1')).toBe(false);
       expect(isValidThousandSeparatedNumber('123,456789')).toBe(false);
+    });
+  });
+
+  describe('other', () => {
+    it('isValidFileExtension', () => {
+      expect(isValidFileExtension('document.pdf', ['pdf', 'doc', 'docx'])).toBe(true);
+      expect(isValidFileExtension('image.png', ['jpg', 'jpeg', 'gif'])).toBe(false);
+    });
+    it('isValidChineseBankCard', () => {
+      expect(isValidChineseBankCard('6214854511980822')).toBe(true);
+      expect(isValidChineseBankCard('1234567891234567')).toBe(false);
+      expect(isValidChineseBankCard('9558822010005085629')).toBe(true);
     });
   });
 });

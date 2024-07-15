@@ -106,6 +106,7 @@ export {
   isValidIPv4,
   containsEmoji,
   hasNoSpecialCharacters,
+  isValidFileExtension,
 } from './basic/utils/validation';
 
 // getDecimalInfo (获取小数信息), getDecimalPlaces (获取小数位数), padZero (补零)
