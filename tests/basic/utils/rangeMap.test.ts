@@ -12,12 +12,16 @@ const ranges: Range[] = [
 const rangeMap = createRangeMap(ranges);
 
 
-describe('valid id card', () => {
-  it('map', () => {
+describe('校验区间', () => {
+  it('取范围', () => {
     expect(getRangeValue(50, rangeMap)).toBe('A');
     expect(getRangeValue(150, rangeMap)).toBe('B');
     expect(getRangeValue(250, rangeMap)).toBe('C');
     expect(getRangeValue(350, rangeMap)).toBe('D');
     expect(getRangeValue(-10, rangeMap)).toBe(null);
+  });
+  it('取边界', () => {
+    expect(getRangeValue(0, rangeMap)).toBe('A');
+    expect(getRangeValue(200, rangeMap)).toBe('C');
   });
 });

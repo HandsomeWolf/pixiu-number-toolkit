@@ -1,5 +1,3 @@
-import { larger, largerEq } from '..';
-
 export interface Range {
   start: number;
   end: number;
@@ -27,14 +25,22 @@ export function getRangeValue(
   let left = 0;
   let right = breakpoints.length - 1;
 
+  // 处理边界情况
+  if (number < breakpoints[0]) {
+    return null;
+  }
+
   while (left <= right) {
     const mid = Math.floor((left + right) / 2);
-    if (larger(number, breakpoints[mid])) {
+    if (number >= breakpoints[mid]) {
+      if (mid === breakpoints.length - 1 || number < breakpoints[mid + 1]) {
+        return values[mid];
+      }
       left = mid + 1;
-    } else if (largerEq(breakpoints[mid], number)) {
+    } else {
       right = mid - 1;
     }
   }
 
-  return left > 0 && left <= values.length ? values[left - 1] : null;
+  return null;
 }
