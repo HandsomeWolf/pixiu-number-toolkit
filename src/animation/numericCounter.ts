@@ -1,6 +1,6 @@
-import { computeExpression } from '../math/compute-expression';
+import { computeExpression } from '../math/computeExpression';
 
-export function countTo(
+export function animateNumericCount(
   start: number,
   end: number,
   duration: number,

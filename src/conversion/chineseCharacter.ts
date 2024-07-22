@@ -1,4 +1,4 @@
-import { computeExpression } from '../math/compute-expression';
+import { computeExpression } from '../index';
 
 const onesZh = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
 const tensZh = ['', '十', '百', '千'];
@@ -11,7 +11,7 @@ const MAX_SAFE_INTEGER = 100_000_000_000; // 1000亿
  * @param number_ - The number to convert (要转换的数字)
  * @returns The number in words (文字形式的数字)
  */
-export function numberToWords(number_: number): string {
+export function numberToChineseCharacter(number_: number): string {
   if (Math.abs(number_) >= MAX_SAFE_INTEGER) {
     throw new Error('输入的整数部分必须在-1000亿到1000亿之间');
   }

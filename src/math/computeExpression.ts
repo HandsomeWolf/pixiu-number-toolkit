@@ -1,6 +1,5 @@
-import { currency, padZero } from '../../index';
-import { convertToBigNumbers, math } from '../utils/math';
-import { NumberDictionary } from '../../../types/common';
+import { currency, padZero, convertToBigNumbers, math } from '..';
+import { NumberDictionary } from '../../types/common';
 
 interface ComputeExpressionOptions {
   parameters?: NumberDictionary;

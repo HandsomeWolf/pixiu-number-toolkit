@@ -4,7 +4,7 @@ import {
   ZERO_DOT_END_REGEX,
   ZERO_DOT_PLUS_REGEX,
   ZERO_YUAN_REGEX,
-} from '../../constants/regex';
+} from '../index';
 
 const fractionUnit = ['角', '分'];
 const digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
@@ -15,7 +15,7 @@ const unit = [
 
 const MAX_CONVERTIBLE_AMOUNT = 999999999999.99;
 
-export function digitUppercase(n: number): string {
+export function numberToChineseUppercaseCurrency(n: number): string {
   if (Math.abs(n) > MAX_CONVERTIBLE_AMOUNT) {
     throw new Error('金额超出可转换范围');
   }
@@ -53,7 +53,7 @@ const unitMap: Record<string, number> = {
   拾: 10, 佰: 100, 仟: 1000, 万: 10000, 亿: 100000000,
 };
 
-export function uppercaseToDigit(s: string): number {
+export function chineseUppercaseCurrencyToNumber(s: string): number {
   let result = 0;
   let currentNum = 0;
   let isNegative = false;

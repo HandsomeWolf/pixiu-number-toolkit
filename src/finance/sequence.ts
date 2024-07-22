@@ -1,4 +1,4 @@
-import { math } from '../utils/math';
+import { math } from '..';
 
 /**
  * 生成等差数列。

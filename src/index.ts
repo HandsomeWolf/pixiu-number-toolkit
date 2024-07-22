@@ -1,127 +1,27 @@
-// ------------------------ converter ------------------------
+export * from './animation/numericCounter';
+export * from './animation/rollerNumber';
 
-export { currency, CurrencyCodeType, CurrencyUnitType, CurrencyOptions, convertCurrencyToNumber, getCurrencySeparators } from './basic/converter/currency';
+export * from './constants/enum';
+export * from './constants/regex';
 
-export { CurrencyUnit, CurrencyCode } from './constants/enum';
+export * from './conversion/chineseCurrency';
+export * from './conversion/chineseCharacter';
 
-// digit-uppercase (数字大写)
-export { digitUppercase, uppercaseToDigit } from './basic/converter/digit-uppercase';
+export * from './finance/expressions';
+export * from './finance/sequence';
 
-// number to words or Chinese (数字转换为英文单词或中文汉字)
-export { numberToWords } from './basic/converter/number-to-words';
+export * from './formatting/currency';
+export * from './formatting/padZero';
 
-// ------------------------ finance ------------------------
+export * from './math/computeExpression';
+export * from './math/config';
+export * from './math/math';
+export * from './math/unitConversion';
 
-// Finance expressions  (财务表达式)
-export {
-  calculateGrossAmount,
-  calculateNetAmount,
-  calculateTaxAmount,
-  calculateTaxRate,
-} from './basic/finance/expressions';
-// Finance Sequences (财务序列)
+export * from './network/CIDR';
 
-export {
-  arithmeticSequence,
-  geometricSequence,
-} from './basic/finance/sequence';
+export * from './parse/idCard';
+export * from './parse/numberDetails';
+export * from './parse/rangeMap';
 
-// ------------------------ formatter ------------------------
-
-
-// ------------------------ math ------------------------
-
-// computeExpression (计算表达式)
-export { computeExpression } from './basic/math/compute-expression';
-
-// unitConversion (单位换算)
-export { unitConversion } from './basic/math/unit-conversion';
-
-// math function (数学函数)
-export {
-  add,
-  subtract,
-  multiply,
-  divide,
-  modulo,
-  round,
-  ceil,
-  floor,
-  pickRandom,
-  random,
-  randomInt,
-  equal,
-  unequal,
-  larger,
-  largerEq,
-  smaller,
-  smallerEq,
-} from './basic/math/math';
-
-// ------------------------ utils ------------------------
-
-// validation (校验)
-export {
-  isValidNumber,
-  isValidNumeric,
-  isValidThousandSeparatedNumber,
-  isValidBlank,
-  areAllElementsNumbers,
-  areAllElementsNumeric,
-  isValidNegativeInteger,
-  isValidPositiveInteger,
-  isValidNegativeFloat,
-  isValidNonNegativeFloat,
-  isValidPositiveFloat,
-  isValidDecimalScientificNotation,
-  isValidChinese,
-  isValidChineseName,
-  isValidChineseCharacters,
-  isValidChineseBankCard,
-  isValidChineseMobile,
-  isValidChineseTel,
-  isValidChinesePostalCode,
-  isValidChineseTaxNumber,
-  isValidEnglishLetter,
-  isValidLowercaseEnglishLetter,
-  isValidNonPositiveInteger,
-  isValidFloat,
-  isValidNonPositiveFloat,
-  isValidEmail,
-  isValidIP,
-  isValidSubnetMask,
-  isValidURL,
-  isValidAccount,
-  isValidUppercaseEnglishLetter,
-  isValidHexColor,
-  isValidMacAddress,
-  isValidChineseIdCard,
-  isValidNewEnergyLicensePlate,
-  isValidNonNewEnergyLicensePlate,
-  isValidLicensePlate,
-  isValidUnifiedSocialCreditIdentifierStrict,
-  isValidUnifiedSocialCreditIdentifierLoose,
-  isValidChineseIDCard2,
-  isValidChineseIDCard1,
-  isValidIPv4,
-  containsEmoji,
-  hasNoSpecialCharacters,
-  isValidFileExtension,
-} from './basic/utils/validation';
-
-// getDecimalInfo (获取小数信息), getDecimalPlaces (获取小数位数), padZero (补零)
-export {
-  getDecimalInfo,
-  getDecimalPlaces,
-  padZero,
-} from './basic/utils/common';
-
-// id-card (身份证)
-export { parseIdCard } from './basic/utils/id-card';
-
-// animate number change (数字变化动画)
-export { countTo } from './basic/animate/count-to';
-
-// regex (正则)
-export { REGEX, buildRegex } from './constants/regex';
-
+export * from './validation';

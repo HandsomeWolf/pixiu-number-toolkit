@@ -105,4 +105,19 @@ describe('unitConversion', () => {
     expect(unitConversion(1, 'N*m', 'J')).toBe(1); // 牛顿米 -> 焦耳
     expect(unitConversion(1, 'kg*m/s^2', 'N')).toBe(1); // 千克米每平方秒 -> 牛顿
   });
+
+  it('中国单位', () => {
+    expect(unitConversion(1, 'Li', 'm')).toBe(500); // 里 -> 米
+    expect(unitConversion(2, 'ShiChen', 'h')).toBe(4); // 时辰 -> 小时
+    expect(unitConversion(3, 'Jin', 'kg')).toBe(1.5); // 斤 -> 千克
+    expect(unitConversion(3, 'Liang', 'Jin')).toBe(0.3); // 两 -> 斤
+    expect(unitConversion(3, 'Qian', 'Liang')).toBe(0.3); // 钱 -> 两
+    expect(unitConversion(3, 'Chi', 'm')).toBe(1); // 尺 -> 米
+    expect(unitConversion(30, 'Cun', 'm')).toBe(1); // 尺 -> 米
+    expect(unitConversion(5, 'Mu', 'm2')).toBe(3333.35); // 亩 -> 平方米
+    expect(unitConversion(1, 'Shang', 'm2')).toBe(10000); // 时辰 -> 小时
+  });
+
+  // console.log(math.evaluate('2 尺 * 3 尺').toString()); // 输出：0.44444444 平方米
+  // console.log(math.evaluate('5 里 / 2 时辰').format({notation: 'fixed', precision: 2})); // 输出：1.25 米/秒
 });

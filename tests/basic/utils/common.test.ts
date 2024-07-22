@@ -1,11 +1,11 @@
 import { describe, it, expect } from '@jest/globals';
-import { getDecimalInfo, getDecimalPlaces, padZero } from '../../../src';
+import { parseNumberDetails, padZero } from '../../../src';
 
 describe('getDecimalInfo', () => {
   describe('should return correct decimal info', () => {
     it('when decimal places is 0', () => {
-      const decimalInfo = getDecimalInfo(123);
-      expect(decimalInfo.valueString).toBe('123');
+      const decimalInfo = parseNumberDetails(123);
+      expect(decimalInfo.originalString).toBe('123');
       expect(decimalInfo.decimalIndex).toBe(3);
       expect(decimalInfo.decimalLength).toBe(0);
       expect(decimalInfo.integerPart).toBe('123');
@@ -14,25 +14,14 @@ describe('getDecimalInfo', () => {
     });
 
     it('when decimal places is 2', () => {
-      const decimalInfo = getDecimalInfo(-123.45);
-      expect(decimalInfo.valueString).toBe('-123.45');
+      const decimalInfo = parseNumberDetails(-123.45);
+      expect(decimalInfo.originalString).toBe('-123.45');
       expect(decimalInfo.decimalIndex).toBe(3);
       expect(decimalInfo.decimalLength).toBe(2);
       expect(decimalInfo.integerPart).toBe('123');
       expect(decimalInfo.decimalPart).toBe('45');
       expect(decimalInfo.integerLength).toBe(3);
     });
-  });
-});
-
-describe('getDecimalPlaces', () => {
-  it('when decimal places is 0', () => {
-    const decimalPlaces = getDecimalPlaces(123);
-    expect(decimalPlaces).toBe(0);
-  });
-  it('when decimal places is 1', () => {
-    const decimalPlaces = getDecimalPlaces(123.4);
-    expect(decimalPlaces).toBe(1);
   });
 });
 

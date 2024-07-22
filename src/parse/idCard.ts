@@ -1,6 +1,6 @@
-import { isValidChineseIdCard } from './validation';
+import { isValidChineseIdCard } from '../validation';
 
-export interface IdCardInfo {
+export interface IdCardDetails {
   /**
    * 归属地区
    */
@@ -19,7 +19,7 @@ export interface IdCardInfo {
   valid: boolean;
 }
 
-export function parseIdCard(id: string): IdCardInfo {
+export function parseIdCard(id: string): IdCardDetails {
   if (!isValidChineseIdCard(id)) {
     return {
       region: '',

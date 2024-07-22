@@ -1,4 +1,4 @@
-import { computeExpression } from '../../../src';
+import { computeExpression } from '..';
 
 /**
  * Calculate the gross amount including tax.
