@@ -1,4 +1,4 @@
-import { parseNumberDetails, computeExpression, math } from '..';
+import { parseNumberDetails, computeExpression } from '..';
 
 export function animateNumericCount(
   start: number,

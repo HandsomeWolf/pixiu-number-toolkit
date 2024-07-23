@@ -37,12 +37,28 @@ export class RollerNumber {
       .split('')
       .map((char) => {
         if (char === '.') {
-          return `<div style="width: ${this.digitHeight / 4}px; display: flex; align-items: flex-end; justify-content: center;">.</div>`;
+          return `<div style="width: ${
+            this.digitHeight / 4
+          }px; display: flex; align-items: flex-end; justify-content: center">.</div>`;
         }
         return `
-          <div style="position: relative; width: ${this.digitHeight / 2}px; height: ${this.digitHeight}px; overflow: hidden;">
-            <div class="digit-column" style="position: absolute; top: 0; left: 0; width: 100%; height: ${this.digitHeight * 20}px; transition: transform ${this.animationDuration}ms cubic-bezier(0.25, 0.1, 0.25, 1);">
-              ${Array.from({ length: 20 }, (_, i) => `<div style="height: ${this.digitHeight}px; display: flex; align-items: center; justify-content: center;">${i % 10}</div>`).join('')}
+          <div style="position: relative; width: ${
+  this.digitHeight / 2
+}px; height: ${this.digitHeight}px; overflow: hidden;">
+            <div class="digit-column" style="position: absolute; top: 0; left: 0; width: 100%; height: ${
+  this.digitHeight * 20
+}px; transition: transform ${
+  this.animationDuration
+}ms cubic-bezier(0.25, 0.1, 0.25, 1);">
+              ${Array.from(
+    { length: 20 },
+    (_, i) =>
+      `<div style="height: ${
+        this.digitHeight
+      }px; display: flex; align-items: center; justify-content: center;">${
+        i % 10
+      }</div>`,
+  ).join('')}
             </div>
           </div>
         `;
@@ -83,14 +99,27 @@ export class RollerNumber {
         column.style.transform = `translateY(${targetTop}px)`;
 
         // 添加过渡结束事件监听器
-        column.addEventListener('transitionend', this.handleTransitionEnd.bind(this, column, currentDigit, targetDigit), { once: true });
+        column.addEventListener(
+          'transitionend',
+          this.handleTransitionEnd.bind(
+            this,
+            column,
+            currentDigit,
+            targetDigit,
+          ),
+          { once: true },
+        );
       }
     });
 
     this.value = this.targetValue;
   }
 
-  private handleTransitionEnd(column: HTMLElement, currentDigit: number, targetDigit: number): void {
+  private handleTransitionEnd(
+    column: HTMLElement,
+    currentDigit: number,
+    targetDigit: number,
+  ): void {
     // 移除过渡效果
     column.style.transition = 'none';
 
@@ -99,6 +128,7 @@ export class RollerNumber {
     column.style.transform = `translateY(${newTop}px)`;
 
     // 强制回流
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     column.offsetHeight;
 
     // 恢复过渡效果
