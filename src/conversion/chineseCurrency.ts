@@ -6,7 +6,6 @@ import {
   ZERO_YUAN_REGEX,
 } from '../index';
 
-const fractionUnit = ['角', '分'];
 const digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
 const unit = [
   ['元', '万', '亿'],
@@ -23,10 +22,18 @@ export function numberToChineseUppercaseCurrency(n: number): string {
   const head = n < 0 ? '欠' : '';
   n = Math.abs(n);
 
-  const fraction = fractionUnit.reduce((acc, curr, idx) => {
-    const value = digit[Math.floor(n * 10 * (10 ** idx)) % 10];
-    return value !== '零' ? acc + value + curr : acc;
-  }, '') || '整';
+  const fractionPart = Math.round((n % 1) * 100);
+  const jiao = Math.floor(fractionPart / 10);
+  const fen = fractionPart % 10;
+
+  let fraction = '';
+  if (jiao > 0) {
+    fraction += `${digit[jiao]}角`;
+  }
+  if (fen > 0) {
+    fraction += `${digit[fen]}分`;
+  }
+  fraction = fraction || '整';
 
   let integer = '';
   n = Math.floor(n);
@@ -44,6 +51,7 @@ export function numberToChineseUppercaseCurrency(n: number): string {
     .replace(ZERO_DOT_PLUS_REGEX, '零')
     .replace(WHOLE_REGEX, '零元整');
 }
+
 
 const digitMap: Record<string, number> = {
   零: 0, 壹: 1, 贰: 2, 叁: 3, 肆: 4, 伍: 5, 陆: 6, 柒: 7, 捌: 8, 玖: 9,
