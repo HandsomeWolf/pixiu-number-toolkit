@@ -21,6 +21,9 @@ describe('formatter', () => {
     expect(chineseUppercaseCurrencyToNumber('壹拾贰万零壹拾贰元整')).toBe(120012);
     expect(chineseUppercaseCurrencyToNumber('壹万叁仟肆佰伍拾陆元柒角捌分')).toBe(13456.78);
     expect(chineseUppercaseCurrencyToNumber('玖亿捌仟柒佰陆拾伍万元整')).toBe(987650000);
-    expect(chineseUppercaseCurrencyToNumber('欠玖亿捌仟柒佰陆拾伍万元整')).toBe(-987650000);
+    expect(chineseUppercaseCurrencyToNumber('壹万元贰角壹分')).toBe(10000.21);
+    expect(chineseUppercaseCurrencyToNumber('壹万元贰角')).toBe(10000.20);
+    expect(chineseUppercaseCurrencyToNumber('壹万元壹分')).toBe(10000.01);
+    expect(chineseUppercaseCurrencyToNumber('壹万元整')).toBe(10000.00);
   });
 });

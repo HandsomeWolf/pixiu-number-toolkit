@@ -1,10 +1,11 @@
 import {
+  computeExpression,
   EMPTY_START_REGEX,
   WHOLE_REGEX,
   ZERO_DOT_END_REGEX,
   ZERO_DOT_PLUS_REGEX,
   ZERO_YUAN_REGEX,
-} from '../index';
+} from '..';
 
 const digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
 const unit = [
@@ -81,33 +82,33 @@ export function chineseUppercaseCurrencyToNumber(s: string): number {
         currentNum = 1;
       }
       if (unitMap[char] >= 10000) {
-        temp += currentNum;
-        tempResult += temp * unitMap[char];
+        temp = Number(computeExpression(`${temp}+${currentNum}`));
+        tempResult = Number(computeExpression(`${tempResult}+ ${temp} * ${unitMap[char]}`));
         if (char === '亿') {
-          result += tempResult;
+          result = Number(computeExpression(`${result} + ${tempResult}`));
           tempResult = 0;
         }
         temp = 0;
       } else {
-        temp += currentNum * unitMap[char];
+        temp = Number(computeExpression(`${temp} + ${currentNum} * ${unitMap[char]}`));
       }
       currentNum = 0;
     } else if (char === '元' || char === '整') {
-      temp += currentNum;
-      tempResult += temp;
-      result += tempResult;
+      temp = Number(computeExpression(`${temp} + ${currentNum}`));
+      tempResult = Number(computeExpression(`${tempResult} + ${temp}`));
+      result = Number(computeExpression(`${result} + ${tempResult}`));
       temp = 0;
       tempResult = 0;
       currentNum = 0;
     } else if (char === '角') {
-      result += currentNum * 0.1;
+      result = Number(computeExpression(`${result}+${currentNum} * 0.1`));
       currentNum = 0;
     } else if (char === '分') {
-      result += currentNum * 0.01;
+      result = Number(computeExpression(`${result}+${currentNum} * 0.01`));
       currentNum = 0;
     }
   }
 
-  result += tempResult + temp + currentNum;
+  result = Number(computeExpression(`${result} + ${tempResult} + ${temp} + ${currentNum}`));
   return isNegative ? -result : result;
 }
