@@ -1,5 +1,5 @@
-import { buildRegex, REGEX } from './constants/regex';
-import { RegexOptions } from '../types/common';
+import { buildRegex, REGEX } from '../constants/regex';
+import { RegexOptions } from '../../types/common';
 
 /**
  *  判断是否为千分位格式

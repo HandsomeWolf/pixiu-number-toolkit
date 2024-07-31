@@ -3,6 +3,7 @@ import { defineConfig } from 'tsup';
 export default defineConfig({
   entry: [
     'src/index.ts',
+    'src/validation/index.ts',
   ],
   dts: true,
   minify: true,

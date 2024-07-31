@@ -1,6 +1,6 @@
 {
   "name": "pixiu-number-toolkit",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "A collection of number utilities.",
   "type": "module",
   "keywords": [
@@ -14,7 +14,7 @@
     "typescript"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/HandsomeWolf",
+  "homepage": "https://github.com/HandsomeWolf/pixiu-number-toolkit",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HandsomeWolf/pixiu-number-toolkit"
@@ -25,6 +25,17 @@
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./validation": {
+      "import": "./dist/validation/index.js",
+      "require": "./dist/validation/index.cjs"
+    }
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
