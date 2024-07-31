@@ -1,4 +1,4 @@
-import { math } from '..';
+import { math } from '../math/config';
 
 /**
  * 生成等差数列。

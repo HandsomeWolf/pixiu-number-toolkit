@@ -1,11 +1,12 @@
 import {
-  computeExpression,
   EMPTY_START_REGEX,
   WHOLE_REGEX,
   ZERO_DOT_END_REGEX,
   ZERO_DOT_PLUS_REGEX,
   ZERO_YUAN_REGEX,
-} from '..';
+} from '../constants/regex';
+
+import { computeExpression } from '..';
 
 const digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
 const unit = [

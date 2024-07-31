@@ -1,5 +1,6 @@
 import { type BigNumber } from 'mathjs';
-import { math, isValidNumeric } from '..';
+import { isValidNumeric } from '..';
+import { math } from './config';
 
 // Check parameters (检查参数)
 function checkParameters(values: Array<number | string>, length?: number): void {

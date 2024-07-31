@@ -1,4 +1,4 @@
-import { math } from '..';
+import { math } from './config';
 
 export function unitConversion(
   value: number,
