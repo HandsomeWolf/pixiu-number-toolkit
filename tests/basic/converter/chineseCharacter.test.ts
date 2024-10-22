@@ -49,5 +49,11 @@ describe('numberToWords', () => {
 
     const result4 = numberToChineseCharacter(-1000000);
     expect(result4).toBe('负一百万');
+
+    const result5 = numberToChineseCharacter(0.01);
+    expect(result5).toBe('零点零一');
+
+    const result6 = numberToChineseCharacter(-1.009);
+    expect(result6).toBe('负一点零零九');
   });
 });

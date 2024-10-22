@@ -52,8 +52,14 @@ function convertInteger(number_: number): string {
 }
 
 function convertDecimal(decimal: number): string {
-  const decimalStr = decimal.toString().slice(2); // 去掉"0."
-  return decimalStr.split('').map((digit) => onesZh[parseInt(digit, 10)]).join('');
+  const decimalStr = decimal.toString().slice(2); // 保留两位小数并去掉"0."
+  return decimalStr.split('').map((digit) => {
+    // 如果当前数字是0，并且不是第一个数字，并且下一个数字不是0，则添加"零"
+    if (digit === '0') {
+      return '零';
+    }
+    return onesZh[parseInt(digit, 10)];
+  }).join('');
 }
 
 /**
