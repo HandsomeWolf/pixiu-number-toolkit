@@ -6,6 +6,7 @@ export { REGEX, buildRegex } from './constants/regex';
 
 export { numberToChineseUppercaseCurrency, chineseUppercaseCurrencyToNumber } from './conversion/chineseCurrency';
 export { numberToChineseCharacter } from './conversion/chineseCharacter';
+export { numberToEnglishCharacter, englishCharacterToNumber } from './conversion/englishCharacter';
 
 export { calculateGrossAmount, calculateTaxRate, calculateTaxAmount, calculateNetAmount, calculateDiscountPrice, calculateDiscountAmount } from './finance/expressions';
 export { arithmeticSequence, geometricSequence } from './finance/sequence';

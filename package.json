@@ -47,7 +47,8 @@
     "lint": "eslint --fix --ext .ts src/**/*.ts"
   },
   "dependencies": {
-    "mathjs": "^13.0.3"
+    "mathjs": "^13.0.3",
+    "pixiu-number-toolkit": "link:"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
